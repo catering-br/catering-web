@@ -1,24 +1,22 @@
-# README
+# catering-web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## requerimentos
+O site está sendo desenvolvido em:
+- Ruby 2.3
+- Rails 5.0
+- Postgres 9.5
 
-Things you may want to cover:
 
-* Ruby version
+## configuração Inicial para o desenvolvimento
 
-* System dependencies
+As configurações iniciais foram feitas seguindo alguns tutorias como:
 
-* Configuration
+http://railsapps.github.io/rails-git.html
+https://gorails.com/setup/ubuntu/16.10
+https://devcenter.heroku.com/articles/getting-started-with-rails5
 
-* Database creation
+**criar um usuario no postgres com o mesmo nome de usuario do seu linux
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Estou fazendo commits com a instrução:
+git subtree push --prefix cateringProject heroku master
