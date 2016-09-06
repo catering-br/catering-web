@@ -1,13 +1,13 @@
-# catering-web
+# Catering-web
 
-## requerimentos
-O site está sendo desenvolvido em:
+## Requerimentos
+O site é desenvolvido em:
 - Ruby 2.3
 - Rails 5.0
 - Postgres 9.5
 
 
-## configuração Inicial para o desenvolvimento
+## Configuração Inicial para o desenvolvimento
 
 As configurações iniciais foram feitas seguindo alguns tutorias como:
 
@@ -20,3 +20,4 @@ https://devcenter.heroku.com/articles/getting-started-with-rails5
 
 Estou fazendo commits com a instrução:
 git subtree push --prefix cateringProject heroku master
+
