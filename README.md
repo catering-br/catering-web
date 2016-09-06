@@ -16,3 +16,7 @@ https://gorails.com/setup/ubuntu/16.10
 https://devcenter.heroku.com/articles/getting-started-with-rails5
 
 **criar um usuario no postgres com o mesmo nome de usuario do seu linux
+
+
+Estou fazendo commits com a instrução:
+git subtree push --prefix cateringProject heroku master
