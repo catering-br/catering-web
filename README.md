@@ -19,5 +19,5 @@ https://devcenter.heroku.com/articles/getting-started-with-rails5
 
 
 Estou fazendo commits com a instrução:
-git subtree push --prefix cateringProject heroku master
+git push eroku master
 
