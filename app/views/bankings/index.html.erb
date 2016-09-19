@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bankings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Professional</th>
+      <th>Bank</th>
+      <th>Agency</th>
+      <th>Account</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bankings.each do |banking| %>
+      <tr>
+        <td><%= banking.professional_id %></td>
+        <td><%= banking.bank %></td>
+        <td><%= banking.agency %></td>
+        <td><%= banking.account %></td>
+        <td><%= link_to 'Show', banking %></td>
+        <td><%= link_to 'Edit', edit_banking_path(banking) %></td>
+        <td><%= link_to 'Destroy', banking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Banking', new_banking_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  professional_id: 1
+  bank: 1
+  agency: 1
+  account: 1
+
+two:
+  professional_id: 1
+  bank: 1
+  agency: 1
+  account: 1

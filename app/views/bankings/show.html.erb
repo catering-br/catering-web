@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Professional:</strong>
+  <%= @banking.professional_id %>
+</p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @banking.bank %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @banking.agency %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @banking.account %>
+</p>
+
+<%= link_to 'Edit', edit_banking_path(@banking) %> |
+<%= link_to 'Back', bankings_path %>

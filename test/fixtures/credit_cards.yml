@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consumer_id: 1
+  name: MyString
+  number: 1
+  digit: 1
+  flag: MyString
+  expiration: MyString
+
+two:
+  consumer_id: 1
+  name: MyString
+  number: 1
+  digit: 1
+  flag: MyString
+  expiration: MyString

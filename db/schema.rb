@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918230232) do
+ActiveRecord::Schema.define(version: 20160919014836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20160918230232) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "bankings", force: :cascade do |t|
+    t.integer  "professional_id"
+    t.integer  "bank"
+    t.integer  "agency"
+    t.integer  "account"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string   "login"
     t.string   "email"
@@ -38,11 +47,54 @@ ActiveRecord::Schema.define(version: 20160918230232) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "consumers", force: :cascade do |t|
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.integer  "consumer_id"
+    t.string   "name"
+    t.integer  "number"
+    t.integer  "digit"
+    t.string   "flag"
+    t.string   "expiration"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "professional_id"
+    t.string   "name"
+    t.text     "description"
+    t.float    "price"
+    t.integer  "rating"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "professionals", force: :cascade do |t|
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "telephones", force: :cascade do |t|
     t.integer  "client_id"
     t.integer  "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "consumer_id"
+    t.float    "amount"
+    t.float    "unitary_price"
+    t.float    "total_price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
