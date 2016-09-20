@@ -1,2 +1,869 @@
-<h1>CateringWeb welcome</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>CateringWeb</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<section class="wrapper">
+
+
+<div class="content" >
+  <div class="main">
+    <div class="shell">
+
+
+
+
+
+
+      <div class="box box1" id="box1-address">
+        <h1>Os melhores serviços de catering perto de você</h1>
+        <form id="buscaCep" class="search clearfix" action="/lista-restaurantes" method="POST">
+          <input type="hidden" id="logged" value="">
+          <input id="locationId" name="location.locationId" type="hidden" value="">
+          <input id="numeroCep" name="location.zipCode" type="hidden" value="">
+          <input id="district" name="location.district" type="hidden" value="">
+          <input id="city" name="location.city" type="hidden" value="">
+          <input id="state" name="location.state" type="hidden" value="">
+          <input id="ruaString" name="location.address" type="hidden" value="">
+          <input id="requireCompl" name="location.requireCompl" type="hidden" value="false">
+          <input id="compl" name="compl" type="hidden" value="">
+          <input id="alias" name="alias" type="hidden" value="">
+          <input id="reference" name="reference" type="hidden" value="">
+          <input id="numeroCasa" name="streetNumber" type="hidden" value="">
+          <input type="tel" id="cep" size="40" maxlength="9" placeholder="Digite aqui seu CEP" onkeyup="removeNonNumber(this);">
+          <i class="sprite-loc-arrow"></i>
+          <input class="buscarCep submitCep" type="submit" alt="#box2" value="Buscar Restaurantes">
+          <p>Não sabe seu <strong>CEP</strong>? <a class="next" id="buscaCepPorEndereco">Clique aqui</a></p>
+          <div>
+          </div></form>
+      </div>
+      <div class="box" id="box-bad-browser">
+        <h1><strong>Desculpe :(</strong></h1>
+        <h3>Infelizmente seu navegador não possui todas as funcionalidades para o funcionamento correto do site. Sugerimos que você o atualize ou use um navegador alternativo, como o Firefox ou Google Chrome</h3>
+      </div>
+
+
+
+
+      <div class="box box2" id="box2">
+        <h1>Informe o <strong>endereço</strong> de entrega!</h1>
+        <form class="form clearfix formEnderecoUnicoLogado" method="post">
+          <input type="hidden" class="locationId">
+          <input type="hidden" class="zipCode">
+          <div class="row">
+            <input type="text" disabled="" class="field1 disabled state">
+            <input type="text" disabled="" class="field2 disabled city">
+          </div>
+          <div class="row">
+            <input type="text" class="field4 disabled address" disabled="" placeholder="Digite seu endereço">
+            <input id="streetNumber" onkeyup="removeNonNumber(this);" type="text" class="field5 streetNumber" autofocus="autofocus" placeholder="Nº" maxlength="5">
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Complemento" class="field-n6 compl semComplId tooltip-example" id="semComplId" data-helpermessage="apartamento, bloco, condomínio, etc" maxlength="100">
+            <span class="radio-holder  field-n7"><a href="#"></a><input type="checkbox" class="semcompl" value="">Sem Complemento</span>
+            <input type="text" placeholder="Ponto de referência" class="field-n8 reference tooltip-example" maxlength="180" data-helpermessage="Lugares ou estabelecimentos pr&amp;oacuteximos que facilitem a entrega">
+          </div>
+          <div class="row">
+            <span class="radio-holder field-n9"><a href="#" id="Casa"></a><input type="checkbox" name="alias" value="Casa">Casa</span>
+            <span class="radio-holder field-n10"><a href="#" id="Trabalho"></a><input type="checkbox" name="alias" value="Casa">Trabalho</span>
+            <span class="radio-holder field-n11"><a href="#" id="Outros"></a><input type="checkbox" name="alias" value="Outros">Outros</span>
+          </div>
+          <div class="row">
+            <input type="submit" alt="#box3" value="Cadastrar Endereço" class="submit field-n13">
+            <input type="button" value="Voltar" class="field9 back mobile logged" alt="#box1-address">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="box box4" id="box4">
+        <h1>Complete seu <strong>endereço</strong> de entrega!</h1>
+        <form class="form formEnderecoUnico clearfix" method="post">
+          <input type="hidden" class="zipCode">
+          <div class="row">
+            <input type="text" disabled="" class="field1 disabled state">
+            <input type="text" disabled="" class="field2 disabled city">
+          </div>
+          <div class="row">
+            <input type="text" class="field4 disabled address" disabled="" placeholder="Digite seu endereço" maxlength="200">
+            <input type="tel" onkeyup="removeNonNumber(this);" class="field5 streetNumber" autofocus="autofocus" placeholder="Nº" maxlength="5">
+          </div>
+
+          <div class="row">
+            <input type="submit" alt="#box5" value="Buscar Restaurantes" class="submit">
+            <input type="button" value="Voltar" class="field9 back" alt="#box1-address">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="box box5" id="box5">
+        <h1>Encontramos muitos resultados! Refine sua busca pelo <strong>número</strong> ou <strong>endereço</strong></h1>
+        <form class="form formEnderecosMultiplos clearfix" method="post">
+          <input type="hidden" class="zipCode">
+          <div class="row">
+            <input type="text" disabled="" class="field1 disabled state" maxlength="100">
+            <input type="text" disabled="" class="field2 disabled city" maxlength="100">
+          </div>
+          <div class="row">
+            <input type="text" class="field4_semEndereco address" placeholder="Digite seu endereço" autofocus="autofocus" maxlength="200">
+            <div class="dynamicAddress"><ul></ul></div>
+            <input type="tel" class="field5_semEndereco streetNumber" placeholder="Nº" onkeyup="removeNonNumber(this);" maxlength="5">
+          </div>
+          <div class="row" id="pre-search">
+            <input type="submit" value="Buscar Restaurantes" class="submit">
+            <input type="button" value="Voltar" class="field9 back" alt="#box1-address">
+          </div>
+          <div class="buscaCepJTable multiplosEnderecos hide">
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="box special_zip box6" id="box6">
+        <h1>Complete seu <strong>endereço</strong> de entrega!</h1>
+
+
+        <form class="form formCompleteEndereco clearfix" method="post">
+
+
+
+
+          <div class="row">
+            <input type="text" name="location.state" disabled="" class="field1 disabled state" value="">
+            <input type="text" name="location.city" disabled="" class="field2 disabled city" value="">
+          </div>
+          <div class="row">
+
+
+            <input type="text" name="location.address" disabled="" class="field4 disabled address" placeholder="Digite seu endereço" value="" maxlength="200">
+            <input type="text" name="streetNumber" disabled="" class="field5 disabled streetNumber " placeholder="Nº" onkeyup="removeNonNumber(this);" value="" maxlength="5">
+          </div>
+          <div class="row">
+            <input type="text" name="compl" placeholder="Complemento (Opcional)" class="field-n6 compl semComplId tooltip-example" id="semComplId-6" data-helpermessage="apartamento, bloco, condomínio, etc" maxlength="100">
+            <span class="radio-holder field-n7 "><a href="#"></a><input type="checkbox" class="semcompl" value="">Sem Complemento</span>
+            <input type="text" name="reference" placeholder="Ponto de referência" class="field-n8 reference tooltip-example" maxlength="180" data-helpermessage="Lugares ou estabelecimentos pr&amp;oacuteximos que facilitem a entrega">
+          </div>
+          <div class="row">
+            <span class="radio-holder field-n9"><a href="#"></a><input type="checkbox" name="alias" value="Casa">Casa</span>
+            <span class="radio-holder field-n10"><a href="#"></a><input type="checkbox" name="alias" value="Trabalho">Trabalho</span>
+            <span class="radio-holder field-n11"><a href="#"></a><input type="checkbox" name="alias" value="Outros">Outros</span>
+            <input type="text" value="" class="field-n12 other disabled" disabled="" name="alias" id="Other">
+          </div>
+          <div class="row">
+
+            <input type="submit" value="Buscar Restaurantes" class="submit">
+            <input type="button" value="Voltar" class="field9 back" alt="#box7">
+
+
+          </div>
+        </form>
+      </div>
+
+
+      <div class="box box7" id="box7">
+        <h1>Informe o <strong>endereço</strong> de entrega!</h1>
+        <form class="form formSemEndereco clearfix" method="post">
+          <input type="hidden" class="zipCode">
+          <input type="hidden" class="location-city" value="">
+          <div class="row">
+            <div class="select field1">
+
+
+
+
+
+              <select class="state">
+
+
+
+                <option value="AC">AC</option>
+
+
+
+
+                <option value="AL">AL</option>
+
+
+
+
+                <option value="AP">AP</option>
+
+
+
+
+                <option value="AM">AM</option>
+
+
+
+
+                <option value="BA">BA</option>
+
+
+
+
+                <option value="CE">CE</option>
+
+
+
+
+                <option value="DF">DF</option>
+
+
+
+
+                <option value="ES">ES</option>
+
+
+
+
+                <option value="GO">GO</option>
+
+
+
+
+                <option value="MA">MA</option>
+
+
+
+
+                <option value="MT">MT</option>
+
+
+
+
+                <option value="MS">MS</option>
+
+
+
+
+                <option value="MG">MG</option>
+
+
+
+
+                <option value="PA">PA</option>
+
+
+
+
+                <option value="PB">PB</option>
+
+
+
+
+                <option value="PR">PR</option>
+
+
+
+
+                <option value="PE">PE</option>
+
+
+
+
+                <option value="PI">PI</option>
+
+
+
+
+                <option value="RJ">RJ</option>
+
+
+
+
+                <option value="RN">RN</option>
+
+
+
+
+                <option value="RS">RS</option>
+
+
+
+
+                <option value="RO">RO</option>
+
+
+
+
+                <option value="RR">RR</option>
+
+
+
+
+                <option value="SC">SC</option>
+
+
+
+                <option value="SP" selected="selected">SP</option>
+
+
+
+
+
+                <option value="SE">SE</option>
+
+
+
+
+                <option value="TO">TO</option>
+
+
+              </select>
+
+
+
+            </div>
+            <div class="select field2" data-placeholder="false">
+              <select class="city">
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <input type="text" placeholder="Digite seu endereço" class="field4_semEndereco address" maxlength="200">
+            <div class="dynamicAddress"><ul></ul></div>
+            <input type="tel" onkeyup="removeNonNumber(this);" placeholder="Nº" class="field5_semEndereco streetNumber" maxlength="5">
+          </div>
+          <div class="row" id="pre-search-naoSeiMeuCep">
+            <input type="submit" value="Buscar Restaurantes" class="submit">
+            <input type="button" value="Voltar" class="field9 back" alt="#box1-address" id="nameAdd">
+          </div>
+          <div class="buscaCepJTableNaoSeiMeuCep hide">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="box box8 comeya" id="box8">
+        <h1>Informe o <strong>endereço</strong> de entrega!</h1>
+        <form class="form formSemEndereco clearfix" method="post">
+          <input type="hidden" class="zipCode">
+          <input type="hidden" class="location-city" value="">
+          <div class="row">
+            <div class="select field1">
+
+
+
+
+
+              <select class="state">
+
+
+
+                <option value="AC">AC</option>
+
+
+
+
+                <option value="AL">AL</option>
+
+
+
+
+                <option value="AP">AP</option>
+
+
+
+
+                <option value="AM">AM</option>
+
+
+
+
+                <option value="BA">BA</option>
+
+
+
+
+                <option value="CE">CE</option>
+
+
+
+
+                <option value="DF">DF</option>
+
+
+
+
+                <option value="ES">ES</option>
+
+
+
+
+                <option value="GO">GO</option>
+
+
+
+
+                <option value="MA">MA</option>
+
+
+
+
+                <option value="MT">MT</option>
+
+
+
+
+                <option value="MS">MS</option>
+
+
+
+
+                <option value="MG">MG</option>
+
+
+
+
+                <option value="PA">PA</option>
+
+
+
+
+                <option value="PB">PB</option>
+
+
+
+
+                <option value="PR">PR</option>
+
+
+
+
+                <option value="PE">PE</option>
+
+
+
+
+                <option value="PI">PI</option>
+
+
+
+
+                <option value="RJ">RJ</option>
+
+
+
+
+                <option value="RN">RN</option>
+
+
+
+
+                <option value="RS">RS</option>
+
+
+
+
+                <option value="RO">RO</option>
+
+
+
+
+                <option value="RR">RR</option>
+
+
+
+
+                <option value="SC">SC</option>
+
+
+
+                <option value="SP" selected="selected">SP</option>
+
+
+
+
+
+                <option value="SE">SE</option>
+
+
+
+
+                <option value="TO">TO</option>
+
+
+              </select>
+
+
+
+            </div>
+            <div class="select field2">
+              <select class="city">
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="select field1 addressType">
+              <select class="tipoAddress">
+
+
+
+                <option value="ACAMP">ACAMPAMENTO</option>
+
+
+
+
+                <option value="ARTERIA">ARTERIA</option>
+
+
+
+
+                <option value="AV">AVENIDA</option>
+
+
+
+
+                <option value="ACESSO">Acesso</option>
+
+
+
+
+                <option value="ALA">Alameda</option>
+
+
+
+
+                <option value="AVE">Avenida</option>
+
+
+
+
+                <option value="BECO">BECO</option>
+
+
+
+
+                <option value="BLOCOS">BLOCOS</option>
+
+
+
+
+                <option value="BOSQUE">BOSQUE</option>
+
+
+
+
+                <option value="BLV">BOULEVARD</option>
+
+
+
+
+                <option value="BULEVAR">Bulevar</option>
+
+
+
+
+                <option value="CAMINHO">CAMINHO</option>
+
+
+
+
+                <option value="CANAL">CANAL</option>
+
+
+
+
+                <option value="CDD">CDD</option>
+
+
+
+
+                <option value="COLONIA">COLONIA</option>
+
+
+
+
+                <option value="CON">CONDOMINIO</option>
+
+
+
+
+                <option value="CORREDOR">CORREDOR</option>
+
+
+
+
+                <option value="CORREGO">CORREGO</option>
+
+
+
+
+                <option value="EST">Estrada</option>
+
+
+
+
+                <option value="EST MUNIC">Estrada Municipal</option>
+
+
+
+
+                <option value="EST VELHA">Estrada Velha</option>
+
+
+
+
+                <option value="FEIRA">FEIRA</option>
+
+
+
+
+                <option value="GALERIA">GALERIA</option>
+
+
+
+
+                <option value="ILHA">ILHA</option>
+
+
+
+
+                <option value="JARDIM">JARDIM</option>
+
+
+
+
+                <option value="LADEIRA">LADEIRA</option>
+
+
+
+
+                <option value="LAGO">LAGO</option>
+
+
+
+
+                <option value="LGO">Largo</option>
+
+
+
+
+                <option value="LOTEAMENTO">Loteamento</option>
+
+
+
+
+                <option value="PQ">PARQUE</option>
+
+
+
+
+                <option value="PASSAGEM">PASSAGEM</option>
+
+
+
+
+                <option value="PATIO">PATIO</option>
+
+
+
+
+                <option value="PROJETADA">PROJETADA</option>
+
+
+
+
+                <option value="PASSARELA">Passarela</option>
+
+
+
+
+                <option value="PTE">Ponte</option>
+
+
+
+
+                <option value="PRAÇA">Praça</option>
+
+
+
+
+                <option value="QUADRA">QUADRA</option>
+
+
+
+
+                <option value="RAMAL">RAMAL</option>
+
+
+
+
+                <option value="RECANTO">RECANTO</option>
+
+
+
+
+                <option value="RES">RESIDENCIAL</option>
+
+
+
+
+                <option value="ROD">Rodovia</option>
+
+
+
+
+                <option value="ROTATORIA">Rotatória</option>
+
+
+
+
+                <option value="RUA">Rua</option>
+
+
+
+
+                <option value="SER">SERVIDAO</option>
+
+
+
+
+                <option value="SETOR">SETOR</option>
+
+
+
+
+                <option value="TERMINAL">TERMINAL</option>
+
+
+
+
+                <option value="TRECHO">TRECHO</option>
+
+
+
+
+                <option value="TREVO">TREVO</option>
+
+
+
+
+                <option value="TRV">Travessa</option>
+
+
+
+
+                <option value="VEREADOR">VEREADOR</option>
+
+
+
+
+                <option value="VIA">Via</option>
+
+
+
+
+                <option value="VDT">Viaduto</option>
+
+
+
+
+                <option value="VIELA">Viela</option>
+
+
+
+
+                <option value="VILA">Vila</option>
+
+
+
+
+                <option value="AREA">Área</option>
+
+
+              </select>
+            </div>
+            <input type="text" class="field3_semEndereco address" maxlength="200">
+            <div class="dynamicAddress"><ul></ul></div>
+            <div class="sharp-div">
+              <div class="sharp-divider">
+                <div>#</div>
+              </div>
+              <input id="dependentAddress" type="text" class="dependentAddress" maxlength="50">
+            </div>
+            <div class="dash-div">
+              <div class="dash-divider">
+                <div>-</div>
+              </div>
+              <input id="streetNumber" type="tel" onkeyup="removeNonNumber(this);" class="streetNumber" maxlength="5">
+            </div>
+          </div>
+          <div class="row" id="pre-search-naoSeiMeuCep">
+            <input type="submit" value="Buscar Restaurantes" class="submit">
+          </div>
+          <div class="buscaCepJTableNaoSeiMeuCep hide">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="box box9" id="box9">
+        <h1>Complete seu <strong>endereço</strong> de entrega!</h1>
+        <form class="form save-address-colombia clearfix" method="post">
+          <input type="hidden" class="locationId" name="location.locationId">
+          <input type="hidden" name="location.zipCode" class="zipCode" id="zipCode" value="">
+          <div class="row">
+            <input type="text" name="location.state" disabled="" class="field1 disabled state" value="">
+            <input type="text" name="location.city" disabled="" class="field2 disabled city" value="">
+          </div>
+          <div class="row">
+            <input type="text" name="location.address" disabled="" class="field10 disabled address" placeholder="Digite seu endereço" value="">
+            <input type="text" name="location.dependentAddress" disabled="" class="field5 margin-left disabled dependentAddress" placeholder="Nº" onkeyup="removeNonNumber(this);" value="">
+            <input type="text" name="streetNumber" disabled="" class="field5 disabled streetNumber" placeholder="Nº" onkeyup="removeNonNumber(this);" value="">
+          </div>
+          <div class="row">
+            <input type="text" name="compl" placeholder="" class="field-n6 compl semComplId tooltip-example" id="semComplId-6" data-helpermessage="apartamento, bloco, condomínio, etc" maxlength="100">
+            <span class="radio-holder field-n7"><a href="#"></a><input type="checkbox" class="semcompl" value="">Sem Complemento</span>
+            <input type="text" name="reference" placeholder="Ponto de referência" class="field-n8 reference tooltip-example" maxlength="180" data-helpermessage="Lugares ou estabelecimentos pr&amp;oacuteximos que facilitem a entrega">
+          </div>
+          <div class="row">
+            <span class="radio-holder field-n9"><a href="#"></a><input type="checkbox" name="alias" value="Casa">Casa</span>
+            <span class="radio-holder field-n10"><a href="#"></a><input type="checkbox" name="alias" value="Trabalho">Trabalho</span>
+            <span class="radio-holder field-n11"><a href="#"></a><input type="checkbox" name="alias" value="Outros">Outros</span>
+            <input type="text" value="" class="field-n12 other disabled" disabled="" name="alias" id="Other" maxlength="100">
+          </div>
+          <div class="row">
+            <input type="submit" value="Buscar Restaurantes" class="submit">
+            <input type="button" value="Voltar" class="field9 back listagemLogr" alt="#box8">
+          </div>
+        </form>
+      </div>
+
+
+
+    </div>
+
+
+    <script>
+      var customer = {
+        email: ''
+      };
+
+      // Localytics logger
+      $(document).ready(function(){
+        ll('tagEvent', 'AbriuApp', {'Cidade': city, 'Periodo': period});
+      });
+    </script>
+  </div>
+</div>
+</section>
+</body>
+</html>
