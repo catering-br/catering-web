@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-  <title>CateringWeb</title>
-  <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-
-<body>
 <section class="wrapper">
 
 
@@ -19,21 +7,21 @@
 
       <div class="box box1" id="box1-address">
         <h1>Os melhores serviços de catering perto de você</h1>
-        <form id="buscaCep" class="search clearfix" action="/lista-restaurantes" method="POST">
-          <input type="tel" id="cep" size="40" maxlength="9" placeholder="Digite aqui seu CEP" onkeyup="removeNonNumber(this);">
+        <form id="buscaCep" class="search clearfix">
+          <input type="tel" id="cep" size="40" maxlength="9" placeholder="Digite aqui seu CEP"
+                 onkeyup="removeNonNumber(this);">
           <i class="sprite-loc-arrow"></i>
-          <input class="buscarCep submitCep" type="submit" alt="#box2" value="Buscar Restaurantes">
+          <input class="buscarCep submitCep" type="submit" alt="#box2" value="Buscar Serviços">
           <p>Não sabe seu <strong>CEP</strong>? <a class="next" id="buscaCepPorEndereco">Clique aqui</a></p>
           <div>
           </div></form>
       </div>
       <div class="box" id="box-bad-browser">
         <h1><strong>Desculpe :(</strong></h1>
-        <h3>Infelizmente seu navegador não possui todas as funcionalidades para o funcionamento correto do site. Sugerimos que você o atualize ou use um navegador alternativo, como o Firefox ou Google Chrome</h3>
+        <h3>Infelizmente seu navegador não possui todas as funcionalidades para o funcionamento correto do site.
+          Sugerimos que você o atualize ou use um navegador alternativo, como o Firefox ou Google Chrome</h3>
       </div>
     </div>
   </div>
 </div>
 </section>
-</body>
-</html>
