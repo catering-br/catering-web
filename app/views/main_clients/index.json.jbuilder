@@ -1,0 +1,1 @@
+json.array! @main_clients, partial: 'main_clients/main_client', as: :main_client

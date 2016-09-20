@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Main Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= number_field_tag('txt_quantity',0) %></td>
+        <td><%= link_to 'Comprar', add_product_car(product) %></td>
+        <td><%# link_to 'Comprar', add_product_car %></td>
+
+        <!--
+
+        <td> <%# link_to 'Mais informação', main_client %></td>
+        <td><%#  link_to 'Comprar', edit_main_client_path(main_client) %></td>
+        <td><%#  link_to 'Destroy', main_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        !-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Main Client', new_main_client_path %>
