@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :transactions
   resources :products
   resources :credit_cards
@@ -9,5 +11,6 @@ Rails.application.routes.draw do
   resources :telephones
   resources :clients
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "application#start_page"
+  # root "application#start_page"
+  root "welcome#index"
 end
