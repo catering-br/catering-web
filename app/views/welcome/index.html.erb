@@ -7,15 +7,22 @@
 
       <div class="box box1" id="box1-address">
         <h1>Os melhores serviços de catering perto de você</h1>
-        <form id="buscaCep" class="search clearfix">
+        <!--<form id="buscaCep" class="search clearfix">
           <input type="tel" id="cep" size="40" maxlength="9" placeholder="Digite aqui seu CEP"
                  onkeyup="removeNonNumber(this);">
           <i class="sprite-loc-arrow"></i>
-          <%= link_to 'Buscar serviços', main_clients_path  %>
+
           <input class="buscarCep submitCep" type="submit" alt="#box2" value="Buscar Serviços">
           <p>Não sabe seu <strong>CEP</strong>? <a class="next" id="buscaCepPorEndereco">Clique aqui</a></p>
-          <div>
-          </div></form>
+        </form>-->
+
+        <%= form_tag(main_clients_path, method: :get, class:"search clearfix") do %>
+            <%= text_field_tag :cep, params[:cep], type:"tel", id:"cep",
+                               size:"40", maxlength:"9", placeholder:"Digite aqui seu CEP",
+                               onkeyup:"removeNonNumber(this)" %>
+            <%= submit_tag 'Procurar serviços', cep:nil , class:"buscarCep submitCep"%>
+            <p>Não sabe seu <strong>CEP</strong>? <a class="next" id="buscaCepPorEndereco">Clique aqui</a></p>
+        <% end %>
       </div>
 
       <div class="box" id="box-bad-browser">
@@ -24,15 +31,8 @@
           Sugerimos que você o atualize ou use um navegador alternativo, como o Firefox ou Google Chrome</h3>
       </div>
 
-      <% provide(:title, "Log in") %>
-      <h1>Log in</h1>
 
 
-      <%= form_tag(main_clients_path, method: :get) do %>
-        <%= label_tag(:cep, "Search for:") %>
-        <%= text_field_tag :cep, params[:cep] %>
-        <%= submit_tag 'Search', cep:nil %>
-      <% end %>
     </div>
   </div>
 </div>
