@@ -5066,7 +5066,7 @@ body.home .wrapper .content-under-the-fold .high-light-area .phones-images .phon
     body.home .wrapper .content-under-the-fold .high-light-area .phones-images .phones-list li .phone-img.windows {
         background-image: url(phone-windows.png);
         width: 188px;
-        height: 320px
+        height: 320pxi
     }
     body.home .wrapper .content-under-the-fold .high-light-area .phones-images .phones-list li .phone-img.ios.co {
         background-image: url(phone-ios-co.png)
