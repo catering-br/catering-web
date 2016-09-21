@@ -92,6 +92,7 @@ class MainClientsController < ApplicationController
   def add_product_car(product)
     shoppingcart.append(product,1)
     puts(shoppingcart.len)
+
     #logger.debug 'Just do it'
     #redirect_to(root_url)
   end
