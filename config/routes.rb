@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :main_clients
   get 'welcome/index'
+  # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
 
   resources :transactions
   resources :products

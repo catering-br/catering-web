@@ -16,7 +16,7 @@ end
 
 class MainClientsController < ApplicationController
   before_action :set_main_client, only: [:show, :edit, :update, :destroy]
-  before_action :load_products
+  # before_action :load_products
   helper_method :add_product_car
   attr_accessor :shoppingcart
 
@@ -25,11 +25,13 @@ class MainClientsController < ApplicationController
   # GET /main_clients
   # GET /main_clients.json
   def index
-    @products = Product.all
+    # @products = Product.all
     @shoppingcart = Shopping_cart.new
     @shoppingcart.append(1,1)
+    #
+    # print(@shoppingcart.len)
+    @main_clients = load_products(params[:cep])
 
-    print(@shoppingcart.len)
   end
 
   # GET /main_clients/1
@@ -95,8 +97,15 @@ class MainClientsController < ApplicationController
   end
 
   private
-    def load_products
-      @products = Product.all.limit(15)
+    def load_products(cep)
+      if (cep and cep!='')
+        # @productores = Professional.where
+
+        @products = Product.where(rating:cep)
+        # where('rating LIKE ?', "%#{cep}%")
+      else
+        @products = Product.all.limit(15)
+      end
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_main_client
