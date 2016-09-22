@@ -41,7 +41,14 @@
 
     <nav class="navigation">
       <ul>
-        <li><a href="/entrar">Entrar/Cadastrar</a></li>
+          <% if client_signed_in? %>
+              <%= 'Olá, ' +  current_client.name %>
+              <%= 'email: ' + current_client.email %>
+              <%= link_to('Logout', destroy_client_session_path, :method => :delete) %> 
+          <% else %>
+              <%= link_to('Entrar', new_client_session_path) %><br />
+              <%= link_to('Cadastrar', new_client_registration_path) %><br />
+          <% end %>
       </ul>
     </nav>
   </div>
