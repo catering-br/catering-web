@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :clients
   resources :main_clients
   get 'welcome/index'
   # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
