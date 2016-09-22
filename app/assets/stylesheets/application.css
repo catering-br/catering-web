@@ -2517,7 +2517,7 @@ h1 strong {
 }
 h2 {
     font-size: 26px;
-    color: #bc2026
+    color: #660033
 }
 h2 i {
     float: left;
@@ -3324,7 +3324,7 @@ a.cd-top:hover {
     height: 460px !important
 }
 .header {
-    background: #bc2026;
+    background: rgba(102, 0, 51, 1);/* #bc2026;*/
     min-height: 80px;
     position: relative;
     z-index: 1000
@@ -3413,7 +3413,7 @@ a.cd-top:hover {
     text-align: center
 }
 .navigation li ul li a:hover {
-    color: #bc2026;
+    color: #660033;
     text-decoration: none
 }
 .navigation li ul.dropdown.sobre {
@@ -3825,7 +3825,8 @@ body.error-page .page-not-found-img {
     float: left
 }
 .box {
-    background: url(transparent.png) 0 0;
+    /*background: url(transparent.png) 0 0;*/
+    background: rgba(0, 204, 204, 0.3);/*mary*/
     padding: 20px;
     clear: both;
     position: relative
@@ -4399,11 +4400,11 @@ ul.menu {
     text-align: center
 }
 .menu-nav li a:hover {
-    border-bottom: 7px solid #bc2026;
+    border-bottom: 7px solid #660033;
     text-decoration: none
 }
 .menu-nav li a.active {
-    border-bottom: 7px solid #bc2026;
+    border-bottom: 7px solid #660033;
     text-decoration: none
 }
 .menu-nav li i {
@@ -4532,7 +4533,7 @@ ul.menu {
     z-index: 500
 }
 .filter li .dd .btn {
-    background: #bc2026;
+    background: #660033;
     color: #fff;
     font-size: 16px;
     margin-top: 16px;
@@ -4572,7 +4573,7 @@ ul.menu {
     box-shadow: inset 0 0 0 1px #b6b6b6
 }
 .filter li a.selected {
-    background-color: #bc2026;
+    background-color: #660033;
     color: #fff;
     font-weight: 600
 }
@@ -4680,8 +4681,8 @@ div.dd.distance_filter {
     background-position: 2px 3px;
     background-repeat: no-repeat;
     background-size: 8px;
-    border-color: #bc2026;
-    color: #bc2026
+    border-color: #660033;
+    color: #660033
 }
 .checkbox-custom-label {
     -khtml-user-select: none;
@@ -5115,7 +5116,7 @@ body.home .feat-cities-search input[type="text"] {
     border: none;
     border-radius: 8px;
     font-size: 1.6em;
-    background-image: url('images/sb-arrow.png');
+    /*background-image: url(sb-arrow.png);*/
     background-size: 15px;
     background-repeat: no-repeat;
     background-position: 95%;
@@ -5257,7 +5258,7 @@ body.home .ui-autocomplete a {
 }
 .spec .restaurants h5 {
     font-size: 1.6em;
-    color: #bc2026;
+    color: #660033;
     font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5310,7 +5311,7 @@ body.home .ui-autocomplete a {
     margin-bottom: 0
 }
 #menuContent .boasvindas h3 {
-    color: #bc2026
+    color: #660033
 }
 #menuContent .boasvindas li:last-of-type .result .result-text {
     border-bottom: transparent
@@ -5324,7 +5325,7 @@ body.home .ui-autocomplete a {
     color: #333
 }
 .boasvindas .explainBoasVindas a {
-    color: #bc2026
+    color: #660033
 }
 .modal .wrap-modal-boasvindas h2 {
     display: inline-block;
@@ -5454,7 +5455,7 @@ body.home .ui-autocomplete a {
     vertical-align: middle
 }
 .suggestRes .suggest-list li .voted {
-    background-image: url(icon-checked.png);
+    /*background-image: url(icon-checked.png);*/
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -6180,7 +6181,7 @@ h6.forgotPass {
     margin-top: 18px
 }
 .favorites .login {
-    background: url("");
+    /*background: url();*/
     border: none;
     margin-left: 330px;
     margin-top: 30px;
@@ -6780,7 +6781,7 @@ a.advise-cart.small {
     display: block
 }
 .places .place .sprite-cart {
-    background: url(ico-cart-list.png) no-repeat 0 0;
+    /*background: url(ico-cart-list.png) no-repeat 0 0;*/
     width: 35px;
     height: 35px;
     clear: both;
@@ -6843,7 +6844,7 @@ a.advise-cart.small {
     width: 276px
 }
 .favorites h5 {
-    color: #bc2026;
+    color: #660033;
     font-size: 21px;
     padding-top: 18px
 }
@@ -6886,7 +6887,7 @@ a.advise-cart.small {
     color: #bebebf
 }
 .favorites h6 {
-    color: #bc2026;
+    color: #660033;
     font-size: 18px;
     padding-bottom: 0
 }
@@ -7065,7 +7066,7 @@ a.advise-cart.small {
     width: 115px
 }
 .modal.modal-with-title .title {
-    color: #bc2026;
+    color: #660033;
     font-size: 2.24em;
     margin-bottom: 20px
 }
@@ -7236,7 +7237,7 @@ button.ui-button.ui-widget {
     vertical-align: middle
 }
 .searchBarFilter .nav-search li.active {
-    background-color: #bc2026;
+    background-color: #660033;
     border: 1px solid rgba(0, 0, 0, 0.3);
     cursor: default
 }
@@ -7281,7 +7282,7 @@ button.ui-button.ui-widget {
 }
 .content_restaurantes .item h3,
 .content_restaurantes .item h5 {
-    color: #bc2026
+    color: #660033
 }
 .dynamicAddress {
     display: none;
@@ -7463,9 +7464,9 @@ button.ui-button.ui-widget {
     display: inline-block
 }
 .contactUsClass .contact-salesforce .field-wrap.is-focused {
-    -webkit-box-shadow: 0 0 5px 2px #bc2026;
-    -moz-box-shadow: 0 0 5px 2px #bc2026;
-    box-shadow: 0 0 5px 2px #bc2026
+    -webkit-box-shadow: 0 0 5px 2px #660033;
+    -moz-box-shadow: 0 0 5px 2px #660033;
+    box-shadow: 0 0 5px 2px #660033
 }
 .contactUsClass .contact-salesforce input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #fff inset
@@ -7527,7 +7528,7 @@ button.ui-button.ui-widget {
     display: block
 }
 .content_restaurantes .item .ico-label.ico-label-free-delivery {
-    background: url("../images/tag-free-delivery-blank.png") no-repeat;
+    /*background: url(tag-free-delivery-blank.png) no-repeat;*/
     height: 126px;
     left: -6px;
     margin-left: -10px;
@@ -7536,7 +7537,7 @@ button.ui-button.ui-widget {
     width: 118px
 }
 .content_restaurantes .item .ico-label.ico-label-new {
-    background: url("../images/tag-new-blank.png") no-repeat;
+    /*background: url(tag-new-blank.png) no-repeat;*/
     height: 72px;
     left: -6px;
     margin-left: -1px;
@@ -7674,7 +7675,7 @@ button.ui-button.ui-widget {
 }
 .content_restaurantes h5,
 .content_restaurantes h3 {
-    color: #bc2026;
+    color: #660033;
     font-size: 1.6em;
     font-weight: 600;
     height: 25px;
@@ -7804,7 +7805,7 @@ button.ui-button.ui-widget {
 .item.closedRestaurant h5 {
     font-size: 1.3em;
     font-weight: 600;
-    color: #bc2026;
+    color: #660033;
     height: 22px;
     padding-top: 0;
     overflow: hidden;
@@ -7983,7 +7984,7 @@ button.ui-button.ui-widget {
     }
 }
 .ico-error2 {
-    background: url(ico-error-2.png) no-repeat;
+    /*background: url(ico-error-2.png) no-repeat;*/
     display: inline-block;
     width: 25px;
     height: 31px
@@ -7999,13 +8000,13 @@ button.ui-button.ui-widget {
     color: #73c501
 }
 .order.order-error h2 {
-    color: #bc2026
+    color: #660033
 }
 .order.order-success .cnt {
     background: #73c501
 }
 .order.order-error .cnt {
-    background: #bc2026
+    background: #660033
 }
 .order h2 {
     font-size: 26px;
@@ -8041,14 +8042,14 @@ button.ui-button.ui-widget {
 .order .buttons a i.ico-button {
     width: 18px;
     height: 20px;
-    background: url(ico-button.png) no-repeat 0 0;
+    /*background: url(ico-button.png) no-repeat 0 0;*/
     display: inline-block;
     position: relative;
     top: 3px;
     margin-right: 7px
 }
 .order-complete h2 {
-    color: #bc2026;
+    color: #660033;
     padding-bottom: 30px
 }
 .order-complete h3 {
@@ -8144,11 +8145,11 @@ button.ui-button.ui-widget {
     white-space: nowrap
 }
 .content-order-status.canceled .main .shell .order-info strong {
-    color: #bc2026
+    color: #660033
 }
 .content-order-status.canceled .main .shell .order-info .title:after {
     font-weight: bold;
-    color: #bc2026
+    color: #660033
 }
 .content-order-status.canceled .main .shell .order-info .time {
     display: none
@@ -8173,7 +8174,7 @@ button.ui-button.ui-widget {
 .content-order-status .main .shell .canceled-order .cancel-image {
     padding-top: 35%;
     width: 35%;
-    background-color: #bc2026;
+    background-color: #660033;
     border-radius: 50%;
     margin: 15px auto 25px auto;
     background-image: url(icon-bike.svg);
@@ -8350,7 +8351,7 @@ button.ui-button.ui-widget {
 .content-order-status .main .shell .order-steps>li.active .step-icon-container:after {
     -webkit-animation: spinning 3s infinite linear;
     animation: spinning 5s infinite linear;
-    background-image: url(step-loading.png);
+    /*background-image: url(step-loading.png);*/
     opacity: 1
 }
 .content-order-status .main .shell .order-steps>li.active .details {
@@ -8408,7 +8409,7 @@ button.ui-button.ui-widget {
 .content-order-status .main .shell .order-steps>li.done .step-icon-container {
     -webkit-transform: rotateY(180deg) translateZ(-1px);
     background-color: #73c501;
-    background-image: url('images/icon-checked-inverse.png') !important;
+    /*background-image: url(icon-checked-inverse.png) !important;*/
     background-size: 50% !important;
     transform: rotateY(180deg) translateZ(-1px)
 }
@@ -8449,43 +8450,43 @@ button.ui-button.ui-widget {
     width: 133%
 }
 .content-order-status .main .shell .order-steps.tracked>#firstStep .step-icon-container {
-    background-image: url('images/icon-sending-grey.png')
+    /*background-image: url(icon-sending-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#firstStep.active .step-icon-container {
-    background-image: url('images/icon-sending-green.png')
+    /*background-image: url(icon-sending-green.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#secondStep .step-icon-container {
-    background-image: url('images/icon-fork-grey.png')
+    /*background-image: url(icon-fork-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#secondStep .details {
     left: -132.5%
 }
 .content-order-status .main .shell .order-steps.tracked>#secondStep.active .step-icon-container {
-    background-image: url('images/icon-fork-green.png')
+    /*background-image: url(icon-fork-green.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#secondStep.scheduled .step-icon-container {
-    background-image: url('images/icon-clock-grey.png')
+    /*background-image: url(icon-clock-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#secondStep.active.scheduled .step-icon-container {
-    background-image: url('images/icon-clock-green.png')
+    /*background-image: url(icon-clock-green.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#thirdStep .step-icon-container {
-    background-image: url('images/icon-bike-grey.png')
+    /*background-image: url(icon-bike-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#thirdStep .details {
     left: -265%
 }
 .content-order-status .main .shell .order-steps.tracked>#thirdStep.active .step-icon-container {
-    background-image: url('images/icon-bike-green.png')
+    /*background-image: url(icon-bike-green.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#fourthStep .step-icon-container {
-    background-image: url('images/icon-like-grey.png')
+    /*background-image: url(icon-like-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.tracked>#fourthStep .details {
     left: -397.5%
 }
 .content-order-status .main .shell .order-steps.tracked>#fourthStep.active .step-icon-container {
-    background-image: url('images/icon-like-green.png')
+    /*background-image: url(icon-like-green.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked {
     max-width: 360px
@@ -8529,28 +8530,28 @@ button.ui-button.ui-widget {
     }
 }
 .content-order-status .main .shell .order-steps.not-tracked>#firstStep .step-icon-container {
-    background-image: url('images/icon-sending-grey.png')
+    /*background-image: url(icon-sending-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked>#firstStep.active .step-icon-container {
-    background-image: url('images/icon-sending-green.png')
+    /*background-image: url(icon-sending-green.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked>#secondStep .step-icon-container {
-    background-image: url('images/icon-fork-grey.png')
+    /*background-image: url(icon-fork-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked>#secondStep .details {
     left: -200%
 }
 .content-order-status .main .shell .order-steps.not-tracked>#secondStep.active .step-icon-container {
-    background-image: url('images/icon-fork-green.png')
+    /*background-image: url(icon-fork-green.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked>#thirdStep .step-icon-container {
-    background-image: url('images/icon-bike-grey.png')
+    /*background-image: url(icon-bike-grey.png)*/
 }
 .content-order-status .main .shell .order-steps.not-tracked>#thirdStep .details {
     left: -300%
 }
 .content-order-status .main .shell .order-steps.not-tracked>#thirdStep.active .step-icon-container {
-    background-image: url('images/icon-bike-green.png')
+    /*background-image: url(icon-bike-green.png)*/
 }
 .content-order-status .main .shell .diskcook-delivery-info {
     background-color: #fafafa;
@@ -8564,7 +8565,7 @@ button.ui-button.ui-widget {
     padding: 10px 30px
 }
 .content-order-status .main .shell .diskcook-delivery-info .diskcook-logo {
-    background-image: url(dc-logo.png);
+    /*background-image: url(dc-logo.png);*/
     background-repeat: no-repeat;
     background-size: 100%;
     display: inline-block;
@@ -8693,7 +8694,7 @@ button.ui-button.ui-widget {
     font-size: 1.8em;
     line-height: 35px;
     height: 35px;
-    color: #bc2026;
+    color: #660033;
     font-weight: 600;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -8736,7 +8737,7 @@ button.ui-button.ui-widget {
     background-color: #e5e5e5
 }
 .restaurant-home-content-buttons li.active {
-    background-color: #bc2026;
+    background-color: #660033;
     border: 1px solid rgba(0, 0, 0, 0.3);
     color: #fff;
     cursor: default
@@ -8760,7 +8761,7 @@ button.ui-button.ui-widget {
 .no-comments {
     text-align: center;
     font-size: 22px;
-    color: #bc2026;
+    color: #660033;
     padding: 25px
 }
 .no-comments .icon {
@@ -9040,7 +9041,7 @@ button.ui-button.ui-widget {
     width: 30px
 }
 .restaurants.restaurant-details p.status .tag.gps-tracker {
-    background-image: url(gps-ico.png)
+    /*background-image: url(gps-ico.png)*/
 }
 .restaurants.restaurant-details p.status .will-close {
     background: #717171;
@@ -9181,7 +9182,7 @@ button.ui-button.ui-widget {
     width: 30px;
     display: inline-block;
     vertical-align: bottom;
-    background-image: url(ico-cook.png);
+    /*background-image: url(ico-cook.png);*/
     background-position: 50%;
     background-size: 100%;
     background-repeat: no-repeat
@@ -9234,7 +9235,7 @@ button.ui-button.ui-widget {
     margin: 17px 0 7px
 }
 .tooltip strong {
-    color: #bc2026;
+    color: #660033;
     display: block;
     font-size: 16px;
     font-weight: 400;
@@ -9277,7 +9278,7 @@ button.ui-button.ui-widget {
     margin: 12px 0
 }
 .rating .ico-rating {
-    background: url(ico-rating.png);
+    /*background: url(ico-rating.png);*/
     width: 49px;
     height: 47px;
     display: inline-block;
@@ -9291,7 +9292,7 @@ button.ui-button.ui-widget {
     font-size: 14px;
     line-height: 22px;
     font-weight: 300;
-    background: url(list-item-line.png) center center repeat-x
+    /*background: url(list-item-line.png) center center repeat-x*/
 }
 .rating ul li span {
     background: #f2f3f3
@@ -9389,7 +9390,7 @@ button.ui-button.ui-widget {
     position: absolute;
     top: 0;
     right: 0;
-    background: url(icon_editar.png) transparent center center no-repeat;
+    /*background: url(icon_editar.png) transparent center center no-repeat;*/
     width: 46px;
     height: 45px;
     border: 0;
@@ -9423,7 +9424,7 @@ button.ui-button.ui-widget {
     font-size: 14px;
     line-height: 18px;
     margin: 0;
-    word-break: break-word
+    word-wrap: break-word
 }
 .results-section ul .result-actions {
     max-width: 155px;
@@ -9503,7 +9504,7 @@ button.ui-button.ui-widget {
     margin: 0 11px 0 0
 }
 .result .more {
-    background: url(more.png) bottom center no-repeat;
+    /*background: url(more.png) bottom center no-repeat;*/
     display: inline-block;
     height: 6px;
     margin: 0;
@@ -9633,7 +9634,7 @@ button.ui-button.ui-widget {
     vertical-align: middle
 }
 .info.maispedidos .headline {
-    background-image: url(ic_mais_pedidos.png);
+    /*background-image: url(ic_mais_pedidos.png);*/
     background-size: contain;
     background-repeat: no-repeat;
     padding-left: 70px
@@ -9652,13 +9653,13 @@ button.ui-button.ui-widget {
     left: 0
 }
 .info.maispedidos .result-exp-content .list>ul>form:nth-child(1) .text-wrap:before {
-    background-image: url(ic_ouro.png)
+    /*background-image: url(ic_ouro.png)*/
 }
 .info.maispedidos .result-exp-content .list>ul>form:nth-child(2) .text-wrap:before {
-    background-image: url(ic_prata.png)
+    /*background-image: url(ic_prata.png)*/
 }
 .info.maispedidos .result-exp-content .list>ul>form:nth-child(3) .text-wrap:before {
-    background-image: url(ic_bronze.png)
+    /*background-image: url(ic_bronze.png)*/
 }
 .main .shell {
     position: relative;
@@ -9781,7 +9782,7 @@ button.ui-button.ui-widget {
     padding-bottom: 15px
 }
 .cart .subtotal {
-    font-weight: 700px
+    font-weight: 700
 }
 .cart .subtotal span {
     color: #333;
@@ -9836,20 +9837,20 @@ button.ui-button.ui-widget {
     text-align: left
 }
 .cart-header .ico-cart {
-    background: transparent url("images/ico-cart-header.png") no-repeat scroll center;
+    background: transparent url(ico-cart-header.png) no-repeat scroll center;
     display: block;
     float: left;
     height: 64px;
     width: 62px
 }
 .cart-header .ico-cart-gray {
-    background: transparent url("images/ico-cart-header.png") no-repeat scroll center;
+    background: transparent url(ico-cart-header.png) no-repeat scroll center;
     display: block;
     float: left;
     height: 64px;
     width: 62px;
     height: 61px;
-    background: transparent url("images/ico-cart-header-gray.png") no-repeat scroll center
+    background: transparent url(ico-cart-header-gray.png) no-repeat scroll center
 }
 .cart-header .cart-header-text {
     position: absolute;
@@ -9874,7 +9875,7 @@ button.ui-button.ui-widget {
     width: 180px
 }
 .restaurantMenu .cart-header {
-    background-color: #bc2026;
+    background-color: #660033;
     box-shadow: 0 0 5px 0 #999
 }
 .cart-schedule {
@@ -10023,7 +10024,7 @@ button.ui-button.ui-widget {
     width: 100%
 }
 #modal-cart .cart-header {
-    background-color: #bc2026;
+    background-color: #660033;
     box-shadow: 0 0 5px 0 #999
 }
 #modal-cart .cart-header .cart-header-text {
@@ -10077,7 +10078,7 @@ button.ui-button.ui-widget {
     padding: 0 0 35px
 }
 .options h5 {
-    color: #bc2026;
+    color: #660033;
     font-size: 19px;
     font-weight: 600;
     line-height: 22px;
@@ -10085,14 +10086,14 @@ button.ui-button.ui-widget {
     padding-top: 15px
 }
 .options h5 a {
-    color: #bc2026
+    color: #660033
 }
 .options h5:first-child {
     padding: 0
 }
 .options h5 span {
     border-radius: 50%;
-    border: solid 1px #bc2026;
+    border: solid 1px #660033;
     display: inline-block;
     font-weight: 400;
     height: 28px;
@@ -10188,7 +10189,7 @@ button.ui-button.ui-widget {
     width: 15px
 }
 .custom-radio {
-    background: url('images/custom-radio.png');
+    background: url(custom-radio.png);
     cursor: pointer;
     display: inline;
     float: left;
@@ -10217,7 +10218,7 @@ button.ui-button.ui-widget {
     float: left;
     position: relative
 }
-.pizza-content .options .alertPayment {
+/*.pizza-content .options .alertPayment {
     color: #ce2e2e;
     font-size: 14px;
     font-weight: 100;
@@ -10305,7 +10306,7 @@ button.ui-button.ui-widget {
 .pizza-content .template-v4 .tipos-sabores .sabores-select .sabores-icone {
     position: absolute;
     height: 45px;
-    background-color: #bc2026;
+    background-color: #660033;
     width: 68px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
@@ -10632,7 +10633,7 @@ body.not-scroll {
     .moduleChoosePizzaFlavor .bottom .observation input {
         width: 100%
     }
-}
+}*/
 .observation {
     padding-top: 12px
 }
@@ -10643,7 +10644,7 @@ body.not-scroll {
     padding-bottom: 6px
 }
 .observation input {
-    background-image: url(icon_editar.png);
+    /*background-image: url(icon_editar.png);*/
     background-position: 98% 50%;
     background-repeat: no-repeat;
     width: 95%;
@@ -10674,8 +10675,8 @@ body.not-scroll {
 }
 .evaluations a.toevaluate,
 .evaluations a.evaluated {
-    border-color: #bc2026;
-    color: #bc2026
+    border-color: #660033;
+    color: #660033
 }
 .evaluations a.toevaluate:hover,
 .evaluations a.evaluated:hover {
@@ -10683,13 +10684,13 @@ body.not-scroll {
 }
 .evaluations a.toevaluate.selected,
 .evaluations a.evaluated.selected {
-    background-color: #bc2026;
-    border-color: #bc2026;
+    background-color: #660033;
+    border-color: #660033;
     color: #fff
 }
 .evaluations a.toevaluate.selected:hover,
 .evaluations a.evaluated.selected:hover {
-    background-color: #bc2026
+    background-color: #660033
 }
 .evaluations .section-content .ratings-wrap {
     background-color: #f1f1f1;
@@ -10753,21 +10754,21 @@ body.not-scroll {
     max-width: none;
     min-height: 0;
     max-height: none;
-    background: url('images/star-off.png') no-repeat;
+    /*background: url(star-off.png) no-repeat;*/
     background-size: contain;
     font-size: 0
 }
 .evaluations .section-content .ratings-wrap .user-rating .star-img.star-empty,
 .evaluations .section-content .ratings-wrap .star-rating .star-img.star-empty {
-    background-image: url('images/star-off.png')
+    /*background-image: url(star-off.png)*/
 }
 .evaluations .section-content .ratings-wrap .user-rating .star-img.star-full,
 .evaluations .section-content .ratings-wrap .star-rating .star-img.star-full {
-    background-image: url('images/star-on-y.png')
+    /*background-image: url(star-on-y.png)*/
 }
 .evaluations .section-content .ratings-wrap .user-rating .star-img.star-half,
 .evaluations .section-content .ratings-wrap .star-rating .star-img.star-half {
-    background-image: url('images/star-half-y.png')
+    /*background-image: url(star-half-y.png)*/
 }
 .evaluations .section-content .ratings-wrap .user-rating .star-radio,
 .evaluations .section-content .ratings-wrap .star-rating .star-radio {
@@ -10909,7 +10910,7 @@ body.not-scroll {
     text-align: left;
     display: inline-block;
     width: auto;
-    min-width: auto;
+    /*min-width: auto;*/
     float: none;
     vertical-align: top
 }
@@ -10917,7 +10918,7 @@ body.not-scroll {
     padding: 5px 0
 }
 .your-rating .delay .not-delivered-container .contact-us-link {
-    color: #bc2026;
+    color: #660033;
     cursor: pointer
 }
 .your-rating .delay .not-delivered-container .contact-us-link:hover {
@@ -10933,7 +10934,7 @@ body.not-scroll {
     }
 }
 .modal.delay-contactus .order-definition {
-    color: #bc2026;
+    color: #660033;
     font-size: 1.2em;
     margin-bottom: 5px
 }
@@ -11212,7 +11213,7 @@ body.not-scroll {
     line-height: 20px
 }
 .popup-shell .headline-list {
-    background: url('images/ico-popup-add.png') 0 6px no-repeat;
+    background: url(ico-popup-add.png) 0 6px no-repeat;
     display: block;
     min-height: 58px;
     padding: 0 0 0 64px
@@ -11269,7 +11270,7 @@ body.not-scroll {
     width: 75px
 }
 .popup-shell .qty-wrap a {
-    background: url(btn-qty-popup.png);
+    /*background: url(btn-qty-popup.png);*/
     display: block;
     height: 21px;
     position: absolute;
@@ -11285,12 +11286,12 @@ body.not-scroll {
     left: 0
 }
 .popup-shell .qty-wrap a.ico-plus.disabled {
-    background: url(btn-qty-popup-disabled.png);
+    /*background: url(btn-qty-popup-disabled.png);*/
     cursor: not-allowed;
     pointer-events: none
 }
 .popup-shell .qty-wrap a.ico-minus.disabled {
-    background: url(btn-qty-popup-disabled.png);
+    /*background: url(btn-qty-popup-disabled.png);*/
     background-position: 21px;
     cursor: not-allowed;
     pointer-events: none
@@ -11390,7 +11391,7 @@ body.not-scroll {
     width: 210px
 }
 .checkout .order-complete h2 {
-    color: #bc2026;
+    color: #660033;
     padding-bottom: 0
 }
 .checkout .cart-checkout {
@@ -11464,7 +11465,7 @@ body.not-scroll {
     width: 30px;
     display: inline-block;
     vertical-align: middle;
-    background-image: url(ico-cook.png);
+    /*background-image: url(ico-cook.png);*/
     background-position: 50%;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -11627,7 +11628,7 @@ body.not-scroll {
     float: left;
     margin: 3px;
     background-color: #fbbd4e;
-    background-image: url(warning-icon.png);
+    /*background-image: url(warning-icon.png);*/
     border-radius: 2px
 }
 .form-big .field-wrap.error {
@@ -11769,7 +11770,7 @@ body.not-scroll {
     padding: 0 10px
 }
 .tooltip-trigger {
-    background: url(tt-trigger.png);
+    /*background: url(tt-trigger.png);*/
     width: 35px;
     height: 35px;
     position: relative;
@@ -11864,7 +11865,7 @@ img.optCode.card {
 }
 .ico-bike {
     display: inline-block;
-    background: url(moto.png) no-repeat;
+    background: url(ico_4.png) no-repeat;
     width: 41px;
     height: 34px
 }
@@ -11899,13 +11900,13 @@ img.optCode.card {
     max-width: 100%
 }
 .checkout .cart-checkout.layout-2 .disk-restaurant-logo span {
-    color: #bc2026;
+    color: #660033;
     display: block;
     font-size: 14px;
     font-weight: bold
 }
 .checkout .cart-checkout.layout-2 h2 {
-    color: #bc2026;
+    color: #660033;
     font-size: 20px;
     line-height: 26px;
     padding-bottom: 15px;
@@ -12019,7 +12020,7 @@ img.optCode.card {
     font-size: 1.75em
 }
 .problems h5 {
-    color: #bc2026;
+    color: #660033;
     font-size: 20px;
     font-weight: 600;
     line-height: 24px;
@@ -12053,7 +12054,7 @@ img.optCode.card {
 }
 .ico-phone {
     display: inline-block;
-    background: url(ico-phone.png);
+    /*background: url(ico-phone.png);*/
     width: 28px;
     height: 28px;
     vertical-align: middle
@@ -12070,13 +12071,13 @@ img.optCode.card {
     padding-left: 40px
 }
 .btn-facebook {
-    background: url(btn-fb.png) 0 0 no-repeat #3c4c84
+    /*background: url(btn-fb.png) 0 0 no-repeat #3c4c84*/
 }
 .btn-twitter {
-    background: url(btn-tw.png) 0 0 no-repeat #73ccf8
+    /*background: url(btn-tw.png) 0 0 no-repeat #73ccf8*/
 }
 .btn-gplus {
-    background: url(btn-gplus.png) 0 0 no-repeat #cc2625
+    /*background: url(btn-gplus.png) 0 0 no-repeat #cc2625*/
 }
 .btn-social:hover {
     text-decoration: none;
@@ -12184,7 +12185,7 @@ img.optCode.card {
     color: #333
 }
 .button-bar a.selected {
-    background: #bc2026;
+    background: #660033;
     color: #fff
 }
 .section-slider {
@@ -12238,7 +12239,7 @@ img.optCode.card {
     line-height: 0
 }
 .slider .pagination a {
-    background: url(pagination.png);
+    /*background: url(pagination.png);*/
     width: 8px;
     text-align: center;
     display: inline-block;
@@ -12390,15 +12391,7 @@ img.optCode.card {
     font-size: 0;
     line-height: 0
 }
-.author-icons i.ico-a-1 {
-    background: url(ico-author-1.png)
-}
-.author-icons i.ico-a-2 {
-    background: url(ico-author-2.png)
-}
-.author-icons i.ico-a-3 {
-    background: url(ico-author-3.png)
-}
+
 .post-reply {
     background: #f8f8f8;
     position: relative;
@@ -12428,7 +12421,7 @@ img.optCode.card {
 }
 .ico-like-s {
     display: inline-block;
-    background: url(ico-like-s.png);
+    /*background: url(ico-like-s.png);*/
     width: 22px;
     height: 21px;
     position: relative;
@@ -12436,7 +12429,7 @@ img.optCode.card {
 }
 .ico-flag-s {
     display: inline-block;
-    background: url(ico-flag-s.png);
+    /*background: url(ico-flag-s.png);*/
     width: 17px;
     height: 21px;
     position: relative;
@@ -12498,7 +12491,7 @@ img.optCode.card {
 .institucional .fix-terms-text {
     font-weight: bold;
     font-style: italic;
-    color: #bc2026
+    color: #660033
 }
 .institucional.about-custom {
     text-align: left;
@@ -12559,7 +12552,7 @@ img.optCode.card {
     color: #333
 }
 .ranking .header-banner {
-    background-image: url('images/ranking-header.png');
+    /*background-image: url(ranking-header.png);*/
     text-align: center;
     white-space: nowrap;
     margin-bottom: 10px
@@ -12610,7 +12603,7 @@ img.optCode.card {
     opacity: .4
 }
 .ranking .ranking-text hr.red {
-    border-color: #bc2026
+    border-color: #660033
 }
 .ranking .ranking-text hr.green {
     border-color: #73c501
@@ -12641,7 +12634,7 @@ img.optCode.card {
     font-weight: 600
 }
 .ranking .ranking-text .text-red {
-    color: #bc2026
+    color: #660033
 }
 .ranking .ranking-text .text-green {
     color: #006e0f
@@ -12683,7 +12676,7 @@ img.optCode.card {
     width: 59px;
     height: 59px;
     margin-right: 20px;
-    background: url(ico-sad.svg);
+    /*background: url(ico-sad.svg);*/
     float: left
 }
 @media (max-width: 768px) {
@@ -12698,10 +12691,10 @@ img.optCode.card {
 .ranking .ranking-text .criterion {
     width: 100%;
     max-width: 360px;
-    color: #bc2026;
+    color: #660033;
     opacity: .8;
     font-weight: 700;
-    background: url('images/img-sad.png') left center no-repeat;
+    /*background: url(img-sad.png) left center no-repeat;*/
     padding: 40px 0 40px 60px;
     float: left;
     display: block
@@ -12721,7 +12714,7 @@ img.optCode.card {
 .ranking .ranking-text .list-lamp li {
     margin-bottom: 20px;
     padding-left: 38px;
-    background: url('images/img-lampada.png') left top no-repeat
+    /*background: url(img-lampada.png) left top no-repeat*/
 }
 .ranking .ranking-text .list-lamp li p {
     margin-bottom: 10px
@@ -12739,57 +12732,7 @@ img.optCode.card {
 .thanks-message {
     max-width: 600px
 }
-.assessoria form input {
-    -moz-box-sizing: border-box;
-    border: 1px solid #c5c5c5;
-    border-radius: 8px;
-    color: #333;
-    display: block;
-    font-size: 19px;
-    font-weight: normal;
-    margin-bottom: 8px;
-    padding-bottom: 15px;
-    padding-left: 21px;
-    padding-top: 15px;
-    width: 100%
-}
-.assessoria form textarea {
-    -moz-box-sizing: border-box;
-    border: 1px solid #c5c5c5;
-    border-radius: 8px;
-    color: #333;
-    display: block;
-    font-size: 19px;
-    font-weight: normal;
-    margin-bottom: 8px;
-    padding-left: 21px;
-    padding-top: 15px;
-    width: 100%
-}
-.assessoria .form {
-    margin-top: 20px
-}
-.assessoria form {
-    margin: auto;
-    width: 750px
-}
-.assessoria form #ddd {
-    display: inline;
-    width: 84px
-}
-.assessoria form #fone {
-    display: inline;
-    width: 662px
-}
-.assessoria form #fone {
-    display: inline;
-    width: 662px
-}
-.assessoria h4 {
-    text-align: left;
-    font-size: 14pt;
-    margin-top: 20px
-}
+
 #allCities {
     margin: 20px auto;
     max-width: 923px
@@ -13182,6 +13125,8 @@ img.optCode.card {
 .formInput {
     margin-bottom: 10px
 }
+
+/* -------------------- FOOTER------------------------ */
 .footer {
     height: auto;
     width: 100%;
@@ -13345,7 +13290,7 @@ img.optCode.card {
     margin-right: 20px
 }
 .footer .right .ssl .wrapper-site-seguro .site-seguro {
-    background: url("images/icon-site-seguro-branco.png") no-repeat;
+    background: url(icon-site-seguro-branco.png) no-repeat;
     background-size: contain;
     display: inline-block;
     height: 27px;
@@ -13357,6 +13302,8 @@ img.optCode.card {
     margin: 9px 0;
     width: 172px
 }
+
+/* -------------------- MENU NAVIGATION FOR MOBILE------------------------ */
 .mobile-nav {
     -webkit-overflow-scrolling: touch;
     background: #4e4e4e;
@@ -13425,7 +13372,7 @@ img.optCode.card {
     text-decoration: none
 }
 .mobile-nav a.has-dd {
-    background-image: url('images/has-dd.png');
+    background-image: url(has-dd.png);
     background-position: right center;
     background-repeat: no-repeat
 }
@@ -13455,7 +13402,7 @@ img.optCode.card {
     display: none
 }
 .ico-profile {
-    background: url("images/ico-profile.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: url(ico-profile.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     display: inline-block;
     height: 31px;
     width: 46px
@@ -13528,7 +13475,7 @@ img.optCode.card {
     right: -64px
 }
 .profile-details .edit i {
-    background: url(ico-edit.png);
+    /*background: url(ico-edit.png);*/
     width: 40px;
     height: 40px;
     position: absolute;
@@ -13690,7 +13637,7 @@ img.optCode.card {
 .logo-wrap .text-wrap h4 {
     font-size: 20px;
     line-height: 26px;
-    color: #bc2026;
+    color: #660033;
     font-weight: 600;
     text-align: left
 }
@@ -14288,7 +14235,7 @@ img.optCode.card {
     }
     .result .more {
         display: inline-block;
-        background: url(more.png) bottom center no-repeat;
+        /*background: url(more.png) bottom center no-repeat;*/
         width: 25px;
         height: 6px;
         position: relative;
@@ -14484,7 +14431,7 @@ img.optCode.card {
         width: inherit
     }
     .filter .shell .filter-header {
-        background-color: #bc2026;
+        background-color: #660033;
         color: #fff;
         display: block;
         font-size: 16px;
@@ -14516,7 +14463,7 @@ img.optCode.card {
         min-height: 30px
     }
     .filter .shell input {
-        -webkit-appearance: normal !important
+        /*-webkit-appearance: normal !important*/
     }
     .filter .filter-mobile-button-container {
         background-color: #d3d3d3;
@@ -14529,7 +14476,7 @@ img.optCode.card {
         z-index: 1000
     }
     .filter .filter-mobile-button-container .filter-mobile-list-button {
-        background-color: #bc2026;
+        background-color: #660033;
         border-radius: 6px;
         color: #fff;
         cursor: pointer;
@@ -14820,7 +14767,7 @@ img.optCode.card {
     .main.inner .box .search input[type="submit"] {
         width: 100%;
         border-radius: 8px;
-        background: #72ac00 url(search-button.png) no-repeat center center;
+        /*background: #72ac00 url(search-button.png) no-repeat center center;*/
         float: none;
         display: block;
         position: static
@@ -14842,7 +14789,7 @@ img.optCode.card {
         float: right !important
     }
     i.exit {
-        background: url(exit.png) no-repeat 0 0;
+        /*background: url(exit.png) no-repeat 0 0;*/
         width: 18px;
         height: 16px;
         float: right;
@@ -15890,7 +15837,7 @@ img.optCode.card {
     }
     .pull {
         margin: 10px auto 10px auto;
-        background: url(sb-arrow.png);
+        /*background: url(sb-arrow.png);*/
         width: 14px;
         height: 8px;
         display: block
@@ -16126,7 +16073,7 @@ img.optCode.card {
     }
     .result .more {
         display: inline-block;
-        background: url(more.png) bottom center no-repeat;
+        /*background: url(more.png) bottom center no-repeat;*/
         width: 25px;
         height: 6px;
         position: relative;
@@ -16292,7 +16239,7 @@ img.optCode.card {
         padding-right: 50px
     }
     .main.inner .box .search input[type="submit"] {
-        background-image: url(search-button2.png);
+        /*background-image: url(search-button2.png);*/
         height: 47px
     }
     .back {
@@ -16326,7 +16273,7 @@ img.optCode.card {
     }
     .result .more {
         display: inline-block;
-        background: url(more.png) bottom center no-repeat;
+        /*background: url(more.png) bottom center no-repeat;*/
         width: 25px;
         height: 6px;
         position: relative;
@@ -16390,7 +16337,7 @@ img.optCode.card {
     }
     .pull {
         margin: 0 auto 10px auto;
-        background: url(sb-arrow.png);
+        /*background: url(sb-arrow.png);*/
         width: 14px;
         height: 8px;
         display: block
@@ -16455,7 +16402,7 @@ img.optCode.card {
         padding-right: 50px
     }
     .main.inner .box .search input[type="submit"] {
-        background-image: url(search-button2.png);
+        /*background-image: url(search-button2.png);*/
         height: 47px
     }
     .back {
@@ -16689,7 +16636,7 @@ img.optCode.card {
         position: relative;
         top: 15px;
         display: block;
-        background: url(ttip-trigger.png) center 0 no-repeat;
+        /*background: url(ttip-trigger.png) center 0 no-repeat;*/
         min-height: 25px;
         -webkit-background-size: 27px 7px;
         background-size: 27px 7px;
@@ -17250,7 +17197,7 @@ img.optCode.card {
         position: relative;
         top: 0;
         display: block;
-        background: url(ttip-trigger.png) center 0 no-repeat;
+        /*background: url(ttip-trigger.png) center 0 no-repeat;*/
         height: 7px;
         -webkit-background-size: 27px 7px;
         background-size: 27px 7px;
@@ -17474,7 +17421,7 @@ img.optCode.card {
         font-size: 16px
     }
     .section-content-left .cart .cart-header .arrow-trigger {
-        background: url(sb-arrow.png) center center no-repeat #cfcfcf;
+        /*background: url(sb-arrow.png) center center no-repeat #cfcfcf;*/
         height: 20px;
         width: 100%;
         display: block;
@@ -17651,7 +17598,7 @@ img.optCode.card {
     width: 100%;
     margin: 20px 0;
     font-size: 20px;
-    color: #bc2026;
+    color: #660033;
     display: none
 }
 .content_restaurantes #searchMsg {
@@ -17663,7 +17610,7 @@ img.optCode.card {
 .result-actions a.btn-add.loading {
     background-size: contain !important;
     cursor: default !important;
-    background: url(btn-add-loading.png);
+    /*background: url(btn-add-loading.png);*/
     -webkit-animation: spin 1s linear;
     animation: spin 1s linear;
     -webkit-animation-iteration-count: infinite;
@@ -17846,7 +17793,7 @@ img.optCode.card {
         width: 210px
     }
     .privateLabel .header .logo:after {
-        background-image: url(poweredbyifood.png);
+        /*background-image: url(poweredbyeasyhost.png);*/
         content: "";
         position: relative;
         top: -125px;
@@ -17871,7 +17818,7 @@ img.optCode.card {
         padding-right: 10px
     }
     .privateLabel .footer .left .footer-logo a {
-        background-image: url(poweredbyifood.png);
+        /*background-image: url(poweredbyeasyhost.png);*/
         background-size: contain;
         background-position: 50%;
         height: 60px;
@@ -17987,7 +17934,7 @@ img.optCode.card {
         padding: 16px
     }
     .main.privateFaq .shell h1 {
-        color: #bc2026;
+        color: #660033;
         font-size: 25px;
         font-weight: bold;
         text-align: center
@@ -18044,7 +17991,7 @@ img.optCode.card {
         width: 250px
     }
     .main.privateOffers .shell h1 {
-        color: #bc2026;
+        color: #660033;
         font-size: 25px;
         font-weight: bold;
         text-align: center
@@ -18087,7 +18034,7 @@ img.optCode.card {
         font-weight: 600;
         line-height: 22px;
         overflow: hidden;
-        word-break: break-word;
+        word-wrap: break-word;
         width: auto;
         margin-right: 105px;
         -webkit-line-clamp: 2;
@@ -18143,7 +18090,7 @@ img.optCode.card {
         margin-top: 25px
     }
     .main.privateStores .shell h1 {
-        color: #bc2026;
+        color: #660033;
         font-size: 25px;
         font-weight: bold;
         text-align: center
@@ -18322,7 +18269,7 @@ body.embedded .header-embed .address .sprite-location-small {
     margin: 0;
     margin-right: 10px;
     vertical-align: middle;
-    background-image: url("images/sprite-header-black.png");
+    /*background-image: url(sprite-header-black.png);*/
     background-size: 69px;
     background-position: 0 50%
 }
@@ -18359,7 +18306,7 @@ body.embedded .header-embed .navigation li ul {
     top: 50px
 }
 body.embedded .header-embed .navigation li ul a:hover {
-    color: #bc2026
+    color: #660033
 }
 body.embedded .header-embed .navigation .link-login {
     padding: 10px
@@ -18369,12 +18316,12 @@ body.embedded .header-embed .navigation .link-login a {
     text-decoration: none
 }
 body.embedded .header-embed .navigation .link-login a:hover {
-    color: #bc2026
+    color: #660033
 }
 body.embedded .header-embed .funnel {
     position: relative;
     float: right;
-    background-image: url("images/ico-cart-m-black.png");
+    /*background-image: url(ico-cart-m-black.png);*/
     margin-bottom: 10px;
     margin-top: 3px
 }
@@ -18448,378 +18395,7 @@ body.embedded #addressPopUp.mask {
         padding-top: 38px
     }
 }
-.pizzatemplate-v3 .pizza-select-container {
-    margin: 20px 0;
-    position: relative;
-    z-index: 3
-}
-.pizzatemplate-v3 .pizza-select-container:after {
-    display: block;
-    clear: both;
-    content: ""
-}
-.pizzatemplate-v3 .pizza-select-container .custom-select-wrap {
-    width: 100%;
-    box-sizing: border-box
-}
-.pizzatemplate-v3 .pizza-option {
-    width: 100%
-}
-.pizzatemplate-v3 .pizza-option.single-topping {
-    display: none;
-    z-index: 2
-}
-.pizzatemplate-v3 .pizza-option.multiple-toppings {
-    z-index: 2
-}
-.pizza-option.pizza-slider-container.single-topping.toppings.slider {
-    z-index: 1
-}
-.pizza-option.pizza-slider-container.multiple-toppings.toppings.slider {
-    z-index: 1
-}
-.pizzatemplate-v3 .pizza-option.pizza-select-container span,
-.pizzatemplate-v3 .pizza-slider-container>span {
-    color: #bc2026;
-    font-weight: bold
-}
-.pizzatemplate-v3 .pizza-select-container>span {
-    float: left;
-    height: 35px;
-    width: 35px;
-    border: 2px solid;
-    border-radius: 50%;
-    line-height: 30px;
-    text-align: center;
-    position: absolute;
-    top: 14%;
-    margin-top: -18px;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-size: 15px;
-    left: 0
-}
-.pizzatemplate-v3 .pizza-slider-container>span {
-    float: left;
-    height: 35px;
-    width: 35px;
-    border: 2px solid;
-    border-radius: 50%;
-    line-height: 30px;
-    text-align: center;
-    box-sizing: border-box;
-    font-weight: bold;
-    font-size: 15px;
-    vertical-align: sub;
-    margin-right: 15px;
-    position: absolute
-}
-.pizzatemplate-v3 .pizza-slider-container>h5 {
-    padding: 8px 0;
-    padding-left: 50px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images {
-    margin: auto;
-    max-width: 430px;
-    margin-bottom: 20px;
-    z-index: 10
-}
-.pizzatemplate-v3 .pizza-slider-container #left-slider .bjqs-images {
-    float: right;
-    max-width: 2250px;
-    margin-bottom: 50px
-}
-.pizzatemplate-v3 .pizza-slider-container #right-slider .bjqs-images {
-    float: left;
-    max-width: 2250px;
-    margin-bottom: 50px
-}
-.pizzatemplate-v3 .pizza-slider-container #right-slider .bjqs-prices {
-    overflow: hidden;
-    width: 200%;
-    left: -100%;
-    margin-bottom: -80px;
-    clear: both;
-    top: -70px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images .pizzas-list {
-    margin-right: 45px;
-    width: auto !important
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images .pizzas-list li {
-    display: none;
-    padding: 0;
-    box-sizing: border-box;
-    clear: both;
-    min-height: 173px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images .bjqs-controls li {
-    padding: 0;
-    position: relative
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images .bjqs-controls li.bjqs-prev:hover:after {
-    display: block;
-    text-align: center;
-    position: absolute;
-    background-color: #f9f9f9;
-    border: solid 1px #bdbdbd;
-    z-index: 10;
-    padding: 8px 15px;
-    width: 118px;
-    left: -54px;
-    border-radius: 5px;
-    box-shadow: 0 5px 1px -3px rgba(0, 0, 0, 0.28);
-    top: 38px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-images .bjqs-controls li.bjqs-next:hover:after {
-    display: block;
-    text-align: center;
-    position: absolute;
-    background-color: #f9f9f9;
-    border: solid 1px #bdbdbd;
-    z-index: 10;
-    padding: 8px 15px;
-    width: 118px;
-    left: -54px;
-    border-radius: 5px;
-    box-shadow: 0 5px 1px -3px rgba(0, 0, 0, 0.28);
-    top: 38px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-prices .bjqs-controls {
-    display: none
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-prices .price-list li {
-    box-sizing: content-box;
-    z-index: 10;
-    padding: 6px 40px 0 0;
-    float: right;
-    display: none;
-    clear: none;
-    position: relative;
-    top: 0;
-    margin-right: -75px;
-    margin-top: -20px;
-    right: 50%
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-prices .price-list li:first-child {
-    display: list-item
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .bjqs-controls {
-    display: none
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .discription-list li {
-    display: none
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .popup-content-garnish,
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .popup-content {
-    display: none
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .discription-list li h4 {
-    text-align: left;
-    font-size: 16px;
-    font-weight: 700;
-    color: #000;
-    margin: 20px 10px
-}
-.pizzatemplate-v3 .pizza-slider-container .bjqs-discription .discription-list li p {
-    font-size: 14px;
-    margin: 20px 10px;
-    color: #656565
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings .bjqs-discription .discription-list li {
-    clear: both
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription li {
-    border-left: 1px solid #ccc;
-    padding: 0
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-discription li {
-    border-right: 1px solid #ccc;
-    padding: 0
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-prices .price-list li {
-    margin-top: 15px
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-prices .price-list li {
-    margin-top: 15px
-}
-.pizzatemplate-v3 .bjqs-prev a,
-.pizzatemplate-v3 .bjqs-next a {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    width: 34px;
-    height: 34px;
-    display: block;
-    margin: 30px 0
-}
-.pizzatemplate-v3 .bjqs-prev a {
-    background-image: url(seta_cima.png)
-}
-.pizzatemplate-v3 .bjqs-next a {
-    background-image: url(seta_baixo.png)
-}
-.pizzatemplate-v3 #singleTopping .bjqs-controls,
-.pizzatemplate-v3 #left-slider .bjqs-controls,
-.pizzatemplate-v3 #right-slider .bjqs-controls {
-    position: absolute;
-    top: 50%;
-    margin-top: -76px
-}
-.pizzatemplate-v3 #right-slider .bjqs-controls,
-.pizzatemplate-v3 #singleTopping .bjqs-controls {
-    right: 0
-}
-.pizzatemplate-v3 #left-slider .bjqs-controls {
-    left: 0
-}
-.pizzatemplate-v3 #right-slider,
-.pizzatemplate-v3 #left-slider {
-    width: 50%
-}
-.pizzatemplate-v3 #left-slider {
-    float: left
-}
-.pizzatemplate-v3 #left-slider .pizza-container.bjqs-images .pizzas-list {
-    margin-left: 45px;
-    margin-right: 0
-}
-.pizzatemplate-v3 #right-slider {
-    float: right
-}
-.pizzatemplate-v3 #left-slider .toppingLabel,
-.pizzatemplate-v3 #right-slider .toppingLabel {
-    display: none;
-    position: absolute;
-    width: 140%;
-    font-size: 14px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 200px;
-    box-sizing: border-box;
-    font-weight: 400;
-    color: #b50000;
-    top: 100%;
-    text-align: inherit;
-    right: inherit;
-    margin-top: 5px
-}
-.pizzatemplate-v3 #left-slider .toppingLabel {
-    left: -45px;
-    text-align: right;
-    padding: 0;
-    padding-right: 10px !important
-}
-.pizzatemplate-v3 #right-slider .toppingLabel p {
-    text-align: left
-}
-.pizzatemplate-v3 #right-slider .toppingLabel.result-actions a.ico-list {
-    float: left
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 {
-    position: relative
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4>p {
-    font-size: 18px;
-    margin: 0;
-    padding-right: 70px;
-    color: #000
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 .hide-on-phone {
-    position: absolute;
-    right: 0;
-    top: 25px
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 .hide-on-phone p {
-    margin: 0;
-    float: right;
-    margin-top: -25px
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 .hide-on-phone a {
-    display: inline-block;
-    background: url(ico-actions.png);
-    width: 25px;
-    height: 25px;
-    margin: 0 3px;
-    background-size: cover
-}
-.pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 .hide-on-phone a.ico-list {
-    background-position: 25px 0
-}
-.toppingLabel.result-actions {
-    padding: 0 !important
-}
-.toppingLabel.result-actions p {
-    margin: 0;
-    margin-top: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-.list-cards {
-    margin-top: 10px
-}
-.list-cards img {
-    max-width: 40px;
-    margin: 0 10px 5px 0
-}
-@media screen and (max-width: 960px) {
-    .pizzatemplate-v3 .pizza-slider-container #right-slider .bjqs-images {
-        margin-bottom: 25px
-    }
-    .pizzatemplate-v3 .pizza-slider-container .bjqs-prices .price-list li {
-        margin-top: -50px
-    }
-    .pizzatemplate-v3 .pizza-slider-container .bjqs-images {
-        margin-bottom: 45px
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .toppingLabel,
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .toppingLabel {
-        display: block
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription {
-        display: none
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription li,
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-discription li {
-        border: none
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription li.layout-qty,
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-discription li.layout-qty {
-        border-top: solid 1px #969696;
-        padding: 12px 0 12px 0
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-discription {
-        width: 200%
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription {
-        width: 200%;
-        left: -100%
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-prices {
-        overflow: hidden;
-        width: 200%;
-        left: -100%;
-        margin-bottom: 0;
-        clear: both;
-        top: 50px
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #left-slider .bjqs-discription .discription-list {
-        padding-top: 104px;
-        overflow: hidden
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings #right-slider .bjqs-discription .discription-list {
-        padding-top: 47px;
-        overflow: hidden
-    }
-    .pizzatemplate-v3 .pizza-slider-container .bjqs-discription .discription-list li.layout-qty {
-        display: block;
-        padding: 12px 0 12px 0
-    }
-    .pizzatemplate-v3 .pizza-slider-container #multipleToppings h4 .hide-on-phone {
-        display: none
-    }
-}
+/* -------------------------------Search by CEP------------------------------------- */
 #addressPopUp.mask {
     position: absolute;
     top: 0;
