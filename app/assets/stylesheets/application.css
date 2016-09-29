@@ -18562,3 +18562,12 @@ body.embedded #addressPopUp.mask {
 :lang(pt) .pizzatemplate-v3 .pizza-slider-container .bjqs-images .bjqs-controls li.bjqs-next:hover:after {
     content: "Clique nas setas para alterar o Sabor"
 }
+.menuMainClient{
+    text-align: center;
+}
+.filtros{
+    float: left;
+}
+.carrinho{
+
+}
