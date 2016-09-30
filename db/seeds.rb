@@ -10,9 +10,9 @@
 
 
 Client.delete_all
-c1 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:245
-c2 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:"123456",cpf:1239874562
-Client.create! login: "usProf", email:"profesional@hotmail.com", name:"name User 3", password:"pass123456", cpf:456987878
+c1 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
+c2 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:"123456",cpf:12398745625
+Client.create! login: "usProf", email:"profesional@hotmail.com", name:"name User 3", password:"pass123456", cpf:45698765432
 
 Telephone.delete_all
 Telephone.create! client:c1, telephone: 23444543

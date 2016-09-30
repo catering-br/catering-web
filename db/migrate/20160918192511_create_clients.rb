@@ -5,7 +5,7 @@ class CreateClients < ActiveRecord::Migration[5.0]
       # t.string :email
       # t.string :password
       t.string :name
-      t.integer :cpf
+      t.string :cpf, :limit=>11
 
       t.timestamps
     end
