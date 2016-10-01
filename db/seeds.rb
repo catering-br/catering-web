@@ -22,11 +22,15 @@ Professional.delete_all
 p1 = Professional.create! client: c1
 p2 = Professional.create! client: c2
 
+
 Product.delete_all
-Product.create! professional: p1, name: "Banana", price: 0.49, description: "description", rating: 2
-Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2", rating: 3
-Product.create! professional: p2, name: "Carton of Strawberries", price: 1.99, description: "description3", rating: 4
+pd1=Product.create! professional: p1, name: "Banana", price: 0.49, description: "description", rating: 2, maxQuantity: 100
+Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2", rating: 3, maxQuantity: 100
+pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 1.99, description: "description3", rating: 4, maxQuantity: 10
 
-
+Keyword.delete_all
+Keyword.create! product: pd1, word: "doçe"
+Keyword.create! product: pd2,word: "salgado"
+Keyword.create! product: pd1, word: "fruta"
 
 
