@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consumer_id: 1
+  status: 1
+  fees: 1.5
+  gain: 1.5
+  promotion_discount: 1.5
+  total_paid: MyString
+  float: MyString
+
+two:
+  consumer_id: 1
+  status: 1
+  fees: 1.5
+  gain: 1.5
+  promotion_discount: 1.5
+  total_paid: MyString
+  float: MyString
