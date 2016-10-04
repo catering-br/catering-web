@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cart_items
+  resources :shopping_carts
   devise_for :clients, controllers: {registrations: 'clients/registrations'}
   resources :main_clients
   get 'welcome/index'

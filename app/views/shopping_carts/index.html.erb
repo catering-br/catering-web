@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shopping Carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consumer</th>
+      <th>Status</th>
+      <th>Fees</th>
+      <th>Gain</th>
+      <th>Promotion discount</th>
+      <th>Total paid</th>
+      <th>Float</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shopping_carts.each do |shopping_cart| %>
+      <tr>
+        <td><%= shopping_cart.consumer_id %></td>
+        <td><%= shopping_cart.status %></td>
+        <td><%= shopping_cart.fees %></td>
+        <td><%= shopping_cart.gain %></td>
+        <td><%= shopping_cart.promotion_discount %></td>
+        <td><%= shopping_cart.total_paid %></td>
+        <td><%= shopping_cart.float %></td>
+        <td><%= link_to 'Show', shopping_cart %></td>
+        <td><%= link_to 'Edit', edit_shopping_cart_path(shopping_cart) %></td>
+        <td><%= link_to 'Destroy', shopping_cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shopping Cart', new_shopping_cart_path %>
