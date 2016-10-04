@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @pictures = Picture.all
+    if client_signed_in?
+        @current_professional_id = Professional.where(client_id: current_client.id).take.id
+    end
   end
 
   # GET /products/1
