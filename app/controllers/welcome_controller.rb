@@ -4,7 +4,6 @@ class WelcomeController < ApplicationController
   end
 
   def main_client
-
   end
 
   def open_main_client

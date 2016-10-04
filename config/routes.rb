@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :cart_items
-  resources :shopping_carts
   devise_for :clients, controllers: {registrations: 'clients/registrations'}
-  resources :main_clients
   get 'welcome/index'
   # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
 
@@ -16,9 +13,13 @@ Rails.application.routes.draw do
   resources :telephones
   resources :clients
   resources :main_clients
+  resources :cart_items
+  resources :shopping_carts
   resources :pictures
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # root "application#start_page"
-  root "welcome#index"
+  # authenticated :client do
+  #   root to: 'products#index', as: :authenticated_root
+  # end
+  root to: 'welcome#index'
 end
