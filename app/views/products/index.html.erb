@@ -19,7 +19,10 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.professional_id %></td>
-        <td><%= image_tag Picture.where(product_id: product.id).take.image.url(:thumb) %></td>
+        <% picture = Picture.where(product_id: product.id).take %>
+        <% if picture != nil %>
+          <td><%= image_tag picture.image.url(:thumb) %></td>
+        <% end %>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
