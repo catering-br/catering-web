@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20161004004337) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "shopping_cart_id"
+    t.float    "quantity"
+    t.float    "unitary_price"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["shopping_cart_id"], name: "index_cart_items_on_shopping_cart_id", using: :btree
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string   "login"
     t.string   "name"
@@ -81,7 +90,7 @@ ActiveRecord::Schema.define(version: 20161004004337) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
+
   create_table "pictures", force: :cascade do |t|
     t.integer  "product_id"
     t.datetime "created_at",         null: false
@@ -92,8 +101,8 @@ ActiveRecord::Schema.define(version: 20161004004337) do
     t.datetime "image_updated_at"
   end
 
-=======
->>>>>>> master
+
+
   create_table "products", force: :cascade do |t|
     t.integer  "professional_id"
     t.string   "name"
@@ -109,6 +118,19 @@ ActiveRecord::Schema.define(version: 20161004004337) do
     t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer  "consumer_id"
+    t.integer  "status"
+    t.float    "fees"
+    t.float    "gain"
+    t.float    "promotion_discount"
+    t.string   "total_paid"
+    t.string   "float"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["consumer_id"], name: "index_shopping_carts_on_consumer_id", using: :btree
   end
 
   create_table "telephones", force: :cascade do |t|

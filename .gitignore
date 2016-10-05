@@ -20,3 +20,6 @@
 # tmp files
 .*~
 public/assets/*
+
+# image files
+public/system/
