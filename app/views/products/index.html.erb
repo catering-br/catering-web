@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
+      <th>Quantidade máxima</th>
       <th>Rating</th>
       <th colspan="3"></th>
     </tr>
@@ -26,6 +27,7 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
+        <td><%= product.maxQuantity %></td>
         <td><%= product.rating %></td>
         <td><%= link_to 'Show', product %></td>
         <% if @current_professional_id == product.professional_id %>

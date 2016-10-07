@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.text :description
       t.float :price
       t.integer :rating
+      t.integer :maxQuantity
 
       t.timestamps
     end

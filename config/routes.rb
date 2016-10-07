@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :keywords
   devise_for :clients, controllers: {registrations: 'clients/registrations'}
   get 'welcome/index'
   # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
