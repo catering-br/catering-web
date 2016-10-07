@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   resources :addresses
   resources :telephones
   resources :clients
-  resources :main_clients
+  resources :main_clients do
+    get 'add_product_car', on: :member
+  end
   resources :cart_items
   resources :shopping_carts
   resources :pictures
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # authenticated :client do

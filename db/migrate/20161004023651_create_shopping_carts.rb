@@ -6,8 +6,7 @@ class CreateShoppingCarts < ActiveRecord::Migration[5.0]
       t.float :fees
       t.float :gain
       t.float :promotion_discount
-      t.string :total_paid
-      t.string :float
+      t.float :total_paid
 
       t.timestamps
     end

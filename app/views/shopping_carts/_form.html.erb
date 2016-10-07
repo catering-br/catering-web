@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.number_field :status %>
+    <%= f.select :status, ShoppingCart.statuses.keys %>
   </div>
 
   <div class="field">
