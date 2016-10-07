@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   layout "application"
   protect_from_forgery with: :exception
 
-  def start_page
-    render html: "EasyHost, sua festa mais fácil"
+  def after_sign_in_path_for(resource_or_scope)
+    products_path
   end
 end

@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Main Clients</h1>
+<div class="menuMainClient">
+  <div class="filtros">
+    <h2>Filtros ...<p/><p/>...</h2>
+  </div>
+  <div class = "carrinho">
+    <h2>Carrinho</h2>
+    <%= label_tag :txtquantity,'0' %> items
+  </div>
+</div>
 
 <table>
   <thead>
@@ -16,7 +24,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= number_field_tag('txt_quantity',0) %></td>
-        <td><%= link_to 'Comprar', add_product_car(product) %></td>
+        <td><%= link_to 'Comprar', add_product_car(product), :remote=>true %></td>
         <td><%# link_to 'Comprar', add_product_car %></td>
 
         <!--
@@ -33,4 +41,4 @@
 
 <br>
 
-<%= link_to 'New Main Client', new_main_client_path %>
+<%# link_to 'New Main Client', new_main_client_path %>
