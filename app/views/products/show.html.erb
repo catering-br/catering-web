@@ -37,5 +37,7 @@
   <%= @product.rating %>
 </p>
 
+<% if @current_professional != nil && @current_professional.id == @product.professional_id %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>
