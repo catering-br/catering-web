@@ -5,10 +5,11 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :telephones
   has_many :addresses
+  has_one :consumer
+  has_one :professional
 
   validates :login, :email, :password, :name, :cpf, presence: true
   validates :login, :email, :cpf, uniqueness: true
   validates_length_of :cpf, is: 11
-  #validates :cpf, length: {:is=>11}
   validates_numericality_of :cpf, :on => :create
 end

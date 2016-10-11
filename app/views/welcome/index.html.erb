@@ -16,7 +16,7 @@
           <p>Não sabe seu <strong>CEP</strong>? <a class="next" id="buscaCepPorEndereco">Clique aqui</a></p>
         </form>-->
 
-        <%= form_tag(main_clients_path, method: :get, class:"search clearfix") do %>
+        <%= form_tag(products_path, method: :get, class:"search clearfix") do %>
             <%= text_field_tag :cep, params[:cep], type:"tel", id:"cep",
                                size:"40", maxlength:"9", placeholder:"Digite aqui seu CEP",
                                onkeyup:"removeNonNumber(this)" %>

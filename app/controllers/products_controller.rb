@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_professional, only: [:index, :show, :new, :edit]
+  before_action :set_consumer, only: [:index, :show, :buy]
   before_action :authenticate_client!, only: [:new, :edit]
   # We should use this when along with shopping_carts
-  # before_action :set_consumer, only: [:index, :show, :edit]
+
 
   # GET /products
   # GET /products.json
@@ -31,6 +32,10 @@ class ProductsController < ApplicationController
     if @current_professional == nil || @current_professional.id != @product.professional_id
       redirect_to product_url(@product), :notice => "You can't edit this product"
     end
+  end
+
+  def buy
+
   end
 
   # POST /products
@@ -80,16 +85,20 @@ class ProductsController < ApplicationController
     end
 
     def set_professional
-        if client_signed_in?
-            @current_professional = Professional.where(client_id: current_client.id).take
-        end
+      if client_signed_in?
+          @current_professional = Professional.where(client_id: current_client.id).take
+      end
     end
 
-    # def set_consumer
-    #     if client_signed_in?
-    #         @current_consumer = Consumer.where(client_id: current_client.id).take
-    #     end
-    # end
+    def set_consumer
+      if client_signed_in?
+        @current_consumer = Consumer.where(client_id: current_client.id).take
+        if @current_consumer != nil
+          @current_cart_id = ShoppingCart.where()
+        end
+      end
+
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params

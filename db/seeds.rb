@@ -10,10 +10,9 @@
 
 
 Client.delete_all
-c1 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
-c2 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:"123456",cpf:12398745625
-Client.create! login: "usProf", email:"profesional@hotmail.com", name:"name User 3", password:"pass123456", cpf:45698765432
-
+c2 = Client.create! login: "usProf", email:"profesional@hotmail.com", name:"name User 3", password:"pass123456", cpf:45698765432
+c1 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:"123456",cpf:12398745625
+c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
 Telephone.delete_all
 Telephone.create! client:c1, telephone: 23444543
 #Telephone.create! telephone: 65574839
@@ -21,6 +20,10 @@ Telephone.create! client:c1, telephone: 23444543
 Professional.delete_all
 p1 = Professional.create! client: c1
 p2 = Professional.create! client: c2
+
+Consumer.delete_all
+u1 = Consumer.create! client:c1
+u2 = Consumer.create! client:c3
 
 
 Product.delete_all

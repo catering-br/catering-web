@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
 
   resources :transactions
-  resources :products
+  resources :products do
+    get 'buy', on: :member
+  end
   resources :credit_cards
   resources :bankings
   resources :consumers
