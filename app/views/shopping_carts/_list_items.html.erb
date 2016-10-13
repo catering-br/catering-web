@@ -22,10 +22,10 @@
         <% end %>
         <td><%= cart_item.product.name %></td>
         <td><%= cart_item.quantity %></td>
-        <td><%= cart_item.unitary_price %></td>
-        <td><%= link_to 'Show', cart_item %></td>
-        <td><%= link_to 'Edit', edit_cart_item_path(cart_item) %></td>
-        <td><%= link_to 'Destroy', cart_item, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td><%= number_to_currency(cart_item.unitary_price) %></td>
+        <td><%= link_to 'Detalhes', cart_item %></td>
+        <td><%= link_to 'Editar', edit_cart_item_path(cart_item) %></td>
+        <td><%= link_to 'Excluir', cart_item, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
   <% end %>
   </thead>

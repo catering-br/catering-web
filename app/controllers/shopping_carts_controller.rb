@@ -12,6 +12,10 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts/1.json
   def show
     @cart_items = CartItem.where(shopping_cart: @shopping_cart)
+    @total = 0
+    @cart_items.each do |item|
+      @total += item.unitary_price*item.quantity
+    end
   end
 
   # GET /shopping_carts/new
@@ -22,7 +26,7 @@ class ShoppingCartsController < ApplicationController
   def buy
     item = CartItem.new(shopping_cart: @shopping_cart, product: @picked_product, quantity: 1, unitary_price: @picked_product.price)
     item.save!
-    @cart_items = CartItem.where(shopping_cart: @shopping_cart)
+    show
   end
 
   # GET /shopping_carts/1/edit
