@@ -7,7 +7,8 @@
     <tr>
       <th>Professional</th>
       <th>Thumbnail</th>
-      <th>Name</th>
+      <th>Categoria</th>
+      <th>Nome</th>
       <th>Description</th>
       <th>Price</th>
       <th>Quantidade máxima</th>
@@ -23,7 +24,10 @@
         <% picture = Picture.where(product_id: product.id).take %>
         <% if picture != nil %>
           <td><%= image_tag picture.image.url(:thumb) %></td>
+        <% else %>
+          <td></td>
         <% end %>
+        <td><%= product.category_product.name %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>

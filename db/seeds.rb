@@ -26,11 +26,19 @@ u1 = Consumer.create! client:c1
 u2 = Consumer.create! client:c3
 u3 = Consumer.create! client:c2
 
+CategoryProduct.delete_all
+cComida = CategoryProduct.create! name: "Comida"
+cFlores = CategoryProduct.create! name: "Flores"
 
 Product.delete_all
-pd1=Product.create! professional: p1, name: "Banana", price: 0.49, description: "description", rating: 2, maxQuantity: 100
-Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2", rating: 3, maxQuantity: 100
-pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 1.99, description: "description3", rating: 4, maxQuantity: 10
+pd1=Product.create! professional: p1, name: "Banana", price: 0.49, description: "description",
+                    rating: 2, maxQuantity: 100, category_product:cComida
+Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2",
+                rating: 3, maxQuantity: 100, category_product:cComida
+pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 1.99,
+                    description: "description3", rating: 4, maxQuantity: 10, category_product:cComida
+Product.create! professional: p1, name: "Rosa vermelha", price: 1.49, description: "uma flor",
+                rating: 4, maxQuantity: 1000, category_product:cFlores
 
 Keyword.delete_all
 Keyword.create! product: pd1, word: "doçe"
