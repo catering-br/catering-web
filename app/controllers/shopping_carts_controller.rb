@@ -11,6 +11,7 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts/1
   # GET /shopping_carts/1.json
   def show
+    @cart_items = CartItem.where(shopping_cart: @shopping_cart)
   end
 
   # GET /shopping_carts/new

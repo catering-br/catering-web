@@ -1,37 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Consumer:</strong>
-  <%= @shopping_cart.consumer_id %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @shopping_cart.status %>
-</p>
-
-<p>
-  <strong>Fees:</strong>
-  <%= @shopping_cart.fees %>
-</p>
-
-<p>
-  <strong>Gain:</strong>
-  <%= @shopping_cart.gain %>
-</p>
-
-<p>
-  <strong>Promotion discount:</strong>
-  <%= @shopping_cart.promotion_discount %>
-</p>
-
-<p>
-  <strong>Total paid:</strong>
-  <%= @shopping_cart.total_paid %>
-</p>
-
-Items:<p/>
+<h2>Items no carrinho:</h2><p/>
 <%= render 'list_items', cart_items: @cart_items %>
 
-<%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
-<%= link_to 'Back', shopping_carts_path %>
+<%= link_to 'Seguir comprando', products_path %> |
+<%= link_to 'Seguinte paso', products_path %>

@@ -24,6 +24,7 @@ p2 = Professional.create! client: c2
 Consumer.delete_all
 u1 = Consumer.create! client:c1
 u2 = Consumer.create! client:c3
+u3 = Consumer.create! client:c2
 
 
 Product.delete_all
