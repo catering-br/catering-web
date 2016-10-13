@@ -30,10 +30,8 @@
   <%= @shopping_cart.total_paid %>
 </p>
 
-<p>
-  <strong>Float:</strong>
-  <%= @shopping_cart.float %>
-</p>
+Items:<p/>
+<%= render 'list_items', cart_items: @cart_items %>
 
 <%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
 <%= link_to 'Back', shopping_carts_path %>

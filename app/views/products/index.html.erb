@@ -35,7 +35,7 @@
           <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <% if @current_consumer != nil %>
-            <td><%= link_to 'Buy', shopping_cart_path(product) %></td>
+            <td><%= link_to 'Buy', buy_shopping_cart_path(@current_cart, :product => product) %></td>
         <% end %>
       </tr>
     <% end %>

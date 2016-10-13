@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :transactions
   has_many :keywords
   has_many :pictures
+  has_many :cart_items
 
   validates :name, :description, :price, :rating, presence: true
 end

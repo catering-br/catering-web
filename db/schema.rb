@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20161004024401) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "shopping_cart_id"
+    t.integer  "product_id"
     t.float    "quantity"
     t.float    "unitary_price"
     t.datetime "created_at",       null: false
@@ -120,12 +121,12 @@ ActiveRecord::Schema.define(version: 20161004024401) do
   create_table "shopping_carts", force: :cascade do |t|
     t.integer  "consumer_id"
     t.integer  "status"
-    t.float    "fees"
-    t.float    "gain"
-    t.float    "promotion_discount"
-    t.float    "total_paid"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.float    "fees",               default: 0.0
+    t.float    "gain",               default: 0.0
+    t.float    "promotion_discount", default: 0.0
+    t.float    "total_paid",         default: 0.0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["consumer_id"], name: "index_shopping_carts_on_consumer_id", using: :btree
   end
 

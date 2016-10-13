@@ -3,10 +3,10 @@ class CreateShoppingCarts < ActiveRecord::Migration[5.0]
     create_table :shopping_carts do |t|
       t.integer :consumer_id
       t.integer :status
-      t.float :fees
-      t.float :gain
-      t.float :promotion_discount
-      t.float :total_paid
+      t.float :fees, :default=>0
+      t.float :gain, :default=>0
+      t.float :promotion_discount, :default=>0
+      t.float :total_paid, :default=>0
 
       t.timestamps
     end

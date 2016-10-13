@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
 
   def buy
 
+
   end
 
   # POST /products
@@ -94,7 +95,12 @@ class ProductsController < ApplicationController
       if client_signed_in?
         @current_consumer = Consumer.where(client_id: current_client.id).take
         if @current_consumer != nil
-          @current_cart_id = ShoppingCart.where()
+          @current_cart = ShoppingCart.where(consumer: @current_consumer.id, status: ShoppingCart.statuses['ativo']).take
+          if @current_cart == nil
+            @current_cart = ShoppingCart.new(consumer:@current_consumer, status: ShoppingCart.statuses['ativo'])
+            @current_cart.save!
+          end
+
         end
       end
 

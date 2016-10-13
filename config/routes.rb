@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     get 'add_product_car', on: :member
   end
   resources :cart_items
-  resources :shopping_carts
+  resources :shopping_carts do
+    get 'buy', on: :member
+  end
   resources :pictures
 
 

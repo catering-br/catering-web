@@ -1,5 +1,6 @@
 class ShoppingCartsController < ApplicationController
-  before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy, :buy]
+  before_action :set_new_product_cart, only: [:buy]
 
   # GET /shopping_carts
   # GET /shopping_carts.json
@@ -15,6 +16,12 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts/new
   def new
     @shopping_cart = ShoppingCart.new
+  end
+
+  def buy
+    item = CartItem.new(shopping_cart: @shopping_cart, product: @picked_product, quantity: 1, unitary_price: @picked_product.price)
+    item.save!
+    @cart_items = CartItem.where(shopping_cart: @shopping_cart)
   end
 
   # GET /shopping_carts/1/edit
@@ -67,8 +74,13 @@ class ShoppingCartsController < ApplicationController
       @shopping_cart = ShoppingCart.find(params[:id])
     end
 
+    def set_new_product_cart
+      @picked_product = Product.find(params[:product])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def shopping_cart_params
       params.require(:shopping_cart).permit(:consumer_id, :status, :fees, :gain, :promotion_discount, :total_paid)
+      # params.require()
     end
 end

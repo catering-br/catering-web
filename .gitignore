@@ -17,6 +17,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Doc files
+doc/*.svg
+
 # tmp files
 .*~
 public/assets/*
