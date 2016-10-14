@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<%= render 'header' %>
+<section id="services">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
 
-<h2>Items no carrinho:</h2><p/>
-<%= render 'list_items', cart_items: @cart_items %>
+    <h2>Items no carrinho:</h2><p/>
+    <%= render 'list_items', cart_items: @cart_items %>
 
 
-<h4>Total: <%= number_to_currency(@total) %></h4>
+    <h4>Total: <%= number_to_currency(@total) %></h4>
 
 
-<%= link_to 'Seguir comprando', products_path %> |
-<%= link_to 'Seguinte paso', products_path %>
+    <%= link_to 'Seguir comprando', products_path %> |
+    <%= link_to 'Seguinte paso', products_path %>
+  </div>
+</section>
