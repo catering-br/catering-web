@@ -1,10 +1,16 @@
 class BankingsController < ApplicationController
   before_action :set_banking, only: [:show, :edit, :update, :destroy]
+  before_action :set_professional, only: [:index, :create, :show, :new, :edit]
+  before_action :authenticate_client!
 
   # GET /bankings
   # GET /bankings.json
   def index
-    @bankings = Banking.all
+    if @current_professional != nil
+      @bankings = Banking.where(professional_id: @current_professional.id)
+    else
+      @bankings = []
+    end
   end
 
   # GET /bankings/1
@@ -14,6 +20,7 @@ class BankingsController < ApplicationController
 
   # GET /bankings/new
   def new
+    @professional = Professional.new
     @banking = Banking.new
   end
 
@@ -24,9 +31,14 @@ class BankingsController < ApplicationController
   # POST /bankings
   # POST /bankings.json
   def create
+    if @current_professional == nil
+      @current_professional = Professional.create(:client_id => current_client.id)
+    end
+
     @banking = Banking.new(banking_params)
 
     respond_to do |format|
+      @banking.professional_id = @current_professional.id
       if @banking.save
         format.html { redirect_to @banking, notice: 'Banking was successfully created.' }
         format.json { render :show, status: :created, location: @banking }
@@ -65,6 +77,12 @@ class BankingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_banking
       @banking = Banking.find(params[:id])
+    end
+
+    def set_professional
+      if client_signed_in?
+          @current_professional = Professional.where(client_id: current_client.id).take
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

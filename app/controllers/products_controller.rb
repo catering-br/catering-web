@@ -22,7 +22,8 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     if @current_professional == nil
-      redirect_to "/professionals/new", :notice => "You are not a professional yet!"
+      # redirect_to "/professionals/new", :notice => "You are not a professional yet!"
+      redirect_to "/bankings/new", :notice => "You are not a professional yet!"
     end
     @product = Product.new
   end
