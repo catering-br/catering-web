@@ -28,7 +28,7 @@
         <tbody>
         <% @products.each do |product| %>
             <tr>
-              <td><%= product.professional_id %></td>
+              <td><%= product.professional.client.name %></td>
               <% picture = Picture.where(product_id: product.id).take %>
               <% if picture != nil %>
                   <td><%= image_tag picture.image.url(:thumb) %></td>
@@ -47,7 +47,9 @@
                   <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
               <% if @current_consumer != nil %>
-                  <td><%= link_to 'Buy', buy_shopping_cart_path(@current_cart, :product => product) %></td>
+                  <td><%= link_to 'Comprar', buy_shopping_cart_path(@current_cart, :product => product) %></td>
+                  <% else %>
+                <td><%= link_to 'Comprar',  new_client_registration_path %></td>
               <% end %>
             </tr>
         <% end %>
