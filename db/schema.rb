@@ -17,15 +17,17 @@ ActiveRecord::Schema.define(version: 20161013203116) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "client_id"
-    t.integer  "cep"
+    t.string   "cep",             limit: 11
     t.string   "street"
     t.integer  "number"
     t.string   "complement"
     t.string   "neighborhood"
     t.string   "city"
     t.string   "country"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "address_type"
+    t.float    "delivery_radius"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "bankings", force: :cascade do |t|

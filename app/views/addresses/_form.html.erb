@@ -20,7 +20,10 @@
     <%= f.label :cep %>
     <%= f.number_field :cep %>
   </div>
-
+    <div class="field">
+      <%= f.label :address_type %>
+      <%= f.select :address_type, Address.address_types.map{|key, value| [key.humanize, value]} %>
+    </div>
   <div class="field">
     <%= f.label :street %>
     <%= f.text_field :street %>

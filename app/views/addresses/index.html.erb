@@ -7,6 +7,7 @@
     <tr>
       <th>Client</th>
       <th>Cep</th>
+      <th>Tipo</th>
       <th>Street</th>
       <th>Number</th>
       <th>Complement</th>
@@ -22,6 +23,7 @@
       <tr>
         <td><%= address.client_id %></td>
         <td><%= address.cep %></td>
+        <td><%= Address.address_types.keys[address.address_type] %></td>
         <td><%= address.street %></td>
         <td><%= address.number %></td>
         <td><%= address.complement %></td>
