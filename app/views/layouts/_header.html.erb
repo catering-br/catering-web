@@ -1,6 +1,6 @@
-<header class="header" style="top: 0px;">
+<header>
 
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     window.NREUM||(NREUM={}),__nr_require=function(e,t,n){
       function r(n){
         if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}
@@ -27,17 +27,6 @@
     <a href="/?toHome=true">Alterar Endereço</a>
   </div>
 
-  <nav class="navigation">
-    <ul>
-      <% if client_signed_in? %>
-          <%= 'Olá, ' +  current_client.name %>
-          <%= 'email: ' + current_client.email %>
-          <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>
-      <% else %>
-          <%= link_to('Entrar', new_client_session_path) %><br />
-          <%= link_to('Cadastrar', new_client_registration_path) %><br />
-      <% end %>
-    </ul>
-  </nav>
-</div>
+
+</div>-->
 </header>

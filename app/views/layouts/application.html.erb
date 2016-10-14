@@ -4,20 +4,25 @@
 
     <title>CateringWeb</title>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'welcome/manifest.css', media: 'all' %>
+    <%= javascript_include_tag 'welcome/manifest.js' %>
   </head>
 
-  <body class="home scrollable" >
-  <%= render 'layouts/header' %>
-  <div class="container-fluid">
-    <% flash.each do |key,value|%>
-    <div class="alert alert-<%= key %> col-md-8 col-md-offset-2 main">
-      <%= value%>
-    </div>
-    <% end %>
-  </div>
+  <body >
+  <%= render 'layouts/navbar' %>
+  <%#= render 'layouts/header' %>
+  <!--<div class="container">-->
+    <%# flash.each do |key,value|%>
+        <!--<div class="alert alert-<%#= key %> col-md-8 col-md-offset-2 main">
+          <%#= value%>
+        </div>-->
+    <%# end %>
+  <!--</div>-->
 
   <%= yield %>
   <%= render 'layouts/footer' %>
