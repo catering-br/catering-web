@@ -1,7 +1,9 @@
 <%= render 'header' %>
-<section id="services">
+<section >
   <div class="container">
-    <p id="notice"><%= notice %></p>
+    <% if notice %>
+        <div id="notice" class="alert alert-success"><%= notice %></div>
+    <% end %>
 
     <h2>Items no carrinho:</h2><p/>
     <%= render 'list_items', cart_items: @cart_items %>

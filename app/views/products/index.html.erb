@@ -1,56 +1,58 @@
 <%= render 'header' %>
-<p id="notice"><%= notice %></p>
 <!-- Services Section -->
-<section id="produtos">
+<section id="products">
   <div class="container">
+    <% if notice %>
+        <div id="notice" class="alert alert-success"><%= notice %></div>
+    <% end %>
     <div class="form-group">
       <input class="form-control" placeholder="Digite aqui o prato, restaurante ou tipo de cozinha preferido">
       <button type="button" class="btn btn-lg btn-primary">Buscar</button>
     </div>
     <div class="table-responsive">
-    <table class="table table-bordered">
-      <thead>
-      <tr>
-        <th>Professional</th>
-        <th>Thumbnail</th>
-        <th>Categoria</th>
-        <th>Nome</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Quantidade máxima</th>
-        <th>Rating</th>
-        <th colspan="3"></th>
-      </tr>
-      </thead>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Professional</th>
+          <th>Thumbnail</th>
+          <th>Categoria</th>
+          <th>Nome</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantidade máxima</th>
+          <th>Rating</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-      <tbody>
-      <% @products.each do |product| %>
-          <tr>
-            <td><%= product.professional_id %></td>
-            <% picture = Picture.where(product_id: product.id).take %>
-            <% if picture != nil %>
-                <td><%= image_tag picture.image.url(:thumb) %></td>
-            <% else %>
-                <td></td>
-            <% end %>
-            <td><%= product.category_product.name %></td>
-            <td><%= product.name %></td>
-            <td><%= product.description %></td>
-            <td><%= product.price %></td>
-            <td><%= product.maxQuantity %></td>
-            <td><%= product.rating %></td>
-            <td><%= link_to 'Show', product %></td>
-            <% if @current_professional != nil && @current_professional.id == product.professional_id %>
-                <td><%= link_to 'Edit', edit_product_path(product) %></td>
-                <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-            <% if @current_consumer != nil %>
-                <td><%= link_to 'Buy', buy_shopping_cart_path(@current_cart, :product => product) %></td>
-            <% end %>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+        <tbody>
+        <% @products.each do |product| %>
+            <tr>
+              <td><%= product.professional_id %></td>
+              <% picture = Picture.where(product_id: product.id).take %>
+              <% if picture != nil %>
+                  <td><%= image_tag picture.image.url(:thumb) %></td>
+              <% else %>
+                  <td></td>
+              <% end %>
+              <td><%= product.category_product.name %></td>
+              <td><%= product.name %></td>
+              <td><%= product.description %></td>
+              <td><%= product.price %></td>
+              <td><%= product.maxQuantity %></td>
+              <td><%= product.rating %></td>
+              <td><%= link_to 'Show', product %></td>
+              <% if @current_professional != nil && @current_professional.id == product.professional_id %>
+                  <td><%= link_to 'Edit', edit_product_path(product) %></td>
+                  <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+              <% if @current_consumer != nil %>
+                  <td><%= link_to 'Buy', buy_shopping_cart_path(@current_cart, :product => product) %></td>
+              <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
     <br>
     <%= link_to 'New Product', new_product_path %>
