@@ -146,14 +146,4 @@ ActiveRecord::Schema.define(version: 20161013203116) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "consumer_id"
-    t.float    "amount"
-    t.float    "unitary_price"
-    t.float    "total_price"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
 end
