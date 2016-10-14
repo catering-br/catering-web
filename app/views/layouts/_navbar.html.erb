@@ -1,0 +1,55 @@
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="/?toHome=true">EasyHost</a>
+
+    </div>
+    <!--<div class="address">
+      <a href="/?toHome=true">
+        <i class="sprite-location-small"></i>
+        <h1> São Paulo </h1>
+      </a>
+
+      <a href="/?toHome=true">Alterar Endereço</a>
+    </div>-->
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <p><i class="fa fa-map-marker" style="font-size:36px"></i> São Paulo ... </p>
+        </li>
+        <li>
+          <a href="/?toHome=true" style="text-transform: none" >Alterar Endereço</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+
+        <% if client_signed_in? %>
+            <li><%= 'Olá, ' +  current_client.name %>
+              <%= 'email: ' + current_client.email %></li>
+            <li><%= link_to('Logout', destroy_client_session_path, :method => :delete) %></li>
+
+        <% else %>
+            <li><%= link_to('Entrar', new_client_session_path) %></li>
+            <li><%= link_to('Cadastrar', new_client_registration_path) %></li>
+
+
+        <% end %>
+
+
+      </ul>
+    </div>
+
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-no-fluid -->
+</nav>
+
