@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
+  before_action :set_shopping_cart, only: [:new]
 
   # GET /payments
   # GET /payments.json
@@ -14,7 +15,8 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @payment = Payment.new
+    @payment = Payment.new(number_quotas: 1, shopping_cart: @shopping_cart,
+                           quota_value: @shopping_cart.total_paid)
   end
 
   # GET /payments/1/edit
@@ -71,4 +73,8 @@ class PaymentsController < ApplicationController
     def payment_params
       params.require(:payment).permit(:shopping_cart, :card, :number_quotas, :quota_value)
     end
+
+  def set_shopping_cart
+    @shopping_cart = ShoppingCart.find(params[:shopping_cart])
+  end
 end

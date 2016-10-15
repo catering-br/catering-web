@@ -12,6 +12,6 @@
 
 
     <%= link_to 'Seguir comprando', products_path %> |
-    <%= link_to 'Seguinte paso', products_path %>
+    <%= link_to 'Seguinte paso', new_payment_path(:shopping_cart => @shopping_cart) %>
   </div>
 </section>
