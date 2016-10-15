@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shopping_cart: 
+  card: 
+  number_quotas: 1
+  quota_value: 9.99
+
+two:
+  shopping_cart: 
+  card: 
+  number_quotas: 1
+  quota_value: 9.99

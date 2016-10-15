@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shopping cart:</strong>
+  <%= @payment.shopping_cart %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @payment.card %>
+</p>
+
+<p>
+  <strong>Number quotas:</strong>
+  <%= @payment.number_quotas %>
+</p>
+
+<p>
+  <strong>Quota value:</strong>
+  <%= @payment.quota_value %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

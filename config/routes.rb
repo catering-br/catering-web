@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resources :category_products
   resources :keywords
   devise_for :clients, controllers: {registrations: 'clients/registrations'}

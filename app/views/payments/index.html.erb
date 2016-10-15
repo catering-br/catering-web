@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shopping cart</th>
+      <th>Card</th>
+      <th>Number quotas</th>
+      <th>Quota value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.shopping_cart %></td>
+        <td><%= payment.card %></td>
+        <td><%= payment.number_quotas %></td>
+        <td><%= payment.quota_value %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment', new_payment_path %>
