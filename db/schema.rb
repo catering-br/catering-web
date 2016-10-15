@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20161014220607) do
     t.text     "description"
     t.float    "price"
     t.integer  "rating"
-    t.integer  "maxQuantity"
+    t.integer  "max_quantity"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

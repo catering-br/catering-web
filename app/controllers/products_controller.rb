@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_professional, only: [:index, :show, :new, :edit]
+  before_action :set_professional, only: [:index, :create, :show, :new, :edit]
   before_action :set_consumer, only: [:index, :show, :buy]
   before_action :authenticate_client!, only: [:new, :edit]
   # We should use this when along with shopping_carts
@@ -46,6 +46,9 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     respond_to do |format|
+      @product.professional_id = @current_professional.id
+      # Since we didn't decide yet, initially it will be 0
+      @product.rating = 0
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
@@ -109,6 +112,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:professional_id, :name, :description, :price, :rating)
+      params.require(:product).permit(:category_product_id, :name, :description, :price, :max_quantity)
     end
 end
