@@ -1,0 +1,39 @@
+<header class="header-login">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2 class="text-center"><i class="fa fa-key"></i> Já sou cadastrado!</h2></div>
+            <div class="panel-body">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="field form-group">
+                    <%#= f.label :email %>
+                    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Digite seu E-mail" %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :password %>
+                    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Digite sua senha"%>
+                  </div>
+
+                  <% if devise_mapping.rememberable? -%>
+                      <div class="field checkbox text-left" >
+                        <%= f.check_box :remember_me,  style:"margin-left: 0px;" %>
+                        <%= f.label :remember_me, class:"text-primary" %>
+                      </div>
+                  <% end -%>
+
+                  <div class="actions">
+                    <%= f.submit "Entrar", class:"btn btn-lg btn-primary center-block" %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>

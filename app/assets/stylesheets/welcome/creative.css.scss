@@ -208,11 +208,20 @@ aside {
   background-image: asset-data-url("welcome/header/products.jpg");
 }
 
+.header-simple {
+  background-image: asset-data-url("welcome/header/simple.png");
+}
+
+.header-login, .header-signup {
+  background-image: asset-data-url("welcome/header/login.jpg");
+  //min-height: 800px;
+}
+
 .header-default {
   background-image: asset-data-url("welcome/header/header3.jpg");
 }
 
-.header-professionals, .header-products,
+.header-professionals, .header-products, .header-simple,
 .header-default{
   min-height: 600px;
 }
@@ -220,7 +229,7 @@ aside {
 header {
   position: relative;
   width: 100%;
-  min-height:auto;
+  min-height: auto;
   text-align: center;
   color: #fff;
   //background-image: asset-data-url("welcome/header.jpg");

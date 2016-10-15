@@ -1,44 +1,57 @@
-<h2>Sign up</h2>
+<header class="header-login">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2 class="text-center"><i class="fa fa-key"></i> Quero me cadastrar!</h2></div>
+            <div class="panel-body">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+                  <div class="field form-group">
+                    <%= f.email_field :email, autofocus: true, class:"form-control",  placeholder:"Digite seu E-mail"  %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :password %>
+                    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Digite sua senha" %>
+                    <% if @minimum_password_length %>
+                        <em class="text-primary text-left">(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirme sua senha" %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :login %>
+                    <%= f.text_field :login , class:"form-control", placeholder:"Digite seu login"%>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :name %>
+                    <%= f.text_field :name, class:"form-control", placeholder:"Digite seu nome" %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%#= f.label :cpf %>
+                    <%= f.number_field :cpf , class:"form-control", placeholder:"Digite seu CPF"%>
+                  </div>
+
+                  <div class="actions">
+                    <%= f.submit "Cadastrar", class:"btn btn-lg btn-primary center-block" %>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :login %>
-    <%= f.text_field :login %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cpf %>
-    <%= f.number_field :cpf %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</header>
