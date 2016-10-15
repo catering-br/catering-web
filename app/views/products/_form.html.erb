@@ -13,7 +13,9 @@
 
     <div class="field">
       <%= f.label :category_product_id %>
-      <%= f.number_field :category_product_id %>
+      <%# <%= f.select(:category_product_id, CategoryProduct.all.collect{|p| [p.name, p.id]}, {:prompt => 'Select'}, {:class => 'col-md-1'}) %>
+      <%# ^ both are equivalent v %>
+      <%= f.collection_select :category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'col-md-1'} %>
     </div>
 
   <div class="field">
