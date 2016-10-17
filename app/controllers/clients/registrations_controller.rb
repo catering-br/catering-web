@@ -4,26 +4,21 @@ class Clients::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    #build_resource({})
-    @client=Client.new
-    @client.telephones.build
+    #@client=Client.new
+    #@client.telephones.build
     super
   end
 
   # POST /resource
   def create
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-    print(sign_up_params)
-    @client = Client.new(sign_up_params)
-    @client.save!
-    #user = Client.new(sign_up_params)
-    #
+    # mk: in case we want to do the building manually, try this:
+    #print('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    #print(sign_up_params)
+    #@client = Client.new(sign_up_params)
+    #@client.save!
 
-    #telephone = user.telephones
-    #user.save
-    #user.errors unless user.save
-    redirect_to products_path
-    #super
+    #redirect_to products_path
+    super
 
   end
 
