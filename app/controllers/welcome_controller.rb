@@ -7,4 +7,8 @@ class WelcomeController < ApplicationController
   def filter
   end
 
+  def redirect
+    redirect_to products_path(:category => params[:welcome][:category_product_id])
+  end
+
 end

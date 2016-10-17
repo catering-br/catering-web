@@ -1,6 +1,7 @@
 <h1>Bem vindo</h1>
 
-<%# TODO: Find out how to get this id %>
-<%= collection_select(:category_product, :id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'col-md-1'}) %>
-</br>
-<%= link_to "Filtrar", products_path(:category => 1) %>
+<%= form_for :welcome, :url => {:action => :redirect } do |f| %>
+    <%= f.collection_select(:category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'col-md-1'}) %>
+    </br>
+    <%= f.submit %>
+<% end %>

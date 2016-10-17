@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :keywords
 
   get 'welcome/filter'
+  post 'welcome/redirect'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # authenticated :client do
