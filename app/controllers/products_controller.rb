@@ -9,7 +9,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:category]
+      @products = Product.where(category_product_id: params[:category])
+    else
+      @products = Product.all
+    end
     @pictures = Picture.all
   end
 

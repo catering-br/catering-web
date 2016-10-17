@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  resources :payments
-  resources :category_products
-  resources :keywords
   devise_for :clients, controllers: {registrations: 'clients/registrations'}
-  get 'welcome/index'
-  # get 'welcome/index', to: 'main_clients#index', as: 'open_main_client'
 
-  resources :transactions
   resources :products do
     get 'buy', on: :member
   end
@@ -25,7 +19,11 @@ Rails.application.routes.draw do
     get 'buy', on: :member
   end
   resources :pictures
+  resources :payments
+  resources :category_products
+  resources :keywords
 
+  get 'welcome/filter'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # authenticated :client do
