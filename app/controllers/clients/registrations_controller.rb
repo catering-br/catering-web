@@ -7,13 +7,14 @@ class Clients::RegistrationsController < Devise::RegistrationsController
     #@client=Client.new
     #@client.telephones.build
     super
+
   end
 
   # POST /resource
   def create
     # mk: in case we want to do the building manually, try this:
-    #print('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-    #print(sign_up_params)
+    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    print(sign_up_params)
     #@client = Client.new(sign_up_params)
     #@client.save!
 
@@ -50,7 +51,10 @@ class Clients::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :login, :name, :cpf, [telephones_attributes: [:telephone]]])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:attribute, :login, :name, :cpf,
+                                             [telephones_attributes: [:telephone]],
+                                             :additional])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
