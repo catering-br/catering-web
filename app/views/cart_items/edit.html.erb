@@ -1,6 +1,23 @@
-<h1>Editing Cart Item</h1>
+<header class="header-default">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2 class="text-center"><i class="fa fa-cutlery"></i> Atualizar item do carinho!</h2></div>
+            <div class="panel-body">
 
-<%= render 'form', cart_item: @cart_item %>
+              <%= render 'form', cart_item: @cart_item %>
 
-<%= link_to 'Show', @cart_item %> |
-<%= link_to 'Back', cart_items_path %>
+
+            </div>
+          </div>
+          <%= link_to 'Show', @cart_item %> |
+          <%= link_to 'Back', @cart_item.shopping_cart%>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>

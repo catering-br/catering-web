@@ -1,11 +1,11 @@
 <%= form_for(cart_item) do |f| %>
   <% if cart_item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(cart_item.errors.count, "error") %> prohibited this cart_item from being saved:</h2>
+      <div class ="text-primary text-left"><h3><%= pluralize(cart_item.errors.count, "error") %> prohibited this cart_item from being saved:</h3></div>
 
       <ul>
       <% cart_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <div class ="text-primary text-left"><li><%= message %></li></div>
       <% end %>
       </ul>
     </div>
@@ -16,17 +16,17 @@
     <%= f.number_field :shopping_cart_id %>
   </div>-->
 
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.text_field :quantity %>
+  <div class="field form-group text-left">
+    <%= f.label "Quantidade do produto", class:"text-primary" %>
+    <%= f.text_field :quantity, class:"form-control",  placeholder:"Digite a quantidade do produto" %>
   </div>
 
-  <div class="field">
-    <%= f.label :unitary_price %>
-    <%= f.text_field :unitary_price %>
+  <div class="field form-group text-left">
+    <%= f.label "Preço unitário", class:"text-primary" %>
+    <%= f.text_field :unitary_price, class:"form-control",  placeholder:"Digite o preço unitário" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Atualizar", class:"btn btn-lg btn-primary center-block"%>
   </div>
 <% end %>

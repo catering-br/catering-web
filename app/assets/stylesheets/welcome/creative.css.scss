@@ -221,7 +221,12 @@ aside {
   background-image: asset-data-url("welcome/header/login.jpg");
 }
 
-.header-professionals, .header-products, .header-simple{
+.header-default-sm {
+  background-image: asset-data-url("welcome/header/login.jpg");
+}
+
+.header-professionals, .header-products, .header-simple,
+.header-default-sm{
   min-height: 600px;
 }
 
