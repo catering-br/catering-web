@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :professional
   belongs_to :category_product
-  has_many :transactions
   has_many :keywords
   has_many :pictures
   has_many :cart_items
