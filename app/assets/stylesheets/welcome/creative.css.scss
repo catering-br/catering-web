@@ -218,11 +218,10 @@ aside {
 }
 
 .header-default {
-  background-image: asset-data-url("welcome/header/header3.jpg");
+  background-image: asset-data-url("welcome/header/login.jpg");
 }
 
-.header-professionals, .header-products, .header-simple,
-.header-default{
+.header-professionals, .header-products, .header-simple{
   min-height: 600px;
 }
 

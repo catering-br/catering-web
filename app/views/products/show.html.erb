@@ -1,50 +1,66 @@
-<% if notice %>
-    <div id="notice" class="alert alert-success"><%= notice %></div>
-<% end %>
+<header class="header-default">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2 class="text-center"><i class="fa fa-cutlery"></i> Produto!</h2></div>
+            <div class="panel-body">
+              <% if notice %>
+                  <div id="notice" class="alert alert-success"><%= notice %></div>
+              <% end %>
 
-<p>
-  <strong>Images:</strong>
-    <% @pictures.each do |p| %>
-      <%= image_tag p.image.url(:medium) %>
-  <% end %>
-</p>
+              <div class="text-left text-success">
+                <strong>Images:</strong>
+                <% @pictures.each do |p| %>
+                    <%= image_tag p.image.url(:medium) %>
+                <% end %>
+              </div>
 
-<p>
-  <strong>Professional:</strong>
-  <%= @product.professional.client.name %>
-</p>
+              <div class="text-left text-success">
+                <strong>Professional:</strong>
+                <%= @product.professional.client.name %>
+              </div>
 
-<p>
-  <strong>Categoria:</strong>
-  <%= @product.category_product.name %>
-</p>
+              <div class="text-left text-success">
+                <strong>Categoria:</strong>
+                <%= @product.category_product.name %>
+              </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+              <div class="text-left text-success">
+                <strong>Name:</strong>
+                <%= @product.name %>
+              </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+              <div class="text-left text-success">
+                <strong>Description:</strong>
+                <%= @product.description %>
+              </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+              <div class="text-left text-success">
+                <strong>Price:</strong>
+                <%= @product.price %>
+              </div>
 
-<p>
-  <strong>MaxQuantity:</strong>
-  <%= @product.max_quantity %>
-</p>
+              <div class="text-left text-success">
+                <strong>MaxQuantity:</strong>
+                <%= @product.max_quantity %>
+              </div>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @product.rating %>
-</p>
+              <div class="text-left text-success">
+                <strong>Rating:</strong>
+                <%= @product.rating %>
+              </div>
 
-<% if @current_professional != nil && @current_professional.id == @product.professional_id %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<% end %>
-<%= link_to 'Back', products_path %>
+              <% if @current_professional != nil && @current_professional.id == @product.professional_id %>
+                  <%= link_to 'Edit', edit_product_path(@product) %> |
+              <% end %>
+              <%= link_to 'Back', products_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
