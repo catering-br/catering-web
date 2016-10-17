@@ -15,7 +15,7 @@ c1 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:
 c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
 
 Telephone.delete_all
-Telephone.create! client:c1, telephone: 23444543
+Telephone.create! client:c1, telephone: '23444543'
 #Telephone.create! telephone: 65574839
 
 Address.delete_all
