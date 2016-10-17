@@ -41,6 +41,13 @@
                     <%#= f.label :cpf %>
                     <%= f.number_field :cpf , class:"form-control", placeholder:"Digite seu CPF"%>
                   </div>
+                  <%= f.fields_for :telephones, resource.telephones.build do |telephone_fields| %>
+                    <div class="field form-group">
+                      <%#= f.label :cpf %>
+                      <%= telephone_fields.number_field :telephone , class:"form-control",
+                                         placeholder:"Digite seu telefone"%>
+                    </div>
+                  <% end %>
 
                   <div class="actions">
                     <%= f.submit "Cadastrar", class:"btn btn-lg btn-primary center-block" %>
