@@ -43,10 +43,15 @@
                   </div>
                   <%= f.fields_for :telephones, resource.telephones.build do |telephone_fields| %>
                     <div class="field form-group">
-                      <%#= f.label :cpf %>
                       <%= telephone_fields.number_field :telephone , class:"form-control",
                                          placeholder:"Digite seu telefone"%>
                     </div>
+                  <% end %>
+                  <%= f.fields_for :additional do |additional_fields| %>
+                      <div class="field form-group">
+                        <%= additional_fields.label "Gostaria de se cadastrar como professional?" , class:"form-control, left"%>
+                        <%= additional_fields.check_box :is_profesional , class:"form-control"%>
+                      </div>
                   <% end %>
 
                   <div class="actions">
