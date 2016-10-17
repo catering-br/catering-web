@@ -1,7 +1,22 @@
-<h1>Bem vindo</h1>
+<header class="header-login">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h2 class="text-center"><i class="fa fa-spoon"></i> Bem vindo!</h2></div>
+            <div class="panel-body">
 
-<%= form_for :welcome, :url => {:action => :redirect } do |f| %>
-    <%= f.collection_select(:category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'col-md-1'}) %>
-    </br>
-    <%= f.submit %>
-<% end %>
+              <%= form_for :welcome, :url => {:action => :redirect } do |f| %>
+                  <%= f.collection_select(:category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'form-control'}) %>
+                  </br>
+                  <%= f.submit "Filtrar", class: "btn btn-lg btn-primary center-block"%>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</header>
