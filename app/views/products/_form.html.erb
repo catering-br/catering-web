@@ -1,44 +1,44 @@
 <%= form_for(product) do |f| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <div class ="text-primary text-left"><h3><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h3></div>
 
       <ul>
       <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <div class ="text-primary text-left"><li><%= message %></li></div>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-    <div class="field">
-      <%= f.label :category_product_id %>
+    <div class="field form-group text-left">
+      <%= f.label "Categoria do produto:", class:"text-primary" %>
       <%# <%= f.select(:category_product_id, CategoryProduct.all.collect{|p| [p.name, p.id]}, {:prompt => 'Select'}, {:class => 'col-md-1'}) %>
       <%# ^ both are equivalent v %>
-      <%= f.collection_select :category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'col-md-1'} %>
+      <%= f.collection_select :category_product_id, CategoryProduct.all, :id, :name, {:prompt => "Select"}, {:class => 'form-control'} %>
     </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="field form-group text-left">
+    <%= f.label "Nome do produto:", class:"text-primary"  %>
+    <%= f.text_field :name, class:"form-control",  placeholder:"Digite o Nome do produto"   %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="field form-group text-left">
+    <%= f.label "Descrição do produto:", class:"text-primary"  %>
+    <%= f.text_area :description, class:"form-control",  placeholder:"Digite a descrição"   %>
   </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+  <div class="field form-group text-left">
+    <%= f.label "Preço:", class:"text-primary"  %>
+    <%= f.number_field :price, class:"form-control",  placeholder:"Digite o preço" %>
   </div>
 
-  <div class="field">
-    <%= f.label :max_quantity %>
-    <%= f.number_field :max_quantity %>
+  <div class="field form-group text-left">
+    <%= f.label "Quantidade máxima:", class:"text-primary" %>
+    <%= f.number_field :max_quantity, class: "form-control",  placeholder:"Digite quantidade máxima" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Cadastrar", class:"btn btn-lg btn-primary center-block" %>
   </div>
 <% end %>
