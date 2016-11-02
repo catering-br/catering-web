@@ -4,6 +4,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
+    raise ActionController::RoutingError.new('Not Found')
     @clients = Client.all
   end
 
@@ -14,6 +15,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/new
   def new
+    raise ActionController::RoutingError.new('Not Found')
     @client = Client.new
   end
 

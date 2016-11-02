@@ -4,6 +4,7 @@ class ProfessionalsController < ApplicationController
   # GET /professionals
   # GET /professionals.json
   def index
+    raise ActionController::RoutingError.new('Not Found')
     @professionals = Professional.all
   end
 
@@ -14,6 +15,7 @@ class ProfessionalsController < ApplicationController
 
   # GET /professionals/new
   def new
+    raise ActionController::RoutingError.new('Not Found')
     @professional = Professional.new
   end
 

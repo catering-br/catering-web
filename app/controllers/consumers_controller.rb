@@ -4,6 +4,7 @@ class ConsumersController < ApplicationController
   # GET /consumers
   # GET /consumers.json
   def index
+    raise ActionController::RoutingError.new('Not Found')
     @consumers = Consumer.all
   end
 
