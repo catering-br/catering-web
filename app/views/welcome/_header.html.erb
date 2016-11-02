@@ -10,7 +10,7 @@
         <div class="shell">
           <div class="box box1" id="box1-address">
             <h2>Os melhores serviços de catering perto de você</h2>
-            <%= form_tag(products_path, method: :get, class:"search clearfix") do %>
+            <%= form_tag(new_event_path, method: :get, class:"search clearfix") do %>
                 <%= text_field_tag :cep, params[:cep], type:"tel", id:"cep",
                                    size:"40", maxlength:"9", placeholder:"Digite aqui seu CEP",
                                    onkeyup:"removeNonNumber(this)" %>
