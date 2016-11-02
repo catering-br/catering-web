@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consumer: 
+  event_data: 2016-11-02
+  hour: 2016-11-02 18:07:09
+  attendants: 1
+  endereço: 
+  duration: 2016-11-02 18:07:09
+  estimated_price_from: 9.99
+  estimated_price_until: 9.99
+
+two:
+  consumer: 
+  event_data: 2016-11-02
+  hour: 2016-11-02 18:07:09
+  attendants: 1
+  endereço: 
+  duration: 2016-11-02 18:07:09
+  estimated_price_from: 9.99
+  estimated_price_until: 9.99

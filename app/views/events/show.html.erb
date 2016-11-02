@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Consumer:</strong>
+  <%= @event.consumer %>
+</p>
+
+<p>
+  <strong>Event data:</strong>
+  <%= @event.event_data %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @event.hour %>
+</p>
+
+<p>
+  <strong>Attendants:</strong>
+  <%= @event.attendants %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @event.endereço %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @event.duration %>
+</p>
+
+<p>
+  <strong>Estimated price from:</strong>
+  <%= @event.estimated_price_from %>
+</p>
+
+<p>
+  <strong>Estimated price until:</strong>
+  <%= @event.estimated_price_until %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

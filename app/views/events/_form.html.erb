@@ -1,0 +1,60 @@
+<%= form_for(event) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group text-left">
+    <%= f.label :consumer , class:"text-primary"%>
+    <%= f.text_field :consumer_id, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :event_data , class:"text-primary"%>
+    <%= f.date_select :event_data, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :hour , class:"text-primary"%>
+    <%= f.time_select :hour, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :attendants, class:"text-primary" %>
+    <%= f.number_field :attendants, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :endereço , class:"text-primary"%>
+    <%= f.text_field :address_id, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :duration , class:"text-primary"%>
+    <%= f.time_select :duration, class:"form-control" %>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :estimated_price_from, class:"text-primary" %>
+    <%= f.text_field :estimated_price_from , class:"form-control"%>
+  </div>
+
+  <div class="field form-group text-left">
+    <%= f.label :estimated_price_until, class:"text-primary" %>
+    <%= f.text_field :estimated_price_until, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="actions">
+    <%= link_to "Omitir", products_path%>
+  </div>
+<% end %>
