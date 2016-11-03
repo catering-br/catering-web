@@ -218,11 +218,11 @@ aside {
 }
 
 .header-default {
-  background-image: asset-data-url("welcome/header/login.jpg");
+  background-image: asset-data-url("welcome/header/default.jpg");
 }
 
 .header-default-sm {
-  background-image: asset-data-url("welcome/header/login.jpg");
+  background-image: asset-data-url("welcome/header/default.jpg");
 }
 
 .header-professionals, .header-products, .header-simple,
@@ -332,7 +332,7 @@ header .header-content .header-content-inner .box.box1 .submitCep {
   margin-left: 0;
   width: 100%;
   margin-top: 10px;
-  background-image: url(welcome/icon-mg-glass.svg);
+  background-image: asset_data_url("welcome/icon-mg-glass.svg");
   background-repeat: no-repeat;
   background-size: 35px;
   background-position: 97% 50%
