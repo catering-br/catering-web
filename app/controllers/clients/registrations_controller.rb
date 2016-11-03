@@ -12,9 +12,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    # mk: in case we want to do the building manually, try this:
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-    print(sign_up_params)
+    # mk: in case we want to do the building manually, try this
     #@client = Client.new(sign_up_params)
     #@client.save!
 

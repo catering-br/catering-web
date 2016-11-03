@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     # products_path
-    '/welcome/filter'
+    #'/welcome/filter'
+    new_event_path
   end
 end
