@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field form-group text-left">
-    <%= f.label :consumer , class:"text-primary"%>
-    <%= f.text_field :consumer_id, class:"form-control" %>
+    <% f.label :consumer , class:"text-primary"%>
+    <% f.text_field :consumer_id, class:"form-control" %>
   </div>
 
   <div class="field form-group text-left">
@@ -32,8 +32,14 @@
   </div>
 
   <div class="field form-group text-left">
-    <%= f.label :endereço , class:"text-primary"%>
-    <%= f.text_field :address_id, class:"form-control" %>
+    <%= f.label "Endereço", class:"text-primary" %>
+    <%= f.collection_select(:address_id, @addresses, :id, :street,{:prompt => "Select"}, {:class => 'form-control'}) %>
+    <%= link_to "Adicionar novo endereço", new_address_path%>
+
+    <= f.label :endereço , class:"text-primary"%>
+    <= f.text_field :address_id, class:"form-control" %>
+
+
   </div>
 
   <div class="field form-group text-left">

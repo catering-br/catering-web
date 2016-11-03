@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_consumer, only: [:new, :show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -65,6 +66,18 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def set_consumer
+      if client_signed_in?
+        @current_consumer = Consumer.where(client_id: current_client.id).take
+        print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+        print(@current_consumer)
+        if @current_consumer != nil
+          @addresses = Address.where(client_id: current_client.id)
+          print(@addresses)
+        end
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

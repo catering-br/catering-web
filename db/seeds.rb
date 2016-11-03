@@ -21,7 +21,7 @@ Telephone.create! client:c1, telephone: '23444543'
 Address.delete_all
 Address.create! client:c1, cep: '05508020', street: 'street1', number: 123, city: 'São Paulo',
                 country: 'Brasil', neighborhood: 'butantã', address_type: Address.address_types['residencial']
-Address.create! client:c2, cep: '05508021', neighborhood: 'butantã', street: 'street2', number: 123, city: 'São Paulo',
+Address.create! client:c1, cep: '05508021', neighborhood: 'butantã', street: 'street2', number: 123, city: 'São Paulo',
                 country: 'Brasil', address_type: Address.address_types['residencial']
 Address.create! client:c2, cep: '55080900', neighborhood: 'butantã', street: 'street3', number: 123, city: 'São Paulo',
                 country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
