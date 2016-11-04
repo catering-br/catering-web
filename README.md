@@ -15,9 +15,12 @@ http://railsapps.github.io/rails-git.html
 https://gorails.com/setup/ubuntu/16.10
 https://devcenter.heroku.com/articles/getting-started-with-rails5
 
-**criar um usuario no postgres com o mesmo nome de usuario do seu linux
+Para que a renderização de imagens sejam feitas com sucesso, é necessário instalar o progrma **imagemagick** (pré-requesito da gema paperclip).
 
+**É necessário criar um usuario no postgres com o mesmo nome de usuario do seu linux**
 
-Estou fazendo commits com a instrução:
-git push eroku master
+Para recriar (ou simplesmente criar) um banco de dados e povoá-lo, rode o script  *./db/rebuild.sh*
+
+<!-- Estou fazendo commits com a instrução: -->
+<!-- git push heroku master -->
 
