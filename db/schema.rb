@@ -79,25 +79,19 @@ ActiveRecord::Schema.define(version: 20161104005028) do
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "consumers", force: :cascade do |t|
-    t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "credit_cards", force: :cascade do |t|
-    t.integer  "consumer_id"
+    t.integer  "client_id"
     t.string   "name"
     t.integer  "number"
     t.integer  "digit"
     t.string   "flag"
     t.string   "expiration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer  "consumer_id"
+    t.integer  "client_id"
     t.date     "event_data"
     t.time     "hour"
     t.integer  "attendants"
@@ -160,7 +154,7 @@ ActiveRecord::Schema.define(version: 20161104005028) do
   end
 
   create_table "shopping_carts", force: :cascade do |t|
-    t.integer  "consumer_id"
+    t.integer  "client_id"
     t.integer  "status"
     t.float    "fees",               default: 0.0
     t.float    "gain",               default: 0.0
@@ -168,7 +162,7 @@ ActiveRecord::Schema.define(version: 20161104005028) do
     t.float    "total_paid",         default: 0.0
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.index ["consumer_id"], name: "index_shopping_carts_on_consumer_id", using: :btree
+    t.index ["client_id"], name: "index_shopping_carts_on_client_id", using: :btree
   end
 
   create_table "telephones", force: :cascade do |t|

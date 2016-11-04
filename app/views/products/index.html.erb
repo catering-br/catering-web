@@ -72,7 +72,7 @@
                             <td><%= link_to 'Edit', edit_product_path(product) %></td>
                             <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                         <% end %>
-                        <% if @current_consumer != nil %>
+                        <% if client_signed_in? %>
                             <td><%= link_to 'Comprar', buy_shopping_cart_path(@current_cart, :product => product) %></td>
                         <% else %>
                             <td><%= link_to 'Comprar',  new_client_registration_path %></td>

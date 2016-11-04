@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_professional, only: [:index, :create, :show, :new, :edit]
-  before_action :set_consumer, only: [:index, :show, :buy]
   before_action :authenticate_client!, only: [:new, :edit]
   # We should use this when along with shopping_carts
 
@@ -97,21 +96,6 @@ class ProductsController < ApplicationController
       if client_signed_in?
           @current_professional = Professional.where(client_id: current_client.id).take
       end
-    end
-
-    def set_consumer
-      if client_signed_in?
-        @current_consumer = Consumer.where(client_id: current_client.id).take
-        if @current_consumer != nil
-          @current_cart = ShoppingCart.where(consumer: @current_consumer.id, status: ShoppingCart.statuses['ativo']).take
-          if @current_cart == nil
-            @current_cart = ShoppingCart.new(consumer:@current_consumer, status: ShoppingCart.statuses['ativo'])
-            @current_cart.save!
-          end
-
-        end
-      end
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

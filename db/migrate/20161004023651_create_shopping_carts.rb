@@ -1,7 +1,7 @@
 class CreateShoppingCarts < ActiveRecord::Migration[5.0]
   def change
     create_table :shopping_carts do |t|
-      t.integer :consumer_id
+      t.integer :client_id
       t.integer :status
       t.float :fees, :default=>0
       t.float :gain, :default=>0
@@ -10,6 +10,6 @@ class CreateShoppingCarts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :shopping_carts, :consumer_id
+    add_index :shopping_carts, :client_id
   end
 end

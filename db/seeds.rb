@@ -34,11 +34,6 @@ Professional.delete_all
 p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabes', rating: 4.1, logo: seed_image("professional_logo1")
 p2 = Professional.create! client: c2, description: 'Tradição em comidas Japonesas', rating: 4.5
 
-Consumer.delete_all
-u1 = Consumer.create! client:c1
-u2 = Consumer.create! client:c3
-u3 = Consumer.create! client:c2
-
 CategoryProduct.delete_all
 cComida = CategoryProduct.create! name: "Comida"
 cFlores = CategoryProduct.create! name: "Flores"

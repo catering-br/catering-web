@@ -5,7 +5,9 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :telephones, inverse_of: :client
   has_many :addresses
-  has_one :consumer
+  has_many :credit_cards
+  has_many :shopping_carts
+  has_many :events
   has_one :professional
 
   validates :login, :email, :password, :name, :cpf, presence: true

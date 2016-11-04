@@ -1,5 +1,5 @@
 class ShoppingCart < ApplicationRecord
-  belongs_to :consumer
+  belongs_to :client
   has_many :cart_items
   has_one :payment
   enum status: [:cancelado, :ativo , :concluido, :pagamento, :pagado, :empacotando, :transporte, :finalizado]

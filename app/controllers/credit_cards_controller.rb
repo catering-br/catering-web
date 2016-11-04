@@ -69,6 +69,6 @@ class CreditCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def credit_card_params
-      params.require(:credit_card).permit(:consumer_id, :name, :number, :digit, :flag, :expiration)
+      params.require(:credit_card).permit(:client_id, :name, :number, :digit, :flag, :expiration)
     end
 end
