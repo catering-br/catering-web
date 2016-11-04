@@ -1,11 +1,22 @@
 <% if notice %>
     <div id="notice" class="alert alert-success"><%= notice %></div>
 <% end %>
+<br> <br> <br> <br> <br>
+<p>
+  <%= image_tag @professional.logo.url(:thumb) %>
+  <br><br>
+  <strong>Professional:</strong>
+  <%= Client.find(@professional.client_id).name %>
+</p>
 
 <p>
-  <strong>Client:</strong>
-  <%= Client.find(@professional.client_id).name %>
-  <%= image_tag @professional.logo.url(:thumb) %>
+  <strong>Description:</strong>
+  <%= @professional.description %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= render 'star', professional: @professional %>
 </p>
 
 <%= link_to 'Edit', edit_professional_path(@professional) %> |

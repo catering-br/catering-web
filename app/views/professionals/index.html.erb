@@ -14,9 +14,13 @@
       <tr>
         <td><%= Client.find(professional.client_id).name %></td>
         <td><%= image_tag professional.logo.url(:thumb) %></td>
+        <td><%= professional.description %></td>
+        <td><%= render 'star', professional: professional %></td>
         <td><%= link_to 'Show', professional %></td>
-        <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
-        <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if @current_client_id == professional.client_id %>
+          <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
+          <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

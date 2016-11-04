@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :client_id %>
-    <%= f.number_field :client_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :logo %>
     <%= f.file_field :logo %>
+  </div>
+
+    <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
   </div>
 
   <div class="actions">

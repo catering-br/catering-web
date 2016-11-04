@@ -31,8 +31,8 @@ Address.create! client:c2, cep: '55080900', neighborhood: 'butantã', street: 's
                 country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
 
 Professional.delete_all
-p1 = Professional.create! client: c1
-p2 = Professional.create! client: c2
+p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabes', rating: 4.1, logo: seed_image("professional_logo1")
+p2 = Professional.create! client: c2, description: 'Tradição em comidas Japonesas', rating: 4.5
 
 Consumer.delete_all
 u1 = Consumer.create! client:c1
