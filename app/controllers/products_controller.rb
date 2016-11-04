@@ -95,6 +95,11 @@ class ProductsController < ApplicationController
     def set_professional
       if client_signed_in?
           @current_professional = Professional.where(client_id: current_client.id).take
+          @current_cart = ShoppingCart.where(client_id: current_client.id, status: ShoppingCart.statuses['ativo']).take
+          if @current_cart == nil
+            @current_cart = ShoppingCart.new(client: current_client, status: ShoppingCart.statuses['ativo'])
+            @current_cart.save!
+          end
       end
     end
 
