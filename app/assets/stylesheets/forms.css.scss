@@ -1,12 +1,14 @@
 /* ----- SimpleForm Styles ----- */
 
 .simple_form {
+  color: black;
   div.input {
     margin-bottom: 10px;
     clear: both;
     /* Required for Webkit, but not for Gecko */
   }
   label {
+    color: black;
     float: left;
     width: 100px;
     text-align: right;

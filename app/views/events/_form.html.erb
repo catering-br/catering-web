@@ -1,14 +1,15 @@
-<%= simple_form_for(event,html: { class: 'form-group' }) do |f| %>
+<%= simple_form_for(event,html: { :class => 'horizontal-form' }) do |f| %>
   <%= f.error_notification %>
-    <%= f.association :consumer %>
-    <%= f.input :event_data, label: "Data" %>
-    <%= f.input :hour, label: "hora" %>
-    <%= f.input :attendants, label: "Invitados esperados" %>
-    <%= f.association :address, label_method: :street %>
-    <%= f.input :duration, label: "Duração do evento" %>
-    <%= f.input :estimated_price_from %>
-    <%= f.input :estimated_price_until %>
-    <%= f.button :submit %>
+  <% f.association :consumer, selected: @current_consumer %>
+  <%= f.input :event_data, label: "Data" %>
+  <%= f.input :hour, label: "hora" %>
+  <%= f.input :attendants, label: "Quantidade aproximada de invitados" %>
+  <%= f.input :address_id, collection: @addresses.map{|a| [a.street, a.id]}, label: "Endereço", :class => "pull-left", include_blank: false%>
+  <%= link_to "criar novo endereço",new_address_path, :class => "inline_field_wrapper, pull-right" %>
+  <%= f.input :duration, label: "Duração do evento" %>
+  <%= f.input :estimated_price_from, label: "Preço desde" %>
+  <%= f.input :estimated_price_until, label: "até" %>
+  <%= f.button :submit %>
 
   <div class="actions">
     <%= link_to "Omitir", products_path%>
