@@ -5,12 +5,7 @@
         <div class="col-md-offset-2 col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading"><h2 class="text-center"><i class="fa fa-cutlery"></i> Crie seu evento!</h2></div>
-            <div class="panel-body">
-              <script>
-                $(function() {
-                  $('.datepicker').datepicker();
-                });
-              </script>
+            <div class="panel-body" style="color: #660033">
             <%= render 'form', event: @event, addresses: @addresses %>
             </div>
           </div>

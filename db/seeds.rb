@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+environment_seed_file = File.join(Rails.root, 'db', 'seed', "#{Rails.env}.rb")
 
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.jpg"))
+end
 
 
 Client.delete_all
@@ -48,6 +52,17 @@ pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 1.9
                     description: "description3", rating: 4, max_quantity: 10, category_product:cComida
 Product.create! professional: p1, name: "Rosa vermelha", price: 1.49, description: "uma flor",
                 rating: 4, max_quantity: 1000, category_product:cFlores
+pd3=Product.create! professional: p1, name: "Pizza marguerita", price: 34.99, description: "Pizza",
+                    rating: 4, max_quantity: 100, category_product:cComida
+#                    image: seed_image("pizza")
+pd4=Product.create! professional: p1, name: "Donut", price: 4.99, description: "has sugar",
+                    rating: 4, max_quantity: 200, category_product:cComida
+#                    image: seed_image("donut")
+
+Picture.delete_all
+Picture.create! product: pd3, image: seed_image("pizza")
+Picture.create! product: pd4, image: seed_image("donut")
+Picture.create! product: pd4, image: seed_image("donut2")
 
 Keyword.delete_all
 Keyword.create! product: pd1, word: "doçe"
