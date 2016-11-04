@@ -16,6 +16,8 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @event.attendants = 50
+    @event.estimated_price_from = 0
   end
 
   # GET /events/1/edit
@@ -25,9 +27,12 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    print("--------------------------------------")
+    print(event_params)
     @event = Event.new(event_params)
+    print(@events)
     @event.save!
-    redirect_to products_path
+    redirect_to products_path(event:@event)
     #respond_to do |format|
       # if @event.save
       #   format.html { redirect_to @event, notice: 'Event was successfully created.' }

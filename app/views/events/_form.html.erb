@@ -1,6 +1,6 @@
 <%= simple_form_for(event,html: { :class => 'horizontal-form' }) do |f| %>
   <%= f.error_notification %>
-  <% f.association :consumer, selected: @current_consumer %>
+  <%= f.hidden_field :consumer_id, :value => @current_consumer.id %>
   <%= f.input :event_data, label: "Data" %>
   <%= f.input :hour, label: "hora" %>
   <%= f.input :attendants, label: "Quantidade aproximada de invitados" %>
