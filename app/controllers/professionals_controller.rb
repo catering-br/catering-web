@@ -4,7 +4,7 @@ class ProfessionalsController < ApplicationController
   # GET /professionals
   # GET /professionals.json
   def index
-    raise ActionController::RoutingError.new('Not Found')
+    # raise ActionController::RoutingError.new('Not Found')
     @professionals = Professional.all
   end
 
@@ -15,7 +15,7 @@ class ProfessionalsController < ApplicationController
 
   # GET /professionals/new
   def new
-    raise ActionController::RoutingError.new('Not Found')
+    # raise ActionController::RoutingError.new('Not Found')
     @professional = Professional.new
   end
 
@@ -71,6 +71,6 @@ class ProfessionalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professional_params
-      params.require(:professional).permit(:client_id)
+      params.require(:professional).permit(:client_id, :logo)
     end
 end

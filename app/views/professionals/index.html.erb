@@ -12,7 +12,8 @@
   <tbody>
     <% @professionals.each do |professional| %>
       <tr>
-        <td><%= professional.client_id %></td>
+        <td><%= Client.find(professional.client_id).name %></td>
+        <td><%= image_tag professional.logo.url(:thumb) %></td>
         <td><%= link_to 'Show', professional %></td>
         <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
         <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>

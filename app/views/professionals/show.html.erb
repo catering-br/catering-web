@@ -4,7 +4,8 @@
 
 <p>
   <strong>Client:</strong>
-  <%= @professional.client_id %>
+  <%= Client.find(@professional.client_id).name %>
+  <%= image_tag @professional.logo.url(:thumb) %>
 </p>
 
 <%= link_to 'Edit', edit_professional_path(@professional) %> |

@@ -1,4 +1,4 @@
-<%= form_for(professional) do |f| %>
+<%= form_for @professional, html: {multipart: true} do |f| %>
   <% if professional.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(professional.errors.count, "error") %> prohibited this professional from being saved:</h2>
@@ -14,6 +14,11 @@
   <div class="field">
     <%= f.label :client_id %>
     <%= f.number_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :logo %>
+    <%= f.file_field :logo %>
   </div>
 
   <div class="actions">
