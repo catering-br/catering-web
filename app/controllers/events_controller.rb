@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_addresses, only: [:new, :show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -71,6 +72,8 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
+    end
+    def set_addresses
       @addresses = Address.where(client_id: current_client.id)
     end
 
