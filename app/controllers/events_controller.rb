@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.attendants = 50
     @event.estimated_price_from = 0
+    set_addresses
   end
 
   # GET /events/1/edit
@@ -31,17 +32,19 @@ class EventsController < ApplicationController
     print(event_params)
     @event = Event.new(event_params)
     print(@events)
-    @event.save!
-    redirect_to products_path(event:@event)
-    #respond_to do |format|
-      # if @event.save
-      #   format.html { redirect_to @event, notice: 'Event was successfully created.' }
-      #   format.json { render :show, status: :created, location: @event }
-      # else
-      #   format.html { render :new }
-      #   format.json { render json: @event.errors, status: :unprocessable_entity }
-      # end
-    #end
+    #@event.save!
+
+    respond_to do |format|
+      if @event.save
+        redirect_to products_path(event:@event)
+        #format.html { redirect_to @event, notice: 'Event was successfully created.', addresses: @addresses }
+        #format.json { render :show, status: :created, location: @event }
+      else
+        format.html { render :new, addresses: @addresses }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   # PATCH/PUT /events/1
