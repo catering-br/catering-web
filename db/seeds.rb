@@ -35,14 +35,16 @@ p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabe
 p2 = Professional.create! client: c2, description: 'Tradição em comidas Japonesas', rating: 4.5
 
 CategoryProduct.delete_all
-cComida = CategoryProduct.create! name: "Comida"
+cEntrada = CategoryProduct.create! name: "Entrada"
+cComida = CategoryProduct.create! name: "Pratos"
+cSobremesa = CategoryProduct.create! name: "Sobremesas"
 cFlores = CategoryProduct.create! name: "Flores"
 
 Product.delete_all
 pd1=Product.create! professional: p1, name: "Banana", price: 0.49, description: "description",
-                    rating: 2, max_quantity: 100, category_product:cComida
+                    rating: 2, max_quantity: 100, category_product:cEntrada
 Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2",
-                rating: 3, max_quantity: 100, category_product:cComida
+                rating: 3, max_quantity: 100, category_product:cSobremesa
 pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 1.99,
                     description: "description3", rating: 4, max_quantity: 10, category_product:cComida
 Product.create! professional: p1, name: "Rosa vermelha", price: 1.49, description: "uma flor",
@@ -51,7 +53,7 @@ pd3=Product.create! professional: p1, name: "Pizza marguerita", price: 34.99, de
                     rating: 4, max_quantity: 100, category_product:cComida
 #                    image: seed_image("pizza")
 pd4=Product.create! professional: p1, name: "Donut", price: 4.99, description: "has sugar",
-                    rating: 4, max_quantity: 200, category_product:cComida
+                    rating: 4, max_quantity: 200, category_product:cSobremesa
 #                    image: seed_image("donut")
 
 Picture.delete_all

@@ -2,14 +2,24 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_professional, only: [:index, :create, :show, :new, :edit]
   before_action :authenticate_client!, only: [:new, :edit]
+  before_action :makes_flow, only: [:index]
   # We should use this when along with shopping_carts
 
 
   # GET /products
   # GET /products.json
   def index
-    if params[:category]
-      @products = Product.where(category_product_id: params[:category])
+    flow_categories = ["Entrada", "Pratos", "Sobremesas"]
+
+    @category = params[:category]
+    if @step
+      @category = CategoryProduct.find_by(name: flow_categories[Integer(@step)])
+    end
+    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    print (@category)
+    print("yyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxx")
+    if @category
+      @products = Product.where(category_product_id: @category)
     else
       @products = Product.all
     end
@@ -92,6 +102,10 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def makes_flow
+      @step = params[:step]
+    end
+
     def set_professional
       if client_signed_in?
           @current_professional = Professional.where(client_id: current_client.id).take
@@ -105,6 +119,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:category_product_id, :name, :description, :price, :max_quantity)
+      params.require(:product).permit(:category_product_id, :name, :description, :price, :max_quantity, :step, :event)
     end
 end

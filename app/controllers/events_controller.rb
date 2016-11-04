@@ -34,12 +34,12 @@ class EventsController < ApplicationController
     print(@events)
     #@event.save!
 
-    respond_to do |format|
-      if @event.save
-        redirect_to products_path(event:@event)
+    if @event.save
+      redirect_to products_path(event: @event, step: 1)
+    else
+      respond_to do |format|
         #format.html { redirect_to @event, notice: 'Event was successfully created.', addresses: @addresses }
         #format.json { render :show, status: :created, location: @event }
-      else
         format.html { render :new, addresses: @addresses }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -72,16 +72,17 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
-    def set_addresses
-      @addresses = Address.where(client_id: current_client.id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:client_id, :event_data, :hour, :attendants, :address_id, :duration, :estimated_price_from, :estimated_price_until)
-    end
+  def set_addresses
+    @addresses = Address.where(client_id: current_client.id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:client_id, :event_data, :hour, :attendants, :address_id, :duration, :estimated_price_from, :estimated_price_until)
+  end
 end
