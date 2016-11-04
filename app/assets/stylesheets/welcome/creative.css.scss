@@ -82,11 +82,11 @@ aside {
 
 .navbar-default {
   border-color: rgba(34,34,34,.05);
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 10px 0;
 }
 
@@ -132,7 +132,7 @@ aside {
 @media(min-width:768px) {
   .navbar-default {
     border-color: rgba(255,255,255,.3);
-    background-color: transparent;
+    background-color: #660033;/* transparent;*/
   }
 
   .navbar-default .navbar-header .navbar-brand {
@@ -227,7 +227,7 @@ aside {
 
 .header-professionals, .header-products, .header-simple,
 .header-default-sm{
-  min-height: 600px;
+  min-height: 500px;
 }
 
 header {
