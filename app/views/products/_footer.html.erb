@@ -1,5 +1,13 @@
 <%= link_to 'New Product', new_product_path %>
 
 <% if @step != nil %>
-    <%= button_tag "Seguinte passo", class: "pull-right" %>
+    <% if Integer(@step)<=1%>
+        <% @new_step=(Integer(@step)+1).to_s %>
+    <%= link_to "Seguinte passo", products_path(:step=> @new_step), class: "pull-right" %>
+    <% button_to "Seguinte passo", products_path(:step=> @new_step) , class: "pull-right" %>
+        <% else %>
+        <% if @step=="2" %>
+            <%= link_to "Finalizar", new_payment_path(:shopping_cart=> @current_cart), class: "pull-right" %>
+            <% end %>
+    <% end %>
 <% end %>

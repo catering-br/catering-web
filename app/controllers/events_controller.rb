@@ -35,7 +35,7 @@ class EventsController < ApplicationController
     #@event.save!
 
     if @event.save
-      redirect_to products_path(event: @event, step: 1)
+      redirect_to products_path(event: @event, step: 0)
     else
       respond_to do |format|
         #format.html { redirect_to @event, notice: 'Event was successfully created.', addresses: @addresses }

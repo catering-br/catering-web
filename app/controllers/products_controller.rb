@@ -10,14 +10,16 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     flow_categories = ["Entrada", "Pratos", "Sobremesas"]
-
+    set_professional
     @category = params[:category]
-    if @step
+
+    if @step!=nil
       @category = CategoryProduct.find_by(name: flow_categories[Integer(@step)])
     end
     print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    print (@category)
+    #print (flow_categories[Integer(@step)])
     print("yyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxx")
+
     if @category
       @products = Product.where(category_product_id: @category)
     else
