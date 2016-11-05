@@ -1,4 +1,128 @@
 <%= render 'header' %>
+<section id="menus">
+  <div class="container">
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills center-block">
+      <li class="active">
+        <a href="#products-pills" data-toggle="tab" aria-expanded="true">Serviços</a>
+      </li>
+      <li class="">
+        <a href="#orders-pills" data-toggle="tab" aria-expanded="false">Pedidos</a>
+      </li>
+    </ul>
+    <!-- Tab panes-->
+    <div class="tab-content panel-body">
+      <!-- product panel end-->
+      <div class="tab-pane fade active in" id="products-pills">
+        <% if notice %>
+            <div id="notice" class="alert alert-success"><%= notice %></div>
+        <% end %>
+        <div class="row">
+          <div class="panel-body">
+            <div id="dataTables-example_filter" class="dataTables_filter" style="text-align: center">
+              <input type="search" class="form-control"
+                     placeholder="Digite aqui o prato, restaurante ou tipo de cozinha preferido"
+                     aria-controls="dataTables-example">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8">
+            <% @products.each do |product| %>
+                <!-- List of products -->
+                <div class="panel-body">
+                  <ul class="list-unstyled">
+                    <li class="left clearfix">
+                      <div class="col-lg-3">
+                        <div class="fa-stack fa-4x">
+                          <% picture = Picture.where(product_id: product.id).take %>
+                          <% if picture != nil %>
+                              <%= image_tag picture.image.url(:thumb) %>
+                          <% else %>
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-file-image-o fa-stack-1x fa-inverse"></i>
+                          <% end %>
+                        </div>
+                      </div>
+                      <div class="col-lg-9 ">
+                        <div class="row">
+
+                          <strong class="text-primary"><%= product.name %></strong>
+                          <div class="pull-right">
+                            <strong class="text-primary">R$ <%= product.price %></strong>
+                            <%= link_to product, class:"btn btn-primary btn-circle" do%>
+                                <i class="fa fa-bars"></i>
+                            <% end %>
+                            <% if @current_consumer != nil %>
+                                <%= link_to buy_shopping_cart_path(@current_cart, :product => product), class:"btn btn-primary btn-circle" do%>
+                                    <i class="fa fa-plus"></i>
+                                <% end %>
+                            <% else %>
+                                <%= link_to new_client_registration_path , class:"btn btn-primary btn-circle" do%>
+                                    <i class="fa fa-plus"></i>
+                                <% end%>
+                            <% end %>
+                          </div>
+
+                        </div>
+                        <!-- category-->
+                        <div class="row">
+                          <i class="fa fa-star">&nbsp</i><%= product.rating %>
+                          <span>,</span>
+                          <i class="fa fa-cutlery">&nbsp </i><%= product.category_product.name %>
+                          <span>,</span>
+                          <i class="fa fa-tag">&nbsp</i><%= product.professional.client.name %>
+                          <span>,</span>
+                          <i class="fa fa-tag">&nbsp</i><%= product.max_quantity %>
+                        </div>
+                        <!-- end category-->
+                        <!-- description of product -->
+                        <div class="row">
+                          <p><%= product.description %></p>
+                        </div>
+                        <!--end product description-->
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+            <% end %>
+          </div>
+
+          <!--list of products end -->
+          <!-- carrinho de compras -->
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h2 class="text-center" style="font-size: 28px;"><i class="fa fa-shopping-cart"></i> Meu pedido</h2>
+              </div>
+              <div class="panel-body text-center">
+                <h2>Carinho vazio</h2>
+                <h3>Faça seu pedido!</h3>
+              </div>
+              <div class="panel-footer">
+                .......
+              </div>
+            </div>
+          </div>
+          <!-- fim do carinho -->
+        </div>
+
+        <br>
+        <%= link_to 'New Product', new_product_path, class:"btn btn-lg btn-primary" %>
+      </div>
+      <!-- Products panel end-->
+      <!-- Orders panel -->
+      <div class="tab-pane fade text-center" id="orders-pills">
+        <h2>Ops! Você não está logado!</h2>
+        <h3>Faça login para visualizar seus pedidos</h3>
+      </div>
+      <!-- orders panel end-->
+    </div>
+  </div>
+</section>
+
 <!-- Services Section -->
 <section id="products">
   <div class="container">
