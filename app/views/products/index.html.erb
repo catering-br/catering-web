@@ -54,7 +54,7 @@
                             <%= link_to product, class:"btn btn-primary btn-circle" do%>
                                 <i class="fa fa-bars"></i>
                             <% end %>
-                            <% if @current_consumer != nil %>
+                            <% if client_signed_in? %>
                                 <%= link_to buy_shopping_cart_path(@current_cart, :product => product), class:"btn btn-primary btn-circle" do%>
                                     <i class="fa fa-plus"></i>
                                 <% end %>

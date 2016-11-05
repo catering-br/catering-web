@@ -1,13 +1,13 @@
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, class: "btn btn-lg btn-primary" %>
 
 <% if @step != nil %>
     <% if Integer(@step)<=1%>
         <% @new_step=(Integer(@step)+1).to_s %>
-    <%= link_to "Seguinte passo", products_path(:step=> @new_step), class: "pull-right" %>
-    <% button_to "Seguinte passo", products_path(:step=> @new_step) , class: "pull-right" %>
+    <%= link_to "Seguinte passo", products_path(:step=> @new_step), class: "pull-right btn btn-lg btn-primary" %>
+    <% button_to "Seguinte passo", products_path(:step=> @new_step) , class: "pull-right  btn btn-lg btn-primary" %>
         <% else %>
         <% if @step=="2" %>
-            <%= link_to "Finalizar", new_payment_path(:shopping_cart=> @current_cart), class: "pull-right" %>
+            <%= link_to "Finalizar", new_payment_path(:shopping_cart=> @current_cart), class: "pull-right  btn btn-lg btn-primary" %>
             <% end %>
     <% end %>
 <% end %>
