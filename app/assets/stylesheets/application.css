@@ -14,7 +14,8 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap.min
- *= require font_awesome
+ *= require font-awesome
+ *= require font-awesome.min
  *= require jquery-ui
  */
 
