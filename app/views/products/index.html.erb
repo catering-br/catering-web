@@ -73,8 +73,6 @@
                           <i class="fa fa-cutlery">&nbsp </i><%= product.category_product.name %>
                           <span>,</span>
                           <i class="fa fa-tag">&nbsp</i><%= product.professional.client.name %>
-                          <span>,</span>
-                          <i class="fa fa-tag">&nbsp</i><%= product.max_quantity %>
                         </div>
                         <!-- end category-->
                         <!-- description of product -->
@@ -191,7 +189,6 @@
                         <td><%= product.name %></td>
                         <td><%= product.description %></td>
                         <td><%= product.price %></td>
-                        <td><%= product.max_quantity %></td>
                         <td><%= product.rating %></td>
                         <td><%= link_to 'Show', product %></td>
                         <% if @current_professional != nil && @current_professional.id == product.professional_id %>

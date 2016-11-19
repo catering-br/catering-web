@@ -10,8 +10,7 @@
                   <div id="notice" class="alert alert-success"><%= notice %></div>
               <% end %>
 
-              <div class="text-left text-success">
-                <strong>Images:</strong>
+              <div class="text-center text-success">
                 <% @pictures.each do |p| %>
                     <%= image_tag p.image.url(:medium) %>
                 <% end %>
@@ -39,17 +38,12 @@
 
               <div class="text-left text-success">
                 <strong>Price:</strong>
-                <%= @product.price %>
-              </div>
-
-              <div class="text-left text-success">
-                <strong>MaxQuantity:</strong>
-                <%= @product.max_quantity %>
+                <%= number_to_currency(@product.price) %>
               </div>
 
               <div class="text-left text-success">
                 <strong>Rating:</strong>
-                <%= @product.rating %>
+                <td><%= render 'star', product: @product %></td>
               </div>
 
               <% if @current_professional != nil && @current_professional.id == @product.professional_id %>

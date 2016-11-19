@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20161104005028) do
   create_table "clients", force: :cascade do |t|
     t.string   "login"
     t.string   "name"
-    t.string   "cpf",                    limit: 11
+    t.string   "cpf",                    limit: 14
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "email",                             default: "", null: false

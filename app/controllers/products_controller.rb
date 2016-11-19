@@ -16,9 +16,9 @@ class ProductsController < ApplicationController
     if @step!=nil
       @category = CategoryProduct.find_by(name: flow_categories[Integer(@step)])
     end
-    print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    #print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     #print (flow_categories[Integer(@step)])
-    print("yyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxx")
+    #print("yyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxx")
 
     if @category
       @products = Product.where(category_product_id: @category)
@@ -121,6 +121,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:category_product_id, :name, :description, :price, :max_quantity, :step, :event)
+      params.require(:product).permit(:category_product_id, :name, :description, :price, :step, :event)
     end
 end

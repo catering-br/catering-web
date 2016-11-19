@@ -12,7 +12,7 @@ class Client < ApplicationRecord
 
   validates :login, :email, :password, :name, :cpf, presence: true
   validates :login, :email, :cpf, uniqueness: true
-  validates_length_of :cpf, is: 11
+  validates_length_of :cpf, in: 11..14
   validates_numericality_of :cpf, :on => :create
 
   accepts_nested_attributes_for :telephones, allow_destroy:  true

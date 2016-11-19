@@ -43,7 +43,7 @@
 
                   <div class="field form-group">
                     <%#= f.label :cpf %>
-                    <%= f.number_field :cpf , class:"form-control", placeholder:"Digite seu CPF"%>
+                    <%= f.number_field :cpf , class:"form-control", placeholder:"Digite seu CPF/CNPJ"%>
                   </div>
                   <%= f.fields_for :telephones, resource.telephones.build do |telephone_fields| %>
                     <div class="field form-group">
