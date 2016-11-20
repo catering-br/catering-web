@@ -14,8 +14,8 @@ end
 
 
 Client.delete_all
-c2 = Client.create! login: "usProf", email:"profesional@hotmail.com", name:"name User 3", password:"pass123456", cpf:45698765432
-c1 = Client.create! login: "user2",email:"a@h.com", name:"name User2", password:"123456",cpf:12398745625
+c2 = Client.create! login: "usProf", email:"profesional@hotmail.com", name:"tradição Japonesa", password:"pass123456", cpf:45698765432
+c1 = Client.create! login: "user2",email:"a@h.com", name:"delicias Arabes", password:"123456",cpf:12398745625
 c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
 
 c4 = Client.create! login: "lavie", email:"admin@lavie.com" , name: "C'est la vie, gastronomia" , password: "laviepas", cpf:'07378321000109'
