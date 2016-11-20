@@ -53,10 +53,20 @@
                   <% end %>
                   <%= f.fields_for :additional do |additional_fields| %>
                       <div class="field checkbox text-left">
-                        <%= additional_fields.check_box :is_profesional,style:"margin-left: 0px;"%>
+                        <%= additional_fields.check_box :is_profesional, id:'is-professional', style:"margin-left: 0px;",
+                                                        onchange:"showProfessionalFields()"%>
                         <%= additional_fields.label "Gostaria de se cadastrar como professional?", class:"text-primary" %>
                       </div>
                   <% end %>
+
+                  <!--fields of professional -->
+                  <%= f.fields_for :professionals do |professional_fields| %>
+                  <div class="field form-group invisible" id="professional-fields" >
+                    <%= professional_fields.text_field :description, class:"form-control",
+                    placeholder:"Coloque a descrição do professional"%>
+                  </div>
+                  <% end %>
+                  <!-- end professional -->
 
                   <div class="actions">
                     <%= f.submit "Cadastrar", class:"btn btn-lg btn-primary center-block" %>

@@ -8,5 +8,6 @@
 //= require welcome/jquery.fittext
 //= require welcome/wow.min
 //= require welcome/creative
+//= require welcome/forms.js
 //= require_self
 
