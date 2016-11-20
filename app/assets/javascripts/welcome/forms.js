@@ -6,11 +6,9 @@ function showProfessionalFields() {
     var professionalFields = document.getElementById('professional-fields');
     var isProfessional = document.getElementById('is-professional');
     if (isProfessional.checked == 1) {
-        //professionalFields.style.display = 'block !important';
-        professionalFields.style.visibility = 'visible';
+        professionalFields.className = 'show-control'
     } else {
-        //professionalFields.style.display = 'none !important';
-        professionalFields.style.visibility = 'hidden';
+        professionalFields.className = 'hidden-control'
     }
 }
 
