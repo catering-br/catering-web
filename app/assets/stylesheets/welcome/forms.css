@@ -1,0 +1,7 @@
+/*Classes*/
+.show-control {
+    display: block;
+}
+.hidden-control {
+    display: none;
+}
