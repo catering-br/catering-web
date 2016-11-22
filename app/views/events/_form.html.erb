@@ -2,20 +2,21 @@
   <%= f.error_notification %>
   <%= f.hidden_field :client_id, :value => current_client.id %>
   <%= f.input :event_data, label: "Data" %>
-  <%= f.input :hour, label: "hora" %>
-  <%= f.input :attendants, label: "Quantidade aproximada de invitados" %>
+  <%= f.input :hour, label: "Hora" %>
+  <%= f.input :attendants, label: "Número de convidados" %>
   <% if @addresses == nil%>
-        <%= "Você não tem endereços cadastrados, cadastre um"%>
+        <%= "Você ainda não possui um endereço cadastrado!"%>
   <% else %>
     <%= f.input :address_id, collection: @addresses.map{|a| [a.street, a.id]}, label: "Endereço", :class => "pull-left", include_blank: false%>
   <% end %>
   <%= link_to "criar novo endereço",new_address_path, :class => "inline_field_wrapper, pull-right" %>
-  <%= f.input :duration, label: "Duração do evento" %>
-  <%= f.input :estimated_price_from, label: "Preço desde" %>
-  <%= f.input :estimated_price_until, label: "até" %>
+  <!-- <%= f.input :duration, label: "Duração do evento" %> -->
+  <!-- <%= f.input :estimated_price_from, label: "Preço desde" %> -->
+  <!-- <%= f.input :estimated_price_until, label: "até" %> -->
+  </br>
   <%= f.button :submit %>
 
   <div class="actions">
-    <%= link_to "Omitir", products_path%>
+    <%= link_to "Ignorar", products_path%>
   </div>
 <% end %>
