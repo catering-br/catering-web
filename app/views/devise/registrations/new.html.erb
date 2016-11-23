@@ -8,15 +8,15 @@
             <div class="panel-body">
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                  <div class ="text-primary text-left"><%= devise_error_messages!%></div>
+                  <div class="text-primary text-left"><%= devise_error_messages! %></div>
 
                   <div class="field form-group">
-                    <%= f.email_field :email, autofocus: true, class:"form-control",  placeholder:"Digite seu E-mail"  %>
+                    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Digite seu E-mail" %>
                   </div>
 
                   <div class="field form-group">
                     <%#= f.label :password %>
-                    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Digite sua senha" %>
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Digite sua senha" %>
                     <% if @minimum_password_length %>
                         <em class="text-primary text-left">(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %>
@@ -24,12 +24,12 @@
 
                   <div class="field form-group">
                     <%#= f.label :password_confirmation %>
-                    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirme sua senha" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirme sua senha" %>
                   </div>
 
                   <div class="field form-group">
                     <%#= f.label :login %>
-                    <%= f.text_field :login , class:"form-control", placeholder:"Digite seu login"%>
+                    <%= f.text_field :login, class: "form-control", placeholder: "Digite seu login" %>
                   </div>
 
                   <div class="field form-group">
@@ -38,46 +38,42 @@
 
                   <div class="field form-group">
                     <%#= f.label :name %>
-                    <%= f.text_field :name, class:"form-control", placeholder:"Digite seu nome" %>
+                    <%= f.text_field :name, class: "form-control", placeholder: "Digite seu nome" %>
                   </div>
 
                   <div class="field form-group">
                     <%#= f.label :cpf %>
-                    <%= f.number_field :cpf , class:"form-control", placeholder:"Digite seu CPF/CNPJ"%>
+                    <%= f.number_field :cpf, class: "form-control", placeholder: "Digite seu CPF/CNPJ" %>
                   </div>
                   <%= f.fields_for :telephones, resource.telephones.build do |telephone_fields| %>
-                    <div class="field form-group">
-                      <%= telephone_fields.text_field :telephone , class:"form-control",
-                                         placeholder:"Digite seu telefone"%>
-                    </div>
-                  <% end %>
-                  <%= f.fields_for :additional do |additional_fields| %>
-                      <div class="field checkbox text-left">
-                        <%= additional_fields.check_box :is_profesional, id:'is-professional', style:"margin-left: 0px;",
-                                                        onchange:"showProfessionalFields()"%>
-                        <%= additional_fields.label "Gostaria de se cadastrar como professional?", class:"text-primary" %>
+                      <div class="field form-group">
+                        <%= telephone_fields.text_field :telephone, class: "form-control",
+                                                        placeholder: "Digite seu telefone" %>
                       </div>
                   <% end %>
 
-                  <!--fields of professional -->
                   <%= f.fields_for :professional do |professional_fields| %>
-                  <div class="field form-group hidden-control" id="professional-fields" >
-                    <%= professional_fields.text_field :description, class:"form-control",
-                    placeholder:"Coloque a descrição do professional"%>
-                  </div>
+                      <div class="field checkbox text-left">
+                        <%= professional_fields.check_box :is_profesional, id: 'is-professional', style: "margin-left: 0px;",
+                                                          onchange: "showProfessionalFields()" %>
+                        <%= professional_fields.label "Gostaria de se cadastrar como professional?", class: "text-primary" %>
+                        <div class="field form-group hidden-control" id="professional-fields">
+                          <%= professional_fields.text_field :description, class: "form-control",
+                                                             placeholder: "Coloque a descrição do professional" %>
+                        </div>
                   <% end %>
                   <!-- end professional -->
 
                   <div class="actions">
-                    <%= f.submit "Cadastrar", class:"btn btn-lg btn-primary center-block" %>
+                    <%= f.submit "Cadastrar", class: "btn btn-lg btn-primary center-block" %>
                   </div>
               <% end %>
+              </div>
             </div>
+            <%= render "devise/shared/links" %>
           </div>
-          <%= render "devise/shared/links" %>
         </div>
       </div>
-    </div>
 
-  </div>
+    </div>
 </header>

@@ -1,6 +1,6 @@
 class Clients::RegistrationsController < Devise::RegistrationsController
   before_action :professional_params, only: [:create]
-  before_action :configure_sign_up_params, only: [:create,:update]
+  before_action :configure_sign_up_params, only: [:create, :update]
   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -30,12 +30,13 @@ class Clients::RegistrationsController < Devise::RegistrationsController
         #respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
 
-      @professional=Professional.new(professional_params)
-      if @professional.description != ""
+      #debugger
+      if professional_params[:is_profesional]
+
+        @professional=Professional.new()
+        @professional.description=professional_params[:description]
         @professional.client=resource
         @professional.save!
-      end
-      if @professional.description != ""
         redirect_to @professional
       else
         redirect_to new_event_path
@@ -76,8 +77,9 @@ class Clients::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def professional_params
-    params.require(:client).permit(professional:[:description])[:professional]
+    params.require(:client).permit(professional: [:description, :is_profesional])[:professional]
   end
+
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up,
                                       keys: [:attribute, :login, :name, :cpf,
@@ -91,7 +93,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :login, :name, :cpf,
                                                               [telephones_attributes: [:telephone]],
                                                               [professional: [:description]],
-                                                            :additional])
+                                                              :additional])
   end
 
   # The path used after sign up.
