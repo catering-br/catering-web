@@ -17,12 +17,19 @@ Client.delete_all
 c2 = Client.create! login: "usProf", email:"profesional@hotmail.com", name:"tradição Japonesa", password:"pass123456", cpf:45698765432
 c1 = Client.create! login: "user2",email:"a@h.com", name:"delicias Arabes", password:"123456",cpf:12398745625
 c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
-
 c4 = Client.create! login: "lavie", email:"admin@lavie.com" , name: "C'est la vie, gastronomia" , password: "laviepas", cpf:'07378321000109'
 
 Telephone.delete_all
 Telephone.create! client:c1, telephone: '23444543'
 #Telephone.create! telephone: 65574839
+
+CreditCard.delete_all
+CreditCard.create! client:c1, name:"Banco do Brasil", number:"4859753812542000", digit:"154", flag:"Visa", expiration:"12/31"
+CreditCard.create! client:c1, name:"Banco Bradesco", number:"8475937410283957", digit:"332", flag:"Elo", expiration:"12/34"
+CreditCard.create! client:c1, name:"Banco Itaú", number:"1827304958120936", digit:"255", flag:"MasterCard", expiration:"12/18"
+CreditCard.create! client:c2, name:"Banco do Brasil", number:"9279735275937645", digit:"128", flag:"Visa", expiration:"12/40"
+CreditCard.create! client:c3, name:"Caixa Economica Federal", number:"4673826475923340", digit:"032", flag:"MasterCard", expiration:"12/17"
+CreditCard.create! client:c3, name:"Banco Santander", number:"3928337455688904", digit:"512", flag:"MasterCard", expiration:"12/22"
 
 Address.delete_all
 Address.create! client:c1, cep: '05508020', street: 'street1', number: 123, city: 'São Paulo',
@@ -39,6 +46,11 @@ p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabe
 p2 = Professional.create! client: c2, description: 'Tradição em comidas Japonesas', rating: 4.5
 p3 = Professional.create! client: c4, description: 'Nossa equipe trabalha de forma eficiente e profissional, garantindo
 um ótimo serviço. Oferecemos uma grande diversidade de produtos', rating: 4.6
+
+Notification.delete_all
+Notification.create! professional: p1, counter: 0
+Notification.create! professional: p2, counter: 0
+Notification.create! professional: p3, counter: 0
 
 CategoryProduct.delete_all
 cEntrada = CategoryProduct.create! name: "Entrada"

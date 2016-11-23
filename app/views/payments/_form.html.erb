@@ -11,14 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field form-group text-left">
-    <%= f.label :shopping_cart, class:"text-primary" %>
-    <%= f.text_field :shopping_cart, class:"form-control",  placeholder:"Digite ...." %>
-  </div>
+  <%= f.hidden_field :shopping_cart_id, :value => @shopping_cart.id %>
 
   <div class="field form-group text-left">
-    <%= f.label :credit_card, class:"text-primary" %>
-    <%= f.text_field :credit_card, class:"form-control",  placeholder:"Digite o cartão de crédito" %>
+    <%= f.label :credit_card_id, class:"text-primary" %>
+    <%= f.select :credit_card_id, CreditCard.where(:client_id => current_client.id).map{|credit_card| [ credit_card.number, credit_card.id]}, prompt:"Selecione seu cartão de crédito" %>
   </div>
 
   <div class="field form-group text-left">
@@ -32,6 +29,6 @@
   </div>
 
   <div class="actions">
-    <% f.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

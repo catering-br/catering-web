@@ -2,7 +2,7 @@ class ShoppingCart < ApplicationRecord
   belongs_to :client
   has_many :cart_items
   has_one :payment
-  enum status: [:cancelado, :ativo , :concluido, :pagamento, :pagado, :empacotando, :transporte, :finalizado]
+  enum status: [:cancelado, :ativo , :concluido, :pagamento, :pago, :empacotando, :transporte, :finalizado]
   validates :status, presence:true
 
   def default_values
