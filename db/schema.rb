@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122105307) do
+ActiveRecord::Schema.define(version: 20161104005028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,13 +110,6 @@ ActiveRecord::Schema.define(version: 20161122105307) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer  "professional_id"
-    t.integer  "counter"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "payments", force: :cascade do |t|
     t.integer  "shopping_cart_id"
     t.integer  "credit_card_id"
@@ -150,9 +143,10 @@ ActiveRecord::Schema.define(version: 20161122105307) do
   create_table "professionals", force: :cascade do |t|
     t.integer  "client_id"
     t.text     "description"
-    t.float    "rating",            default: 0.0
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.float    "rating",               default: 0.0
+    t.integer  "notification_counter", default: 0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"

@@ -4,6 +4,7 @@ class CreateProfessionals < ActiveRecord::Migration[5.0]
       t.integer :client_id
       t.text :description
       t.float :rating, :default => 0
+      t.integer :notification_counter, :default => 0
 
       t.timestamps
     end

@@ -47,11 +47,6 @@ p2 = Professional.create! client: c2, description: 'Tradição em comidas Japone
 p3 = Professional.create! client: c4, description: 'Nossa equipe trabalha de forma eficiente e profissional, garantindo
 um ótimo serviço. Oferecemos uma grande diversidade de produtos', rating: 4.6
 
-Notification.delete_all
-Notification.create! professional: p1, counter: 0
-Notification.create! professional: p2, counter: 0
-Notification.create! professional: p3, counter: 0
-
 CategoryProduct.delete_all
 cEntrada = CategoryProduct.create! name: "Entrada"
 cComida = CategoryProduct.create! name: "Pratos"

@@ -31,8 +31,7 @@ class PaymentsController < ApplicationController
       if @payment.save
         @professionals = Professional.where(:id => Product.where(:id => CartItem.where(:shopping_cart_id => ShoppingCart.find(@payment.shopping_cart_id))))
         for p in @professionals do
-          counter = Notification.where(:professional_id => p.id).take.counter + 1
-          Notification.update(p.id, :counter => counter)
+          p.increment!(:notification_counter, by = 1)
         end
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }

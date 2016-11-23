@@ -40,8 +40,6 @@ class ProfessionalsController < ApplicationController
     @professional.client_id = current_client.id
     respond_to do |format|
       if @professional.save
-        @notification = Notification.new(:professional_id => @professional.id, :counter => 0)
-        @notification.save
         format.html { redirect_to @professional, notice: 'Professional was successfully created.' }
         format.json { render :show, status: :created, location: @professional }
       else
