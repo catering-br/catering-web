@@ -33,7 +33,7 @@
                   </div>
 
                   <div class="field form-group">
-                    <%= f.file_field :avatar , class:"form-control"%>
+                    <%#= f.file_field :avatar , class:"form-control"%>
                   </div>
 
                   <div class="field form-group">
@@ -60,7 +60,7 @@
                   <% end %>
 
                   <!--fields of professional -->
-                  <%= f.fields_for :professionals do |professional_fields| %>
+                  <%= f.fields_for :professional do |professional_fields| %>
                   <div class="field form-group hidden-control" id="professional-fields" >
                     <%= professional_fields.text_field :description, class:"form-control",
                     placeholder:"Coloque a descrição do professional"%>
