@@ -30,7 +30,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
         #respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
 
-      debugger
+      #debugger
       if professional_params[:is_profesional]=='1'
         @professional=Professional.new
         @professional.description=professional_params[:description]
