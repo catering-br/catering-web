@@ -16,7 +16,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
   def create
 
     build_resource(sign_up_params)
-    resource.save!
+    resource.save
 
     yield resource if block_given?
     if resource.persisted?
@@ -29,21 +29,22 @@ class Clients::RegistrationsController < Devise::RegistrationsController
         expire_data_after_sign_in!
         #respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
+
+      @professional=Professional.new(professional_params)
+      if @professional.description != ""
+        @professional.client=resource
+        @professional.save!
+      end
+      if @professional.description != ""
+        redirect_to @professional
+      else
+        redirect_to new_event_path
+      end
+
     else
       clean_up_passwords resource
       set_minimum_password_length
-      #respond_with resource
-    end
-
-    @professional=Professional.new(professional_params)
-    if @professional.description != ""
-      @professional.client=resource
-      @professional.save!
-    end
-    if @professional.description != ""
-      redirect_to @professional
-    else
-      redirect_to new_event_path
+      respond_with resource
     end
   end
 
