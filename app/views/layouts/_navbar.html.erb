@@ -31,6 +31,12 @@
         </li>
 
         <% if client_signed_in? %>
+            <!-- Exibe o número de notificações não lidas TODO: Zerar as notificações quando visitar os pedidos -->
+            <% if (professional = Professional.where(:client_id => current_client.id).take) != nil %>
+              <% if (counter = Notification.where(:professional_id => professional.id).take.counter) > 0 %>
+                <li> <p> <i style="font-size:28px"> <%= counter %> </i> </p> </li>
+              <% end %>
+            <% end %>
             <li><%= image_tag current_client.avatar.url(:thumb) %> </li>
             <li><p><i class="fa fa-user-circle" style="font-size:28px"></i><%= ' Olá, ' +  current_client.name %>
               <%= '/ email: ' + current_client.email %></p></li>
@@ -39,8 +45,6 @@
                   <i class="fa fa-sign-out fa-2x"></i>
               <% end%>
             </li>
-
-
         <% else %>
             <li><%= link_to('Cadastrar', new_client_registration_path) %></li>
             <li>

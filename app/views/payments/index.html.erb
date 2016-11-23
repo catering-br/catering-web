@@ -16,8 +16,8 @@
   <tbody>
     <% @payments.each do |payment| %>
       <tr>
-        <td><%= payment.shopping_cart %></td>
-        <td><%= payment.card %></td>
+        <td><%= payment.shopping_cart_id %></td>
+        <td><%= payment.credit_card_id %></td>
         <td><%= payment.number_quotas %></td>
         <td><%= payment.quota_value %></td>
         <td><%= link_to 'Show', payment %></td>

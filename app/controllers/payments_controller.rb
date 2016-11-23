@@ -15,8 +15,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @payment = Payment.new(number_quotas: 1, shopping_cart: @shopping_cart,
-                           quota_value: @shopping_cart.total_paid)
+    @payment = Payment.new(:number_quotas => 1, :quota_value => 0)
   end
 
   # GET /payments/1/edit
@@ -30,6 +29,11 @@ class PaymentsController < ApplicationController
 
     respond_to do |format|
       if @payment.save
+        @professionals = Professional.where(:id => Product.where(:id => CartItem.where(:shopping_cart_id => ShoppingCart.find(@payment.shopping_cart_id))))
+        for p in @professionals do
+          counter = Notification.where(:professional_id => p.id).take.counter + 1
+          Notification.update(p.id, :counter => counter)
+        end
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
@@ -71,10 +75,10 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:shopping_cart, :card, :number_quotas, :quota_value)
+      params.require(:payment).permit(:shopping_cart_id, :credit_card_id, :number_quotas, :quota_value)
     end
 
-  def set_shopping_cart
-    @shopping_cart = ShoppingCart.find(params[:shopping_cart])
-  end
+    def set_shopping_cart
+      @shopping_cart = ShoppingCart.find(params[:shopping_cart_id])
+    end
 end

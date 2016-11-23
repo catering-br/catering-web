@@ -3,8 +3,8 @@ class CreateCreditCards < ActiveRecord::Migration[5.0]
     create_table :credit_cards do |t|
       t.integer :client_id
       t.string :name
-      t.integer :number
-      t.integer :digit
+      t.string :number
+      t.string :digit
       t.string :flag
       t.string :expiration
 
