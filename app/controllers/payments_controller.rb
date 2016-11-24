@@ -28,6 +28,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(payment_params)
 
     respond_to do |format|
+
       if @payment.save
         @professionals = Professional.where(:id => Product.where(:id => CartItem.where(:shopping_cart_id => ShoppingCart.find(@payment.shopping_cart_id))))
         for p in @professionals do
@@ -36,7 +37,8 @@ class PaymentsController < ApplicationController
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
-        format.html { render :new }
+        @payment.save!  #comment it
+        format.html { render :new, shopping_cart_id: @shopping_cart }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
     end

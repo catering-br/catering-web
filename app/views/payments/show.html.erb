@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<p>Compra concluida, espere seu pedido chegar.</p>
 
-<p>
-  <strong>Shopping cart:</strong>
-  <%= @payment.shopping_cart_id %>
-</p>
+<!--<p>-->
+  <!--<strong>Shopping cart:</strong>-->
+  <!--<%= @payment.shopping_cart_id %>-->
+<!--</p>-->
 
-<p>
-  <strong>Card:</strong>
-  <%= @payment.credit_card_id %>
-</p>
+<!--<p>-->
+  <!--<strong>Card:</strong>-->
+  <!--<%= @payment.credit_card_id %>-->
+<!--</p>-->
 
-<p>
-  <strong>Number quotas:</strong>
-  <%= @payment.number_quotas %>
-</p>
+<!--<p>-->
+  <!--<strong>Number quotas:</strong>-->
+  <!--<%= @payment.number_quotas %>-->
+<!--</p>-->
 
-<p>
-  <strong>Quota value:</strong>
-  <%= @payment.quota_value %>
-</p>
+<!--<p>-->
+  <!--<strong>Quota value:</strong>-->
+  <!--<%= @payment.quota_value %>-->
+<!--</p>-->
 
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
+<% link_to 'Edit', edit_payment_path(@payment) %>
+<%= link_to 'Retornar', products_path %>

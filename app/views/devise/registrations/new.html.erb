@@ -57,6 +57,7 @@
                         <%= professional_fields.check_box :is_profesional, id: 'is-professional', style: "margin-left: 0px;",
                                                           onchange: "showProfessionalFields()" %>
                         <%= professional_fields.label "Gostaria de se cadastrar como professional?", class: "text-primary" %>
+                        </div>
                         <div class="field form-group hidden-control" id="professional-fields">
                           <%= professional_fields.text_field :description, class: "form-control",
                                                              placeholder: "Coloque a descrição do professional" %>

@@ -36,6 +36,7 @@ class Clients::RegistrationsController < Devise::RegistrationsController
         @professional.description=professional_params[:description]
         @professional.client=resource
         @professional.save!
+        #redirect_to edit_professional_path(@professional)
         redirect_to @professional
       else
         redirect_to new_event_path
