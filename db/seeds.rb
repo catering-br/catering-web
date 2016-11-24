@@ -17,7 +17,12 @@ c2 = Client.create! login: "usProf", email:"profissional@hotmail.com", name:"tra
 c1 = Client.create! login: "user2",email:"a@h.com", name:"delicias Arabes", password:"123456",cpf:12398745625
 c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
 c4 = Client.create! login: "lavie", email:"admin@lavie.com" , name: "C'est la vie, gastronomia" , password: "laviepas", cpf:'07378321000109'
-c5 = Client.create! login: 'felipe', email: 'felipe@mail.com', name: 'Felipe Alberto dos Santos', password: '123456', cpf: '205698788812'
+
+c7 = Client.create! login: 'felipe', email: 'felipe@mail.com', name: 'Felipe Alberto dos Santos', password: '123456', cpf: '205698788812'
+
+c5 = Client.create! login: "farmfresh", email:"admin@farmfresh.com" , name: "Farm Fresh" , password: "farmfreshpas", cpf:'17378321000109'
+c6 = Client.create! login: "oggi", email:"admin@oggi.com" , name: "Oggi by Pronutri" , password: "oggipas", cpf:'18978321000109'
+
 
 Telephone.delete_all
 Telephone.create! client:c1, telephone: '23444543'
@@ -30,7 +35,7 @@ CreditCard.create! client:c1, name:"Banco Itaú", number:"1827304958120936", dig
 CreditCard.create! client:c2, name:"Banco do Brasil", number:"9279735275937645", digit:"128", flag:"Visa", expiration:"12/40"
 CreditCard.create! client:c3, name:"Caixa Economica Federal", number:"4673826475923340", digit:"032", flag:"MasterCard", expiration:"12/17"
 CreditCard.create! client:c3, name:"Banco Santander", number:"3928337455688904", digit:"512", flag:"MasterCard", expiration:"12/22"
-CreditCard.create! client:c5, name:"Banco do Brasil", number:"4859753812542001", digit:"890", flag:"Visa", expiration:"12/32"
+CreditCard.create! client:c7, name:"Banco do Brasil", number:"4859753812542001", digit:"890", flag:"Visa", expiration:"12/32"
 
 
 Address.delete_all
@@ -42,7 +47,12 @@ Address.create! client:c2, cep: '55080900', neighborhood: 'butantã', street: 's
                 country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
 Address.create! client:c4, cep: '01430001', neighborhood: 'Jardim América', street: 'Avenida Brasil', number:1122,
                 city: 'São Paulo', country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
-Address.create! client:c5, cep: '01430001', neighborhood: 'Jardim América', street: 'Avenida Brasil', number:1122,
+
+Address.create! client:c7, cep: '01430001', neighborhood: 'Jardim América', street: 'Avenida Brasil', number:1122, city: 'São Paulo',
+                country: 'Brasil', address_type: Address.address_types['residencial']
+Address.create! client:c5, cep: '05508030', neighborhood: 'butantã', street: 'Vital do Brasil', number:1044,
+                city: 'São Paulo', country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
+Address.create! client:c6, cep: '05508030', neighborhood: 'butantã', street: 'Vital do Brasil', number:244,
                 city: 'São Paulo', country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
 
 Professional.delete_all
@@ -50,14 +60,18 @@ p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabe
 p2 = Professional.create! client: c2, description: 'Tradição em comidas Japonesas', rating: 4.5
 p3 = Professional.create! client: c4, description: 'Nossa equipe trabalha de forma eficiente e profissional, garantindo
 um ótimo serviço. Oferecemos uma grande diversidade de produtos', rating: 4.6
+p4 = Professional.create! client: c5, description: 'Uma refeição completa com ingredientes frescos, orgânicos e selecionados.
+Tudo que seu corpo precisa no ritmo que seu dia pede. A combinação perfeita para uma rotina saudável. Entrega Rápida!', rating: 4.5
+p5 = Professional.create! client: c6, description: 'Comida contemporânea. Hoje, amanhã e sempre!', rating: 4.5
 
 CategoryProduct.delete_all
 cEntrada = CategoryProduct.create! name: "Entradas/Salgados"
 cComida = CategoryProduct.create! name: "Pratos"
 cSobremesa = CategoryProduct.create! name: "Sobremesas"
 cFlores = CategoryProduct.create! name: "Flores"
-cQuitutes = CategoryProduct.create! name: "Quitutes"
+cQuitute = CategoryProduct.create! name: "Quitutes"
 cBebida = CategoryProduct.create! name: "bebida"
+cSalada = CategoryProduct.create! name: "Salada"
 
 Product.delete_all
 pd1=Product.create! professional: p1, name: "Pizza de banana", price: 20.49, description: "Pizza doçe feita de banana e leite condensada",
@@ -76,13 +90,56 @@ pd4=Product.create! professional: p1, name: "Donut", price: 4.99, description: "
 #                    image: seed_image("donut")
 
 pd5 = Product.create! professional: p3, name: "crepé de frango desfiado", description: "Crepe recheado com frango desfiado,
-gruyére, gorgonzola, molho de queijo e passas, finalizado com calda de cassis.", category_product: cQuitutes, price: 24.99, rating: 5
+gruyére, gorgonzola, molho de queijo e passas, finalizado com calda de cassis.", category_product: cQuitute, price: 24.99, rating: 5
 
+#-----------------Dados reais ------------------
+#Farm Fresh
+pd6 = Product.create! professional: p4, name: "Salada Caesar com frango Orgânico", description: "Peito de frango Orgânico,
+alface americana, granola salgada e molho tipo Caesar com iogurte.", category_product: cSalada, price: 36.90, rating: 5
+
+pd7 = Product.create! professional: p4, name: "Salada de Quinoa Caprese com frango Orgânico", description: "Peito de frango
+Orgânico, Quinoa, tomate grape, mussarela de búfala, Amêndoa laminada e molho tipo Pesto.", category_product: cSalada, price: 37.90, rating: 3
+
+pd8 = Product.create! professional: p4, name: "Salada Thai com peito de frango Orgânico", description: "Bifum com legumes,
+frango Orgânico, shitake, brócolis, castamha de caju e molho oriental.", category_product: cSalada, price: 37.90, rating: 5
+
+pd9 = Product.create! professional: p4, name: "Suco Fazenda da Toca orgânico 200ml", description: "Suco de Tangerina",
+                      category_product: cBebida, price: 3.90, rating: 5
+#Oggi by Pronutri
+pd10 = Product.create! professional: p5, name: "Salada italiana", description: "Mix de folhas, parmesão, tomate, molho
+Italiano e azeitona.", category_product: cSalada, price: 35.23, rating: 5
+
+pd11 = Product.create! professional: p5, name: "Salada caesar", description: "Alface americana, tomate cereja,
+frango grelhado em tiras e croutons ao molho caesar.", category_product: cSalada, price: 30.54, rating: 5
+
+pd12 = Product.create! professional: p5, name: "Filé a parmegiana", description: "Com arroz e batata frita.",
+                       category_product: cComida, price: 34.04, rating: 5
+
+pd13 = Product.create! professional: p5, name: "Strogonoff de carne", description: "Com arroz e batata frita.",
+                       category_product: cComida, price: 35.26, rating: 5
+
+pd14 = Product.create! professional: p5, name: "Contra filé ao alho", description: "Com arroz, e vinagrete.",
+                       category_product: cComida, price: 35.54, rating: 5
+
+# pd10 = Product.create! professional: p4, name: "", description: "", category_product: cComida, price: 36.90, rating: 5
+#
+# pd10 = Product.create! professional: p4, name: "", description: "", category_product: cComida, price: 36.90, rating: 5
+#-----------------------------------------
 Picture.delete_all
 Picture.create! product: pd3, image: seed_image("pizza")
 Picture.create! product: pd4, image: seed_image("donut")
 Picture.create! product: pd4, image: seed_image("donut2")
 Picture.create! product: pd5, image: seed_image("crepe")
+Picture.create! product: pd6, image: seed_image("42042_27100317_SaladaCaesa")
+Picture.create! product: pd7, image: seed_image("42042_27100318_SaladadeQui")
+Picture.create! product: pd8, image: seed_image("42042_27100321_SaladaThaic")
+Picture.create! product: pd9, image: seed_image("42042_27100346_SucoFazenda")
+# Picture.create! product: pd10, image: seed_image("")
+# Picture.create! product: pd11, image: seed_image("")
+# Picture.create! product: pd12, image: seed_image("")
+# Picture.create! product: pd13, image: seed_image("")
+# Picture.create! product: pd14, image: seed_image("")
+
 
 Keyword.delete_all
 Keyword.create! product: pd1, word: "doçe"
