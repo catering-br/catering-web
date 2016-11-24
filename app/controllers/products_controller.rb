@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
   before_action :set_professional, only: [:index, :create, :show, :new, :edit]
   before_action :authenticate_client!, only: [:new, :edit]
   before_action :makes_flow, only: [:index]
-  # We should use this when along with shopping_carts
-
 
   # GET /products
   # GET /products.json
@@ -13,15 +11,15 @@ class ProductsController < ApplicationController
     set_professional
     @category = params[:category]
 
-    if @step!=nil
+    if @step != nil
       @category = CategoryProduct.find_by(name: flow_categories[Integer(@step)])
     end
-    #print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-    #print (flow_categories[Integer(@step)])
-    #print("yyyyyyyyxxxxxxxxxxxxxxxxxxxxxxxx")
+
 
     if @category
       @products = Product.where(category_product_id: @category)
+    elsif @current_professional
+      @products = Product.where.not(professional_id: @current_professional.id)
     else
       @products = Product.all
     end
@@ -116,7 +114,6 @@ class ProductsController < ApplicationController
             @current_cart = ShoppingCart.new(client: current_client, status: ShoppingCart.statuses['ativo'])
             @current_cart.save!
           end
-
       end
     end
 

@@ -1,4 +1,34 @@
 <div class="tab-pane fade text-center" id="orders-pills">
-  <h2>Ops! Você não está logado!</h2>
-  <h3>Faça login para visualizar seus pedidos</h3>
+  <!-- Na hora de pegar o endereço, temos que saber qual o endereço para a entrega
+  <% querry = ShoppingCart.joins(client: [:addresses, :telephones], cart_items: :product).where('shopping_carts.status' => 1, 'products.professional_id' => 1).select("clients.name as c_name, telephones.telephone, addresses.street, products.name as p_name, products.id as p_id") %> -->
+
+  <% querry = ShoppingCart.joins(:client, cart_items: :product).where('shopping_carts.status' => ShoppingCart.statuses['finalizado'], 'products.professional_id' => @current_professional.id).select("clients.name as c_name, products.name as p_name, products.id as p_id, cart_items.quantity") %>
+  <% querry.each do |q| %>
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      <li class="left clearfix">
+        <div class="col-lg-3">
+          <div class="fa-stack fa-4x">
+            <% picture = Picture.where(product_id: q.p_id).take %>
+            <% if picture != nil %>
+            <%= image_tag picture.image.url(:thumb) %>
+            <% else %>
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-file-image-o fa-stack-1x fa-inverse"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-lg-9 ">
+          <div class="row">
+            <strong class="text-primary"><%= q.p_name %></strong>
+            </br>
+            <strong class="text-primary"><%= q.quantity%></strong>
+            </br>
+            <strong class="text-primary"><%= q.c_name %></strong>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <% end %>
 </div>

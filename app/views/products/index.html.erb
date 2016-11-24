@@ -4,16 +4,31 @@
     <!-- Nav tabs -->
     <ul class="nav nav-pills center-block">
       <li class="active">
-        <a href="#products-pills" data-toggle="tab" aria-expanded="true">Serviços</a>
+        <a href="#products-pills" data-toggle="tab" aria-expanded="true">Produtos</a>
       </li>
-      <li class="">
-        <a href="#myorders" data-toggle="tab" aria-expanded="false">Meus Pedidos</a>
-      </li>
-      <% if @current_professional%>
-      <li class="">
-        <a href="#orders-pills" data-toggle="tab" aria-expanded="false">Pedidos a entregar</a>
-      </li>
+      <% if client_signed_in? %>
+        <li class="">
+          <a href="#myorders" data-toggle="tab" aria-expanded="false">Meus Pedidos</a>
+        </li>
+      <% end %>
+      <% if @current_professional %>
+        <li class="">
+          <a href="#orders-pills" data-toggle="tab" aria-expanded="false" id="orders" onclick="reset_notification_counter()">Pedidos a entregar
+            <% if @current_professional && @current_professional.notification_counter > 0 %>
+              <%= "(" + @current_professional.notification_counter.to_s + ")" %>
+            <% end %>
+          </a>
+        </li>
+      <% end %>
+      <script>
+        function reset_notification_counter() {
+          <% if @current_professional && @current_professional.notification_counter > 0 %>
+            document.getElementById('orders').innerHTML = 'Pedidos a entregar';
+            <% Professional.update(@current_professional.id, :notification_counter => 0) %>
           <% end %>
+        }
+      </script>
+
     </ul>
     <!-- Tab panes-->
     <div class="tab-content panel-body">
@@ -87,31 +102,24 @@
                         <!--end product description-->
                       </div>
                     </li>
-
                   </ul>
                 </div>
             <% end %>
           </div>
-
-          <!--list of products end -->
-          <!-- carrinho de compras -->
-          <div class="col-lg-4">
-            <%#= render 'carrinho' %>
-
-          </div>
-          <!-- fim do carinho -->
         </div>
 
         <br>
-        <%= link_to 'New Product', new_product_path, class:"btn btn-lg btn-primary" %>
+        <%= link_to 'Novo produto', new_product_path, class:"btn btn-lg btn-primary" %>
       </div>
-      <!-- Products panel end-->
-      <!-- Orders panel -->
-      <%= render 'myorders' %>
-      <% if @current_professional%>
+
+      <% if client_signed_in? %>
+        <%= render 'myorders' %>
+      <% end %>
+
+      <% if @current_professional %>
           <%= render 'pedidos', current_professional:@current_professional %>
       <% end %>
-      <!-- orders panel end-->
+
     </div>
   </div>
 </section>
@@ -120,5 +128,3 @@
 
   </div>
 </section>
-
-

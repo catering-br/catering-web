@@ -30,14 +30,14 @@ class PaymentsController < ApplicationController
     respond_to do |format|
 
       if @payment.save
-        @professionals = Professional.where(:id => Product.where(:id => CartItem.where(:shopping_cart_id => ShoppingCart.find(@payment.shopping_cart_id))))
+        @professionals = Professional.joins([products: [cart_items: :shopping_cart]]).where('shopping_carts.id' =>  @payment.shopping_cart_id).group(:id)
         for p in @professionals do
           p.increment!(:notification_counter, by = 1)
         end
+        ShoppingCart.update(@payment.shopping_cart_id, :status => ShoppingCart.statuses['finalizado'])
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render :show, status: :created, location: @payment }
       else
-        @payment.save!  #comment it
         format.html { render :new, shopping_cart_id: @shopping_cart }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
       end
