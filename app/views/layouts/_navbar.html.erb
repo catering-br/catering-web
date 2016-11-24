@@ -30,23 +30,23 @@
           <a href="#page-top"></a>
         </li>
 
-        <% if client_signed_in? %>
-            <li><%= image_tag current_client.avatar.url(:thumb) %> </li>
+        <!--<% if client_signed_in? %>-->
+            <!--<li><%= image_tag current_client.avatar.url(:thumb) %> </li>-->
             <li><p><i class="fa fa-user-circle" style="font-size:28px"></i><%= ' Olá, ' +  current_client.name %>
               <%= '/ email: ' + current_client.email %></p></li>
-            <li>
-              <%= link_to(destroy_client_session_path, :method => :delete) do%>
-                  <i class="fa fa-sign-out fa-2x"></i>
-              <% end%>
-            </li>
-        <% else %>
-            <li><%= link_to('Cadastrar', new_client_registration_path) %></li>
-            <li>
-              <%= link_to(new_client_session_path) do%>
-                  <i class="fa fa-sign-in fa-2x"></i>
-              <% end%>
-            </li>
-        <% end %>
+            <!--<li>-->
+              <!--<%= link_to(destroy_client_session_path, :method => :delete) do%>-->
+                  <!--<i class="fa fa-sign-out fa-2x"></i>-->
+              <!--<% end%>-->
+            <!--</li>-->
+        <!--<% else %>-->
+            <!--<li><%= link_to('Cadastrar', new_client_registration_path) %></li>-->
+            <!--<li>-->
+              <!--<%= link_to(new_client_session_path) do%>-->
+                  <!--<i class="fa fa-sign-in fa-2x"></i>-->
+              <!--<% end%>-->
+            <!--</li>-->
+        <!--<% end %>-->
 
 
       </ul>

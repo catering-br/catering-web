@@ -55,9 +55,9 @@ cQuitutes = CategoryProduct.create! name: "Quitutes"
 cBebida = CategoryProduct.create! name: "bebida"
 
 Product.delete_all
-pd1=Product.create! professional: p1, name: "Banana", price: 0.49, description: "description",
+pd1=Product.create! professional: p1, name: "Pizza de banana", price: 20.49, description: "Pizza doçe feita de banana e leite condensada",
                     rating: 2, category_product:cEntrada
-Product.create! professional: p1, name: "Apple", price: 0.29, description: "description2",
+Product.create! professional: p1, name: "Pie de maça", price: 0.29, description: "Pie de maça tradicional",
                 rating: 3, category_product:cSobremesa
 pd2=Product.create! professional: p2, name: "Carton of Strawberries", price: 10.99,
                     description: "description3", rating: 4, category_product:cComida
