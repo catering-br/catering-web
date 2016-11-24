@@ -116,6 +116,7 @@ class ProductsController < ApplicationController
             @current_cart = ShoppingCart.new(client: current_client, status: ShoppingCart.statuses['ativo'])
             @current_cart.save!
           end
+
       end
     end
 

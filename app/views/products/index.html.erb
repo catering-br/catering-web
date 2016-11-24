@@ -7,8 +7,13 @@
         <a href="#products-pills" data-toggle="tab" aria-expanded="true">Serviços</a>
       </li>
       <li class="">
-        <a href="#orders-pills" data-toggle="tab" aria-expanded="false">Pedidos</a>
+        <a href="#myorders" data-toggle="tab" aria-expanded="false">Meus Pedidos</a>
       </li>
+      <% if @current_professional%>
+      <li class="">
+        <a href="#orders-pills" data-toggle="tab" aria-expanded="false">Pedidos a entregar</a>
+      </li>
+          <% end %>
     </ul>
     <!-- Tab panes-->
     <div class="tab-content panel-body">
@@ -91,7 +96,7 @@
           <!--list of products end -->
           <!-- carrinho de compras -->
           <div class="col-lg-4">
-            <% render 'carrinho' %>
+            <%#= render 'carrinho' %>
 
           </div>
           <!-- fim do carinho -->
@@ -102,10 +107,10 @@
       </div>
       <!-- Products panel end-->
       <!-- Orders panel -->
-      <div class="tab-pane fade text-center" id="orders-pills">
-        <h2>Ops! Você não está logado!</h2>
-        <h3>Faça login para visualizar seus pedidos</h3>
-      </div>
+      <%= render 'myorders' %>
+      <% if @current_professional%>
+          <%= render 'pedidos', current_professional:@current_professional %>
+      <% end %>
       <!-- orders panel end-->
     </div>
   </div>
