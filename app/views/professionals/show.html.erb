@@ -1,23 +1,52 @@
-<% if notice %>
-    <div id="notice" class="alert alert-success"><%= notice %></div>
-<% end %>
-<br> <br> <br> <br> <br>
-<p>
-  <%= image_tag @professional.logo.url(:thumb) %>
-  <br><br>
-  <strong>Professional:</strong>
-  <%= Client.find(@professional.client_id).name %>
-</p>
+<header class="header-default">
+  <div class="main">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <div class="col-md-offset-2 col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="text-center"><i class="fa fa-cutlery"></i> Meu perfil de profissional</h2></div>
+            <div class="panel-body text-success" style="color: #660033">
 
-<p>
-  <strong>Description:</strong>
-  <%= @professional.description %>
-</p>
+              <% if notice %>
+                  <div id="notice" class="alert alert-success"><%= notice %></div>
+              <% end %>
+              <br> <br> <br> <br> <br>
+              <p>
+                <%= image_tag @professional.logo.url(:thumb) %>
+                <br><br>
+              <div class="text-center text-success">
+                <strong>Professional:</strong>
+                <%= Client.find(@professional.client_id).name %>
+              </div>
+              </p>
 
-<p>
-  <strong>Rating:</strong>
-  <%= render 'star', professional: @professional %>
-</p>
+              <p>
+              <div class="text-center text-success">
+                <strong>Description:</strong>
+                <%= @professional.description %>
+              </div>
+              </p>
 
-<%= link_to 'Edit', edit_professional_path(@professional) %> |
-<%= link_to 'Back', professionals_path %>
+              <p>
+              <div class="text-center text-success">
+                <strong>Rating:</strong>
+                <%= render 'star', professional: @professional %>
+              </div>
+              </p>
+
+
+              <%= link_to 'Editar', edit_professional_path(@professional) %> |
+              <% link_to 'Back', professionals_path %>
+              <%= link_to 'Cadastrar produto', new_product_path %>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>

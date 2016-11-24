@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    flow_categories = ["Entrada", "Pratos", "Sobremesas"]
+    flow_categories = ["Entradas/Salgados", "Pratos", "Sobremesas"]
     set_professional
     @category = params[:category]
 

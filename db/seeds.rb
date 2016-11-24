@@ -17,6 +17,7 @@ c2 = Client.create! login: "usProf", email:"profissional@hotmail.com", name:"tra
 c1 = Client.create! login: "user2",email:"a@h.com", name:"delicias Arabes", password:"123456",cpf:12398745625
 c3 = Client.create! login: "user1", email:"u@h.com", name:"name User", password:"password",cpf:12345678901
 c4 = Client.create! login: "lavie", email:"admin@lavie.com" , name: "C'est la vie, gastronomia" , password: "laviepas", cpf:'07378321000109'
+c5 = Client.create! login: 'felipe', email: 'felipe@mail.com', name: 'Felipe Alberto dos Santos', password: '123456', cpf: '205698788812'
 
 Telephone.delete_all
 Telephone.create! client:c1, telephone: '23444543'
@@ -29,6 +30,8 @@ CreditCard.create! client:c1, name:"Banco Itaú", number:"1827304958120936", dig
 CreditCard.create! client:c2, name:"Banco do Brasil", number:"9279735275937645", digit:"128", flag:"Visa", expiration:"12/40"
 CreditCard.create! client:c3, name:"Caixa Economica Federal", number:"4673826475923340", digit:"032", flag:"MasterCard", expiration:"12/17"
 CreditCard.create! client:c3, name:"Banco Santander", number:"3928337455688904", digit:"512", flag:"MasterCard", expiration:"12/22"
+CreditCard.create! client:c5, name:"Banco do Brasil", number:"4859753812542001", digit:"890", flag:"Visa", expiration:"12/32"
+
 
 Address.delete_all
 Address.create! client:c1, cep: '05508020', street: 'street1', number: 123, city: 'São Paulo',
@@ -39,6 +42,8 @@ Address.create! client:c2, cep: '55080900', neighborhood: 'butantã', street: 's
                 country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
 Address.create! client:c4, cep: '01430001', neighborhood: 'Jardim América', street: 'Avenida Brasil', number:1122,
                 city: 'São Paulo', country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
+Address.create! client:c5, cep: '01430001', neighborhood: 'Jardim América', street: 'Avenida Brasil', number:1122,
+                city: 'São Paulo', country: 'Brasil', address_type: Address.address_types['comercial'], delivery_radius: 4
 
 Professional.delete_all
 p1 = Professional.create! client: c1, description: 'Tradição em comidas Árabes', rating: 4.1, logo: seed_image("professional_logo1")
@@ -47,7 +52,7 @@ p3 = Professional.create! client: c4, description: 'Nossa equipe trabalha de for
 um ótimo serviço. Oferecemos uma grande diversidade de produtos', rating: 4.6
 
 CategoryProduct.delete_all
-cEntrada = CategoryProduct.create! name: "Entrada"
+cEntrada = CategoryProduct.create! name: "Entradas/Salgados"
 cComida = CategoryProduct.create! name: "Pratos"
 cSobremesa = CategoryProduct.create! name: "Sobremesas"
 cFlores = CategoryProduct.create! name: "Flores"
