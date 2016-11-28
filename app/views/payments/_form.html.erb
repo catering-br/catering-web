@@ -1,4 +1,4 @@
-<%= form_for(payment) do |f| %>
+<%= simple_form_for(payment) do |f| %>
   <% if payment.errors.any? %>
     <div id="error_explanation">
       <div class ="text-primary text-left"><h3><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h3></div>
@@ -14,9 +14,9 @@
   <%= f.hidden_field :shopping_cart_id, :value => @shopping_cart.id %>
 
   <div class="field form-group text-left">
-    <%= f.label :credit_card_id, class:"text-primary" %>
-    <%= f.select :credit_card_id, CreditCard.where(:client_id => current_client.id).map{|credit_card| [ credit_card.number, credit_card.id]},
-                 prompt:"Selecione seu cartão de crédito", class:"form-control" %>
+    <%= f.label "Cartão de crédito", class:"text-primary" %>
+    <%= f.select(:credit_card_id, CreditCard.where(:client_id => current_client.id).map{|credit_card| [ credit_card.number, credit_card.id]},{},
+                 {:class=>'form-control'}) %>
   </div>
     <%= link_to "cadastrar novo cartao",new_credit_card_path, :class => "inline_field_wrapper, pull-right" %>
 
@@ -31,6 +31,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-lg btn-primary center-block"%>
   </div>
 <% end %>

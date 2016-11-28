@@ -5,3 +5,6 @@
 .hidden-control {
     display: none;
 }
+.text-default {
+    color: #555;
+}
