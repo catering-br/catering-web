@@ -126,14 +126,14 @@ pd14 = Product.create! professional: p5, name: "Contra filé ao alho", descripti
 # pd10 = Product.create! professional: p4, name: "", description: "", category_product: cComida, price: 36.90, rating: 5
 #-----------------------------------------
 Picture.delete_all
-Picture.create! product: pd3, image: seed_image("pizza")
-Picture.create! product: pd4, image: seed_image("donut")
-Picture.create! product: pd4, image: seed_image("donut2")
-Picture.create! product: pd5, image: seed_image("crepe")
-Picture.create! product: pd6, image: seed_image("42042_27100317_SaladaCaesa")
-Picture.create! product: pd7, image: seed_image("42042_27100318_SaladadeQui")
-Picture.create! product: pd8, image: seed_image("42042_27100321_SaladaThaic")
-Picture.create! product: pd9, image: seed_image("42042_27100346_SucoFazenda")
+# Picture.create! product: pd3, image: seed_image("pizza")
+# Picture.create! product: pd4, image: seed_image("donut")
+# Picture.create! product: pd4, image: seed_image("donut2")
+# Picture.create! product: pd5, image: seed_image("crepe")
+# Picture.create! product: pd6, image: seed_image("42042_27100317_SaladaCaesa")
+# Picture.create! product: pd7, image: seed_image("42042_27100318_SaladadeQui")
+# Picture.create! product: pd8, image: seed_image("42042_27100321_SaladaThaic")
+# Picture.create! product: pd9, image: seed_image("42042_27100346_SucoFazenda")
 # Picture.create! product: pd10, image: seed_image("")
 # Picture.create! product: pd11, image: seed_image("")
 # Picture.create! product: pd12, image: seed_image("")
